@@ -2,11 +2,18 @@
 title: A Developer Blog
 email: mjftrask@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  A PHP Developer who has some interesting thoughts, not all pretaining to development.
-baseurl: "matthewtrask.me" # the subpath of your site, e.g. /blog/
+  Im a developer who is passionate about learning, open source and pushing yourself to the limits.
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://matthewtrask.me" # the base hostname & protocol for your site
+permalink: pretty
+encoding: "utf-8"
+
+
+
+
 twitter_username: matthewtrask
 github_username:  rocketpastsix
+facebook_username: matt.trask
 
 # Build settings
 markdown: kramdown
