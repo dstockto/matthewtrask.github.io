@@ -16,4 +16,6 @@ PHP, Clean Code, Learning, Open Source, Civic Hacking, Reading, The Beatles
 
 If you are in Atlanta, feel free to message me. Ill gladly meet you for a beer or coffee. 
 
-If you are not in Atlanta, you can find me on Twitter, various Slack channels, 
+If you are not in Atlanta, you can find me on Twitter, various Slack channels, Reddit, and Github
+
+#**Skills**
