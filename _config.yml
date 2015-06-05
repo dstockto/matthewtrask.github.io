@@ -13,7 +13,20 @@ encoding: "utf-8"
 
 twitter_username: matthewtrask
 github_username:  rocketpastsix
-facebook_username: matt.trask
+
 
 # Build settings
 markdown: kramdown
+permalink: /:title
+
+#Comments
+comments:
+  provider: disqus
+  disqus:
+    short_name: matthewtrask
+
+#analytics
+analytics:
+  provider: Google
+  google:
+    tracking_id :
