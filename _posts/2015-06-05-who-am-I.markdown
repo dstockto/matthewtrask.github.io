@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Who Am I?"
+date: 2015-06-05 11:39:00
+categories: Life Developer
+author: Matthew Trask
+permalink: Who-Am-I
+comments: true
+---
+
+#I'm Matt.
+I am a number of things. Im a PHP Developer, open source advocate, mentor,
+teacher, community member for PHP and web development, musician, advocate for
+open government and now a blogger.
+
+Cal Evans ([@calevans](https://twitter.com/calevans)) and Yitzchok Wilroth ([@coderabbi](https://twitter.com/coderabbi)) both advocate that being a
+developer shouldn't stop at 5pm. Rather, you are apart of a growing community of people who will push for improvement in a number of ways. Being on Twitter, Github, blogging, attending conferences and mentoring at a number of ways to get involved.
+So here I am, taking another step forward and getting more involved with the PHP
+community at large. Im excited to do that. 
