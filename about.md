@@ -1,21 +1,30 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
-#**Who Am I?**
+<p class="message">
+  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
+</p>
 
-Im Matt
+In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
 
-#**What am I interested in?**
+There are currently two themes built on Poole:
 
-PHP, Clean Code, Learning, Open Source, Civic Hacking, Reading, The Beatles
+* [Hyde](http://hyde.getpoole.com)
+* [Lanyon](http://lanyon.getpoole.com)
 
-#**Where can you find me?**
+Learn more and contribute on [GitHub](https://github.com/poole).
 
-If you are in Atlanta, feel free to message me. Ill gladly meet you for a beer or coffee. 
+## Setup
 
-If you are not in Atlanta, you can find me on Twitter, various Slack channels, Reddit, and Github
+Some fun facts about the setup of this project include:
 
-#**Skills**
+* Built for [Jekyll](http://jekyllrb.com)
+* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
+* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
+* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
+
+Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
+
+Thanks for reading!

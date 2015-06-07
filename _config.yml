@@ -1,32 +1,26 @@
-# Site settings
-title: A Developer Blog
-email: mjftrask@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Im a developer who is passionate about learning, open source and pushing yourself to the limits.
-baseurl: "" # the subpath of your site, e.g. /old_blog/
-url: "http://matthewtrask.me" # the base hostname & protocol for your site
-permalink: pretty
-encoding: "utf-8"
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
 
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
 
+# Setup
+title:            Hyde
+tagline:          'A Jekyll theme'
+description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+url:              http://hyde.getpoole.com
+baseurl:          /
 
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
 
-twitter_username: matthewtrask
-github_username:  rocketpastsix
+paginate:         5
 
+# Custom vars
+version:          2.1.0
 
-# Build settings
-markdown: kramdown
-permalink: /:title
-
-#Comments
-comments:
-  provider: disqus
-  disqus:
-    short_name: matthewtrask
-
-#analytics
-analytics:
-  provider: Google
-  google:
-    tracking_id :
+github:
+  repo:           https://github.com/poole/hyde
