@@ -7,4 +7,6 @@ permalink: Hello-World
 ---
 #Hello World
 
-Testing my first post.
+Hello there.
+
+How did you get here? Well, however you did, I hope you enjoy your stay. \

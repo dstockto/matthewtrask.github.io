@@ -1,5 +1,5 @@
 # Dependencies
-markdown:         redcarpet
+markdown:         kramdown
 highlighter:      pygments
 
 # Permalinks
@@ -8,7 +8,7 @@ relative_permalinks: true
 
 # Setup
 title:            A Development Blog
-tagline:          'A Jekyll theme'
+tagline:          'Matt Trask'
 description:      'I love coding and its about time I start writing about it.'
 url:              http://matthewtrask
 baseurl:          /
