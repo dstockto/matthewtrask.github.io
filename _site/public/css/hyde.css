@@ -70,6 +70,13 @@ html {
   }
 }
 
+/* Image Styles */
+img.image {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+
 /* Sidebar links */
 .sidebar a {
   color: #fff;
@@ -112,13 +119,6 @@ a.sidebar-nav-item:focus {
     bottom: 1rem;
     left:   1rem;
   }
-}
-
-/* Image Styles */
-img.image {
-  border-radius: 50%;
-  width: 250px;
-  height: 250px;
 }
 
 
