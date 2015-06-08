@@ -9,4 +9,4 @@ permalink: Hello-World
 
 Hello there.
 
-How did you get here? Well, however you did, I hope you enjoy your stay. \
+How did you get here? Well, however you did, I hope you enjoy your stay. 
