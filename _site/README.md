@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![preview Long Haul](/preview.jpg)
 
 Long Haul is a minimal jekyll theme built with COMPASS / SASS / SUSY and focuses on long form blog plosts. It is meant to used as a starting point for a jekyll blog/website.
@@ -47,3 +48,6 @@ The main settings can be found inside the `_config.yml` file:
 ## License
 
 This is [MIT](LICENSE) with no added caveats, so feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.
+=======
+
+>>>>>>> 3635500ea636de4f0abca7237177c410e9f1d928
