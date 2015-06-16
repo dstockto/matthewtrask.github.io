@@ -1,5 +1,5 @@
 title: Matt Trask
-description: My travels from the start to now. 
+description: My travels from the start to now.
 
 url: http://matthewtrask.net
 baseurl: ""
@@ -14,9 +14,9 @@ navigation:
  - title: Home
    url: /index.html
  - title: About
-   url: /about
+   url: /about.html
  - title: Contact
-   url: /contact
+   url: /contact.html
 
 social:
    github: rocketpastsix
