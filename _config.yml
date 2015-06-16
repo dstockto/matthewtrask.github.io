@@ -23,4 +23,9 @@ social:
    twitter: matthewtrask
    email: mjftrask@gmail.com
 
+comments :
+  provider : disqus
+  disqus :
+    short_name : matthewtrask
+
 google_analytics: "UA-64167405-1"
