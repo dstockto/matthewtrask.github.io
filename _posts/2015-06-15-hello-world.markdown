@@ -4,6 +4,7 @@ title:  "Hello World"
 date:   2016-06-15
 comments: yes
 description: Hello World
+tags: Hello World, PHP, Beginnings
 ---
 
 <p class="intro">This is my first blog post, and I hope its a good one. I'm writing this for a few reasons.</p><br />
