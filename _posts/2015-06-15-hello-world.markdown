@@ -5,7 +5,7 @@ date:   2016-06-15
 comments: yes
 ---
 
-This is my first blog post, and I hope its a good one. I'm writing this for a few reasons.
+<p class="intro">This is my first blog post, and I hope its a good one. I'm writing this for a few reasons.</p><br />
 
 ## Reasons
 * Get more involved with the community
@@ -33,4 +33,4 @@ football/soccer team and I do too much fantasy football to really cheer for a te
 
 So thats me. Theres a lot more abut me, but thats a good overview. Im sure new posts
 will come that will show off more things like my tech stack, what I am working on,
-and what I hope to learn soon. 
+and what I hope to learn soon.
