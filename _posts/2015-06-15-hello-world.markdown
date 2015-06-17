@@ -7,6 +7,9 @@ comments: yes
 
 <p class="intro">This is my first blog post, and I hope its a good one. I'm writing this for a few reasons.</p><br />
 
+
+
+
 ## Reasons
 * Get more involved with the community
 * Help beginners
