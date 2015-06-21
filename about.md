@@ -3,8 +3,6 @@ layout: default
 title: About Me
 ---
 
-	<h1 class="pageTitle">About Me</h1>
-	<img src="{{ '/assets/img/elephpants.jpg' | prepend: site.baseurl }}" alt="">
 	##Hi, Im Matt.
 	I live in Atlanta, track down awesome new beers, and code a lot.
 	I have an affinity for groups that are trying to help the less fortunate in anyway.
