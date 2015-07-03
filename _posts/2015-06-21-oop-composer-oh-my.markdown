@@ -30,4 +30,13 @@ enough while learning.
 #After Codecademy
 
 So you've done some work with Codecademy, and you think you can build a page, that's great!
-But what now? 
+But what now?
+
+You build something! Anything! Build yourself a simple website. It doesnt need to be great,
+but its a great place to work. When you are ready, then you can buy the domain and the hosting.
+Until then, just practice. The thing with Codecademy or Teamtreehouse is that you feel comfortable
+in their setting. Its a crutch. If you type something wrong during an exercise, a warning will appear
+and you will know that you messed something up. In the real world, you aren't that fortunate.
+
+However, after practicing, you begin to start recognizes things that are not working, and tips to make things
+work better! So what are you waiting for? Code something!
