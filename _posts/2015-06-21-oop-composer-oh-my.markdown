@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "OOP & Composer and PHP, oh my!"
-date:   2016-06-21
+date:   2015-06-21
 comments: yes
 description: Tools of the trade
 tags: Tools, PHP, OOP

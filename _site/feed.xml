@@ -5,9 +5,138 @@
     <description>My travels from the start to now.</description>
     <link>http://matthewtrask.net/</link>
     <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Jun 2015 20:54:28 -0400</pubDate>
-    <lastBuildDate>Tue, 16 Jun 2015 20:54:28 -0400</lastBuildDate>
+    <pubDate>Sat, 25 Jul 2015 14:40:21 -0400</pubDate>
+    <lastBuildDate>Sat, 25 Jul 2015 14:40:21 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      
+      <item>
+        <title>Tech Stack</title>
+        <description>&lt;h1&gt;How I build apps and sites&lt;/h1&gt;
+
+&lt;p&gt;I work at LAMP Camp, and since most of the people there are learning, one question I get alot
+is what tools do I use? And its an interesting question, because as of late, Ive been changing
+my mind and wondering what could be the best way to use the tools I use. Anyways, here is a run
+down. Keep an eye on this, cause I will be changing the post as I mess around with new tools. Lets
+treat this as if I just bought a new machine, and I want to set it up for development.&lt;/p&gt;
+
+&lt;h2&gt;Machine&lt;/h2&gt;
+
+&lt;p&gt;First and foremost, I am a Mac guy. I dont live and die with every decision they make, but
+they make good computers. Its a 2011 Macbook Pro, with 16 gigs or ram and 120 gig SSD. The SSD was
+the best decision I have made. Super fast, it sped my computer up and helped my workflow. Lately, however,
+Im not overly thrilled that Apple is soldering the ram and hard drives into the machine. Purely a business
+move to get more revenue, but still sucks. One trick I do like to do is remove the programs from the dock.
+It helps me keep track of what is open, and keeps the dock small and less distracting.&lt;/p&gt;
+
+&lt;p&gt;Now, I do have a Linux machine too, running a distro called ElementaryOS. They got some flack for
+trying to charge for their distro, and while I cant blame them for trying to make a living, it was
+kind of a dick move.&lt;/p&gt;
+
+&lt;h2&gt;Computer Programs&lt;/h2&gt;
+
+&lt;p&gt;Theres a few Mac specific programs I use to really optimize how I work. First thing I get is
+&lt;a href=&quot;http://brew.sh/&quot;&gt;Homebrew&lt;/a&gt;. It&amp;#39;s &lt;em&gt;the&lt;/em&gt; package manager for a Mac. To browse packages, check out this &lt;a href=&quot;http://braumeister.org/&quot;&gt;page&lt;/a&gt;. As you can see, theres Apache, Python, PHP, and others that you may want
+or need.&lt;/p&gt;
+
+&lt;p&gt;After I set up Homebrew, I get a version of &lt;a href=&quot;iterm2.com&quot;&gt;iTerm&lt;/a&gt;. It has a ton of awesome features that help speed
+things up for me. As a PHP developer, I spend a lot of time in the command line, and iTerm has some features I can&amp;#39;t live
+without anymore. Split screen is fantastic, and I hot key it on the &amp;#39;~&amp;#39; key. To aid in the terminal, and to make it a little
+less bland, I grab a copy of &lt;a href=&quot;http://ohmyz.sh/&quot;&gt;Oh My Zsh&lt;/a&gt;. It has a ton of plugins you can call upon, and it the color scheme
+helps keep it from getting dull after hours of looking at the terminal. Truly a godsend in my opinion.&lt;/p&gt;
+
+&lt;p&gt;The last thing I get specific to the Mac, is &lt;a href=&quot;http://www.sequelpro.com/&quot;&gt;Sequel Pro&lt;/a&gt;. Have you ever worked with command line MySQL or even worse, PHPMyAdmin. Yea, this solves the headaches. Its clean, fast, easy to use, allows for SSH tunnels for connections and an easy way to export tables to keep work up to date.&lt;/p&gt;
+
+&lt;p&gt;Outside of these, I get Pomodoro Time from the app store, Evernote for note taking, Spotify for music.&lt;/p&gt;
+
+&lt;h2&gt;PHP Specific Tools&lt;/h2&gt;
+
+&lt;p&gt;As a PHP Developer, there are a few awesome things that I need in order to maximize my workflow.&lt;/p&gt;
+
+&lt;p&gt;First, is a text editor. And for that, its hard to beat &lt;a href=&quot;atom.io&quot;&gt;Atom&lt;/a&gt;. Its my favorite word, free, and very customizable.
+I&amp;#39;ll download it, and then get plugin support for Twig and LinterPHP for all of the linting tools out there. PHP Codesniffer is awesome to use, I highly recommend it. Clean code is good code. You can also get a plugin that will let you see PHPUnit test results in the text editor.&lt;/p&gt;
+
+&lt;p&gt;If you are looking for something more powerful, its hard not to recomment &lt;a href=&quot;jetbrains.com&quot;&gt;PHPStorm&lt;/a&gt;. The license may seem steep, but honestly, everything that it offers is unrivaled. PHPUnit support, Vagrant support, Git support, code completion and error checking just to name a few. I absolutely love it. But I only try to use it when Im plugged into power cause it can cause your battery to die off quickly.&lt;/p&gt;
+</description>
+        
+          <description>&lt;h1&gt;How I build apps and sites&lt;/h1&gt;
+</description>
+        
+        <pubDate>Sat, 25 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://matthewtrask.net/blog/Tech-Stack/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/Tech-Stack/</guid>
+        
+        <category>PHP,</category>
+        
+        <category>Tools,</category>
+        
+        <category>Beginnings,</category>
+        
+        <category>APIs,</category>
+        
+        <category>frameworks</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>OOP &amp; Composer and PHP, oh my!</title>
+        <description>&lt;p&gt;When you get into coding and development, everything seems so foreign. OOP, MVC,
+MVVM, MV*, JSON, API, and XML. Let alone when a new person sees Angular, Node,
+Laravel, Django, Rails or Sass. So what is it all, and how can someone who is new
+to the game make sense of this all? Lets start from the ground up.&lt;/p&gt;
+
+&lt;h1&gt;Starting out&lt;/h1&gt;
+
+&lt;p&gt;One big question friends have asked me is where to start? Theres tons of places online
+that will help you start learning how to write code. I started on Codecademy, and
+its a good starting point. But will you code the next AirBnB? No, you will not. Will
+you be able to build something? Absolutely. Its all about what you do &lt;em&gt;outside&lt;/em&gt; of
+the Codecademy.com cirriculm. Thats the key! And its amazing how many people have
+yet to figure this out. Ive seen people go to /r/learnprogramming or /r/webdev and say
+that Codecademy.com isnt working for them. They say that teamtreehouse.com was great to
+start, but now they are stuck. But why are they stuck? Is it cause the videos do not
+go very deep into web development? Or is it that people arent being creative enough
+with that they have learned over the course of a video series. In the time I have spent
+working in this industry, that has been the biggest issue coming around. Not pushing deep
+enough while learning.&lt;/p&gt;
+
+&lt;h1&gt;After Codecademy&lt;/h1&gt;
+
+&lt;p&gt;So you&amp;#39;ve done some work with Codecademy, and you think you can build a page, that&amp;#39;s great!
+But what now?&lt;/p&gt;
+
+&lt;p&gt;You build something! Anything! Build yourself a simple website. It doesnt need to be great,
+but its a great place to work. When you are ready, then you can buy the domain and the hosting.
+Until then, just practice. The thing with Codecademy or Teamtreehouse is that you feel comfortable
+in their setting. Its a crutch. If you type something wrong during an exercise, a warning will appear
+and you will know that you messed something up. In the real world, you aren&amp;#39;t that fortunate.&lt;/p&gt;
+
+&lt;p&gt;However, after practicing, you begin to start recognizes things that are not working, and tips to make things
+work better! So what are you waiting for? Code something!&lt;/p&gt;
+</description>
+        
+          <description>&lt;p&gt;When you get into coding and development, everything seems so foreign. OOP, MVC,
+MVVM, MV*, JSON, API, and XML. Let alone when a new person sees Angular, Node,
+Laravel, Django, Rails or Sass. So what is it all, and how can someone who is new
+to the game make sense of this all? Lets start from the ground up.&lt;/p&gt;
+</description>
+        
+        <pubDate>Sun, 21 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://matthewtrask.net/blog/oop-composer-oh-my/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/oop-composer-oh-my/</guid>
+        
+        <category>Tools,</category>
+        
+        <category>PHP,</category>
+        
+        <category>OOP</category>
+        
+        
+      </item>
+      
     
       
       <item>
@@ -48,7 +177,7 @@ and what I hope to learn soon.&lt;/p&gt;
           <description>&lt;p&gt;&lt;p class=&quot;intro&quot;&gt;This is my first blog post, and I hope its a good one. I&amp;#39;m writing this for a few reasons.&lt;/p&gt;&lt;br /&gt;&lt;/p&gt;
 </description>
         
-        <pubDate>Wed, 15 Jun 2016 00:00:00 -0400</pubDate>
+        <pubDate>Mon, 15 Jun 2015 00:00:00 -0400</pubDate>
         <link>http://matthewtrask.net/blog/hello-world/</link>
         <guid isPermaLink="true">http://matthewtrask.net/blog/hello-world/</guid>
         

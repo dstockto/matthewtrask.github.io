@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title></title>
+    <title>Tech Stack</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
@@ -20,7 +20,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="http://matthewtrask.net/">
+    <link rel="canonical" href="http://matthewtrask.net/blog/Tech-Stack/">
 
     <!-- Modernizr -->
     <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
@@ -48,7 +48,7 @@
          <nav class="nav-collapse">
              <ul class="noList">
                  
-                 <li class="element first current ">
+                 <li class="element first  ">
                      <a href="/index.html">Home</a>
                  </li>
                  
@@ -69,31 +69,85 @@
 
    <div class="content">
       <div class="container">
-         <div class="home" id="home">
-  <h1 class="pageTitle">Recent Posts</h1>
-  <ul class="posts noList">
+         <div class="post">
+  
+  <h1 class="postTitle">Tech Stack</h1>
+  <p class="meta">July 25, 2015 | <span class="time">3</span> Minute Read</p>
+
+  <h1>How I build apps and sites</h1>
+
+<p>I work at LAMP Camp, and since most of the people there are learning, one question I get alot
+is what tools do I use? And its an interesting question, because as of late, Ive been changing
+my mind and wondering what could be the best way to use the tools I use. Anyways, here is a run
+down. Keep an eye on this, cause I will be changing the post as I mess around with new tools. Lets
+treat this as if I just bought a new machine, and I want to set it up for development.</p>
+
+<h2>Machine</h2>
+
+<p>First and foremost, I am a Mac guy. I dont live and die with every decision they make, but
+they make good computers. Its a 2011 Macbook Pro, with 16 gigs or ram and 120 gig SSD. The SSD was
+the best decision I have made. Super fast, it sped my computer up and helped my workflow. Lately, however,
+Im not overly thrilled that Apple is soldering the ram and hard drives into the machine. Purely a business
+move to get more revenue, but still sucks. One trick I do like to do is remove the programs from the dock.
+It helps me keep track of what is open, and keeps the dock small and less distracting.</p>
+
+<p>Now, I do have a Linux machine too, running a distro called ElementaryOS. They got some flack for
+trying to charge for their distro, and while I cant blame them for trying to make a living, it was
+kind of a dick move.</p>
+
+<h2>Computer Programs</h2>
+
+<p>Theres a few Mac specific programs I use to really optimize how I work. First thing I get is
+<a href="http://brew.sh/">Homebrew</a>. It&#39;s <em>the</em> package manager for a Mac. To browse packages, check out this <a href="http://braumeister.org/">page</a>. As you can see, theres Apache, Python, PHP, and others that you may want
+or need.</p>
+
+<p>After I set up Homebrew, I get a version of <a href="iterm2.com">iTerm</a>. It has a ton of awesome features that help speed
+things up for me. As a PHP developer, I spend a lot of time in the command line, and iTerm has some features I can&#39;t live
+without anymore. Split screen is fantastic, and I hot key it on the &#39;~&#39; key. To aid in the terminal, and to make it a little
+less bland, I grab a copy of <a href="http://ohmyz.sh/">Oh My Zsh</a>. It has a ton of plugins you can call upon, and it the color scheme
+helps keep it from getting dull after hours of looking at the terminal. Truly a godsend in my opinion.</p>
+
+<p>The last thing I get specific to the Mac, is <a href="http://www.sequelpro.com/">Sequel Pro</a>. Have you ever worked with command line MySQL or even worse, PHPMyAdmin. Yea, this solves the headaches. Its clean, fast, easy to use, allows for SSH tunnels for connections and an easy way to export tables to keep work up to date.</p>
+
+<p>Outside of these, I get Pomodoro Time from the app store, Evernote for note taking, Spotify for music.</p>
+
+<h2>PHP Specific Tools</h2>
+
+<p>As a PHP Developer, there are a few awesome things that I need in order to maximize my workflow.</p>
+
+<p>First, is a text editor. And for that, its hard to beat <a href="atom.io">Atom</a>. Its my favorite word, free, and very customizable.
+I&#39;ll download it, and then get plugin support for Twig and LinterPHP for all of the linting tools out there. PHP Codesniffer is awesome to use, I highly recommend it. Clean code is good code. You can also get a plugin that will let you see PHPUnit test results in the text editor.</p>
+
+<p>If you are looking for something more powerful, its hard not to recomment <a href="jetbrains.com">PHPStorm</a>. The license may seem steep, but honestly, everything that it offers is unrivaled. PHPUnit support, Vagrant support, Git support, code completion and error checking just to name a few. I absolutely love it. But I only try to use it when Im plugged into power cause it can cause your battery to die off quickly.</p>
+
+  If you liked this post, you can
+<a href="https://twitter.com/intent/tweet?url=http://matthewtrask.net/blog/Tech-Stack/&text=Tech Stack&via=matthewtrask"
+   target="_blank">
+  share it with your followers</a>
+or
+<a href="https://twitter.com/matthewtrask">
+  follow me on Twitter</a>!
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'matthewtrask'; // Required - Replace '<example>' with your forum shortname
+      //var disqus_developer = 1; // Comment out when the site is live
+      var disqus_identifier = "/blog/Tech-Stack/";
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <!-- POST NAVIGATION -->
+  <div class="postNav clearfix">
     
-      <li>
-        <span class="date">July 25, 2015</span>
-        <h3><a class="post-link" href="/blog/Tech-Stack/">Tech Stack</a></h3>
-        <p class="description">What I use to make a website or app happen, from start to finish.</p>
-      </li>
-    
-      <li>
-        <span class="date">June 21, 2015</span>
-        <h3><a class="post-link" href="/blog/oop-composer-oh-my/">OOP & Composer and PHP, oh my!</a></h3>
-        <p class="description">Tools of the trade</p>
-      </li>
-    
-      <li>
-        <span class="date">June 15, 2015</span>
-        <h3><a class="post-link" href="/blog/hello-world/">Hello World</a></h3>
-        <p class="description">Hello World</p>
-      </li>
-    
-  </ul>
-  <!-- Pagination links -->
-  <div class="pagination">
+      <a class="prev" href="/blog/oop-composer-oh-my/"><span>&laquo;&nbsp;OOP & Composer and PHP, oh my!</span>
+      
+    </a>
     
     
   </div>
