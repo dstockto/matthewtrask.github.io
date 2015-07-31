@@ -17,6 +17,8 @@ navigation:
    url: /about
  - title: Contact
    url: /contact
+ - title: Purpose
+   url: /purpose
 
 social:
    github: rocketpastsix
