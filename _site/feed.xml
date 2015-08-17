@@ -5,17 +5,21 @@
     <description>My travels from the start to now.</description>
     <link>http://matthewtrask.net/</link>
     <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Aug 2015 17:16:24 -0400</pubDate>
-    <lastBuildDate>Mon, 17 Aug 2015 17:16:24 -0400</lastBuildDate>
+    <pubDate>Mon, 17 Aug 2015 17:22:07 -0400</pubDate>
+    <lastBuildDate>Mon, 17 Aug 2015 17:22:07 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       
       <item>
         <title>On Community</title>
         <description>&lt;h1&gt;The PHP Community&lt;/h1&gt;
+
+&lt;p&gt;This weekend was interesting. Why do I say that? Well, take a look at a few tweets from &lt;a href=&quot;https://twitter.com/ircmaxell/status/632422970636419072&quot;&gt;@ircmaxell&lt;/a&gt; about Laravel. &lt;/p&gt;
 </description>
         
           <description>&lt;h1&gt;The PHP Community&lt;/h1&gt;
+
+&lt;p&gt;This weekend was interesting. Why do I say that? Well, take a look at a few tweets from &lt;a href=&quot;https://twitter.com/ircmaxell/status/632422970636419072&quot;&gt;@ircmaxell&lt;/a&gt; about Laravel. &lt;/p&gt;
 </description>
         
         <pubDate>Mon, 17 Aug 2015 00:00:00 -0400</pubDate>
