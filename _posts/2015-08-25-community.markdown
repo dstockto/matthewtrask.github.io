@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "On Community"
-date:   2015-08-17
+date:   2015-08-25
 comments: yes
 description: Lets get more involved in a community that has grown into something great. 
 tags: Community, PHP, Lets Be Friends
