@@ -5,8 +5,8 @@
     <description>My travels from the start to now.</description>
     <link>http://matthewtrask.net/</link>
     <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Aug 2015 17:22:07 -0400</pubDate>
-    <lastBuildDate>Mon, 17 Aug 2015 17:22:07 -0400</lastBuildDate>
+    <pubDate>Tue, 25 Aug 2015 12:36:39 -0400</pubDate>
+    <lastBuildDate>Tue, 25 Aug 2015 12:36:39 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       
@@ -14,12 +14,38 @@
         <title>On Community</title>
         <description>&lt;h1&gt;The PHP Community&lt;/h1&gt;
 
-&lt;p&gt;This weekend was interesting. Why do I say that? Well, take a look at a few tweets from &lt;a href=&quot;https://twitter.com/ircmaxell/status/632422970636419072&quot;&gt;@ircmaxell&lt;/a&gt; about Laravel. &lt;/p&gt;
+&lt;p&gt;A few weeks ago, members of the PHP community were up in arms over a divisive issue. The issue? It was the always popular, debated framework Laravel. Of course the tweet, which is an awful mode of communication of ideas, sparked the debate which got personal fast. It spread to Reddit, which is the bastion of cool headedness and reasonable thought. Do I need the sarcasm tag there? &lt;/p&gt;
+
+&lt;p&gt;Luckily it ended a day later with Taylor Otwell and Anthony Ferrera agreeing to discuss the tweet sent by Anthony in a podcast. So thats a huge win for everyone. But while the community has these dark days, where can you find some awesomeness in the community? Better yet, how can you be involved?&lt;/p&gt;
+
+&lt;h2&gt;The User Group&lt;/h2&gt;
+
+&lt;p&gt;The user group is &lt;em&gt;the&lt;/em&gt; place to be in terms of interacting with the community. Most major cities have a user group, and they all run in a simple fashion. There is a period of conversation amongst users, generally friends, about work or projects. Food can be provided, sometimes beer, and then the group gets going. At &lt;a href=&quot;atlantaphp.org&quot;&gt;AtlantaPHP&lt;/a&gt; we have a mini talk. Can be about anything, but usually its someone testing a talk or idea, or showing off a project they think others will use. Then the big talk, which is more about concepts of programming and PHP. I&amp;#39;ve been fortunate enough to see a few good talks, with plenty to come.&lt;/p&gt;
+
+&lt;p&gt;One thing I notice with newer developers is a sense of fear. Part of our mission at &lt;a href=&quot;lampcamp.guru&quot;&gt;LAMP Camp&lt;/a&gt; is getting these developers out in front of people to meet others. But you need to make the effort. Developers are people too, same as CTO&amp;#39;s, CEO&amp;#39;s and others. Introduce yourself, let them ask questions. Especially if you are apart of a program, or just learning. I know for me, my first time was a little nervewracking, but being with my boss and fellow coworkers allowed me to break out of my shell and get involved. In fact, I&amp;#39;ll be giving a talk next week at AtlantaPHP. Unfortunately, or fortunately, some people arent close to a user group, so what can you do about it? Well there is a few things. &lt;/p&gt;
+
+&lt;h2&gt;The Virtual Hallway&lt;/h2&gt;
+
+&lt;p&gt;The hallway track, and now the viritual hallway, is a concept from the conferences that happen all year. While you are going from one talk to another, you stumble into vendors and other developers in the hallway talking and showing off a project or some knowledge. Enter &lt;a href=&quot;https://twitter.com/coderabbi&quot;&gt;@coderabbi&lt;/a&gt; and the rest of IRC. I mentioned @coderabbi cause his room on IRC is #coderabbi - &amp;quot;The Virtual Hallway&amp;quot;. But his is not the only one. A few active ones are #phpc, #phpmentoring and #slimphp. These are rooms I get into first thing in the morning, and just linger. I can contribute when I want, start conversations, offer input or ask for advice. Its great. Just this morning I was getting advice about &lt;a href=&quot;https://slimframework.com&quot;&gt;SlimPHP&lt;/a&gt; and how to use the Twig templates. All because I asked, and made myself involved. Its easy to register a nickname, and all you need to do is say &amp;quot;good morning&amp;quot;. &lt;/p&gt;
+
+&lt;h2&gt;NomadPHP&lt;/h2&gt;
+
+&lt;p&gt;Another great outlet, started by PHP&amp;#39;s cheerleader himself, &lt;a href=&quot;https://twitter.com/calevans&quot;&gt;Cal Evans&lt;/a&gt;, is NomadPHP.It&amp;#39;s slated to be for the developer without a user group, its more of an event for anyone who wants to be. Featuring two videos a month and an IRC room(#nomadPHP), its an easy way to learn from the comfort of home or at the office. We watched one video last week and put it on the projector so everyone could learn a little. For $20 a month, its one of the best ways to be involved. So why arent you doing it yet?&lt;/p&gt;
+
+&lt;h2&gt;Twitter&lt;/h2&gt;
+
+&lt;p&gt;The last way, and a way a lot of people are already involved with, is Twitter. Following other developers allows me access to their blogs, and comments on different concepts of programming. &lt;a href=&quot;https://twitter.com/philsturgeon&quot;&gt;Phil Sturgeon&lt;/a&gt; routinely sends tweet that gave valuable insight to the PHP community. Same with &lt;a href=&quot;https://twitter.com/ramsey&quot;&gt;Ben Ramsey&lt;/a&gt;. Its a constant information stream that is worth the effort to hop on Twitter and check it out everyday. I use Twitter so much its essentially replaced Facebook for me.  &lt;/p&gt;
+
+&lt;p&gt;Some others to follow include &lt;a href=&quot;https://twitter.com/joepferguson&quot;&gt;Joe Ferguson&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/elazar&quot;&gt;Matthew Turland&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/ambassadorawsum&quot;&gt;Amanda Folson&lt;/a&gt;, &lt;a href=&quot;@ircmaxell&quot;&gt;Anthony Ferrera&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/grumpyprogrammer&quot;&gt;Chris Hartjes&lt;/a&gt; and so many more. Cal Evans keeps a running &lt;a href=&quot;https://twitter.com/CalEvans/lists/phpeople&quot;&gt;list&lt;/a&gt; on his twitter, its worth running through it and just following everyone. &lt;/p&gt;
+
+&lt;h2&gt;Now what?&lt;/h2&gt;
+
+&lt;p&gt;Go out! Be involved! Meetup.com and search for whatever language you want to be involved with. Look for what groups are desiring comments on things, look at github.com for open source projects. Comment on those threads, read them and go out and be ready to be apart of the community. I made the choice to be apart of the PHP community and because of it, I have made some awesome new friends, drinking buddies, and a list of peers I know I can ask for honest advice from. Thats something I wouldn&amp;#39;t change for the world.&lt;/p&gt;
 </description>
         
           <description>&lt;h1&gt;The PHP Community&lt;/h1&gt;
 
-&lt;p&gt;This weekend was interesting. Why do I say that? Well, take a look at a few tweets from &lt;a href=&quot;https://twitter.com/ircmaxell/status/632422970636419072&quot;&gt;@ircmaxell&lt;/a&gt; about Laravel. &lt;/p&gt;
+&lt;p&gt;A few weeks ago, members of the PHP community were up in arms over a divisive issue. The issue? It was the always popular, debated framework Laravel. Of course the tweet, which is an awful mode of communication of ideas, sparked the debate which got personal fast. It spread to Reddit, which is the bastion of cool headedness and reasonable thought. Do I need the sarcasm tag there? &lt;/p&gt;
 </description>
         
         <pubDate>Mon, 17 Aug 2015 00:00:00 -0400</pubDate>
