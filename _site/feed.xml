@@ -5,9 +5,147 @@
     <description>My travels from the start to now.</description>
     <link>http://matthewtrask.net/</link>
     <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Aug 2015 12:36:39 -0400</pubDate>
-    <lastBuildDate>Tue, 25 Aug 2015 12:36:39 -0400</lastBuildDate>
+    <pubDate>Sun, 27 Sep 2015 21:15:52 -0400</pubDate>
+    <lastBuildDate>Sun, 27 Sep 2015 21:15:52 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      
+      <item>
+        <title>Technology, inclusion and how to do better</title>
+        <description>&lt;h2&gt;Tear down these walls.&lt;/h2&gt;
+
+&lt;p&gt;Over the weekend, I took apart in something special, something unique. And I have a unique perspective for a number of reasons. And to really give you the idea, I have to take you back to last year. &lt;/p&gt;
+
+&lt;p&gt;In America exists a program called &lt;a href=&quot;http://www.codeforamerica.org&quot;&gt;Code for America&lt;/a&gt;. Their mission is to open up the government with technology. Its simple, everyone has a smartphone, tablet, and/or computer. Hell, some of us now have fancy watches that let us know we got a text message before everyone else. The government, however, has decided that Internet Explore 8 and Windows XP (now well past security updates, and was E.O.L&amp;#39;d about a year ago) are the way to go. But thats neither here or there. Instead, Code For America, and the local groups, have taken it upon themselves to open up the government with current technology. Through this group, Code For Atlanta, a friend in the non profit world reached out and sent me an invite for the first ever &lt;a href=&quot;http://goodiehack.com&quot;&gt;Goodie Hack&lt;/a&gt;. &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Goodie Hack is an intense and high energy event where techies and non-techies form teams to brainstorm and develop technical solutions to problems in under-served communities relative to economic development, education, heath, and safety.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;That sounds awesome right? I though so too! Well, long story short, I was the only white guy there. Only white person really. But you know what? Even though the hack was for the underserved and minority communities, there was never a sense of not belonging. So I got my laptop out, and started helping in anyway I could. Back then I barely knew what I was doing, so I didnt help much, but I created a name for myself with the group, and got invited to more hacks. My team managed to win a hack &lt;a href=&quot;http://amplify4good.org&quot;&gt;Amplify 4 Good&lt;/a&gt;, the parent company of Goodie Hack, hosted at General Assembly in Ponce City Market. &lt;/p&gt;
+
+&lt;h2&gt;Personalized Emails and being asked to help&lt;/h2&gt;
+
+&lt;p&gt;Generally when a hack is coming up, I get an email from &lt;a href=&quot;https://twitter.com/joeydigital&quot;&gt;Joey Womack&lt;/a&gt;, who leads the Amplify 4 Good group, mentioning the need for volunteers and mentors for the students at the various hacks they host. This time, I got a personalized call, which could have been the same for everyone, but I felt special and took to the calling. Sending an email back saying Im in, I get signed up and attend the tutoring class. &lt;/p&gt;
+
+&lt;p&gt;The tutoring class had some amazing thinkers, all aimed at empowering youth to go to college and look at Computer Science and Coding as available options. One thing stood out the most, &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We should aim to teach the students that not every programmer and coder out there is a nerdy white guy sitting in the corner not talking to everyone.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Wow. &lt;/p&gt;
+
+&lt;p&gt;Those are powerful words. Are they right? Well maybe. Im not disagreeing with the fact that &lt;em&gt;a lot&lt;/em&gt; of programmers and devs I know are white. Im not disagreeing that diversity lacks. Im not the only one who thinks that either. Look on twitter, there are tons of developers who think the same way. Call for papers for conferences routinely ask for women to submit. Groups like PHP Women, Girl Develop It, Black Girls Code and Women Who Code help forward the cause. But yet, there are still people in the industry who have to be told to not be a dick to someone with different colored skin or something else. Its wrong. &lt;/p&gt;
+
+&lt;h2&gt;The hackathon itself&lt;/h2&gt;
+
+&lt;p&gt;If you know me, you know I value my down time. I gave up a huge chunk this weekend to help out. It was worth it. Being the only white person there is a huge push out of the comfort zone, but it didnt take long for it to just be another day of helping out. The students themselves came armed with questions and ideas. Personally I was shocked with how open they were to ideas, and how they didnt feel any reason was a reason to stop their efforts. This sentiment was echoed from many mentors who I talked with. It was an amazing experience to be apart of. &lt;/p&gt;
+
+&lt;p&gt;What I thought the students enjoyed most was gathering their data. It took some pushing on our part, but they took a liking to going out and talking to their peers and elders. So much that my mentoring partner, Monet, and I had to walk fast to keep up to their curiousity. They came back energized. It was awesome. &lt;/p&gt;
+
+&lt;h2&gt;Day 2&lt;/h2&gt;
+
+&lt;p&gt;Day 2 was the hardest bit. Kids came in tired, we came in tired. Starbucks couldnt get my drink size right. Venti means as much as possible, not 20 ounces of coffee. Seriously. But it was crunch time, and we pushed our kids to get the most out of them. One thing a student mentioned was their interest in coding. &lt;/p&gt;
+
+&lt;p&gt;I had him sit next to me, and with some simple Javascript commands in the console, completely blew his mind. Who know &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;alert(&amp;#39;hello, world!&amp;#39;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;would take a kid down the road of learning to code? So what is the next logical step? Have them help us build a webpage. &lt;/p&gt;
+
+&lt;p&gt;For some reason, the same kid had a mild obsession with the Hawaii stickers on my laptop. So we built a simple page around the island of Kauai. Then Monet suggested we build a site for our group. Simple! &lt;/p&gt;
+
+&lt;p&gt;With the students in tow, I set out with a simple idea, utilizing &lt;a href=&quot;https://html5boilerplate.com&quot;&gt;HTML 5 Boilerplate&lt;/a&gt; to skeleton the project, &lt;a href=&quot;materializecss.com&quot;&gt;MaterializeCSS&lt;/a&gt; for that lovely Android design feel, and set to work, with three students helping me out at every step. They got to write some basic HTML and CSS, and then I set to hosting the site.&lt;/p&gt;
+
+&lt;h2&gt;Ill pay you to propagate the DNS now&lt;/h2&gt;
+
+&lt;p&gt;No one ever told me it usually takes 48 hours to propagate DNS. Maybe cause I use Digital Ocean, and they are awesome and I dont deal with that shit. Namecheap, who I think is the best registrar out there, let me buy a domain for 8 bucks. Rad! But then there was a glitch and the whole payment process seemed messed up. Which is explains why the DNS didnt fold over to Digital Ocean like I wanted. Frustrated, and not wanting to let the kids down, I set out to set up hosting via Namecheap. Shouldnt hard right, &lt;em&gt;right&lt;/em&gt;? Well, cause of the glitch, Namecheap was having a hard time placing the domain in a DNS zone, which is why Digital Ocean wasnt accepting it either. I was on chat support for an hour, literally up until 5 minutes before we presented. I was hoping, praying, wishing and everything in between to get this to work. The last thing I wanted to do was let down the students. &lt;/p&gt;
+
+&lt;p&gt;Finally, as we were walking over, I got confirmation that the DNS propagated, and I was good. Unfortunately, the FTP service I had wasnt working, so I had to manually upload the files via the cPanel as we walked to the presentation. Luckily it worked just the way we wanted. &lt;/p&gt;
+
+&lt;h2&gt;On to the Finals&lt;/h2&gt;
+
+&lt;p&gt;The finals judges were some big names in the start up community. The biggest was &lt;a href=&quot;https://twitter.com/MrDavidJohns&quot;&gt;David Johns&lt;/a&gt;. if you dont know, he is an advisor to President Obama about education initiatives. Having him there was a huge thing for the students. When we found out our team made it to the finals, Monet and I were nervous and excited. However the group did amazing. Mr. Johns summed up our group perfectly with this&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;We went beyond the basics and created a website&amp;quot; #MicDrop #TeachTheBabies #LevelTheCodingField #LPFIHactivist #Ed &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Our group did everything we could have hoped for. They came up with an awesome idea, pushed through the tough times, and came out the other side stronger and empowered to learn more. Although they didnt win the money, they definitely were winners in my book for coming together, working hard and putting on a great presentation in under 48 hours. &lt;/p&gt;
+
+&lt;h2&gt;Takeaways&lt;/h2&gt;
+
+&lt;p&gt;Sitting at home now, I cant help but think about everything that happened. Its funny that as the sole white mentor, no one was outwardly stand offish to me. We were there working on the same goal, and everyone was working great together. Mentors joked, the students had fun, and hopefully some of them are looking up how to code now. Im sure their parents are already googling ways to be more involved with them.&lt;/p&gt;
+
+&lt;p&gt;You should never judge someone for anything. A book cover can only tell you so much. People wear ther hearts on their sleeves, but hide the scars deep underneath. Everyone: white, black, Asian, short, tall, male and female; has faced some sort of tough time. But to discount someone based on their skin color is the easiest way to be labelled an absolute tool bag. &lt;/p&gt;
+
+&lt;p&gt;I learned a lot this weekend, came out with some awesome stories, and I look forward to continuing to help empower youth of all ages and walks of life to challenge the system and do something more. &lt;/p&gt;
+
+&lt;p&gt;Special thanks to &lt;a href=&quot;twitter.com/morehouse&quot;&gt;Morehouse&lt;/a&gt; for hosting the event, &lt;a href=&quot;https://twitter.com/engijen&quot;&gt;Jennifer Arguello&lt;/a&gt; for being the driving force to excellence, and everyone else who joined in to help make the weekend a huge success!&lt;/p&gt;
+</description>
+        
+          <description>&lt;h2&gt;Tear down these walls.&lt;/h2&gt;
+</description>
+        
+        <pubDate>Sun, 27 Sep 2015 00:00:00 -0400</pubDate>
+        <link>http://matthewtrask.net/blog/preconceived-notions-are-bad/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/preconceived-notions-are-bad/</guid>
+        
+        <category>Coding,</category>
+        
+        <category>Technology,</category>
+        
+        <category>Inclusion</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>How we rebuilt Transparent Trade Coffee</title>
+        <description>&lt;p&gt;As a developer, you can get the chance to work on a lot of projects. Some are going to be easy, some are going to be stressful, and some are going to make you think outside of the box. This is one of those innovative projects. In April, I was approached by Brian from &lt;a href=&quot;http://goizueta.emory.edu/faculty/socialenterprise&quot;&gt;Social Enterprise @ Goizueta&lt;/a&gt; with a unique project to move his current project&amp;#39;s site off Wix, and build up more functionality. The concept was great, but I can&amp;#39;t do it justice, so Im going to let you &lt;a href=&quot;http://transparenttradecoffee.org/transparentcoffees&quot;&gt;see here&lt;/a&gt;. After a lunch meeting and some research, we came to the already known conclusion, Wix had to go.&lt;/p&gt;
+
+&lt;h2&gt;Framework, CMS or from scratch?&lt;/h2&gt;
+
+&lt;p&gt;My friend Justin and I put heads together to figure out how we were going to do it. There was talk or just writing the whole thing ourselves with a few packages. Then we thought, what if we used something like PyroCMS, or Drupal? Well, yea it could work, but theres a learning curve to how Drupal or Pyro works. We decided to pick up a copy of &lt;a href=&quot;https://simplemvcframework.com&quot;&gt;SimpleMVC&lt;/a&gt;. Its what made the most sense at the time. With SimpleMVC, we were able to leverage our knowledge of PHP with a very simplistic framework. One of the deciding factors about not going with PyroCMS is the paid modules. While I know Ryan works hard on them, as well as the rest of the team; we wanted to keep this as low budget as we possibly could. So we picked up a copy of SimpleMVC and got to work.&lt;/p&gt;
+
+&lt;h2&gt;The other tools we used&lt;/h2&gt;
+
+&lt;p&gt;With a semi-tight deadline, we set out with the standard thing first. A Github repo. We started up with what we knew, and added issues and set up a &lt;a href=&quot;https://waffle.io&quot;&gt;Waffle.io&lt;/a&gt; board to track issues. After that, we set up a gulp.js file. If you aren&amp;#39;t familiar with &lt;a href=&quot;https://gulpjs.com&quot;&gt;Gulp.js&lt;/a&gt;, its a task runner that allows us to write &lt;a href=&quot;https://sass-lang.com&quot;&gt;Sass&lt;/a&gt; and automatically compile it down to CSS. Its as awesome as it sounds. So, gulpfile.js set up, we picked up a copy of &lt;a href=&quot;https://foundation.zurb.com&quot;&gt;Foundation&lt;/a&gt; framework for the CSS. No point in rewriting CSS someone else has already done. After that, we were set to get to work.&lt;/p&gt;
+
+&lt;h2&gt;Roadmap&lt;/h2&gt;
+
+&lt;p&gt;The roadmap was simple. First, copy the site from Wix to our own site. Easy enough right? We used the dev tools of Firefox and Chrome to get the right sizes so that the site mirrored Wix.&lt;/p&gt;
+
+&lt;p&gt;Next up, we had to make an upload form, with multiple image upload points. Logos, receipts, proof of payment, all sorts of uploads. But thats not it. We learned they wanted a full on admin panel with multiple points of updating datas, sending emails and writing a blog(insights). So we started gathering our tools and bringing in what we needed.&lt;/p&gt;
+
+&lt;p&gt;We had to decide on a few other things as well. Where would this project live? What was the architecture of the backend, or the MySQL table structure.&lt;/p&gt;
+
+&lt;h2&gt;You need what?&lt;/h2&gt;
+
+&lt;p&gt;While we kept plucking away at what we knew, emails kept coming in to tell us that something else was needed. Lots of code was written with Javascript for the AJAX calls, models were creatively coded to make them updated tables dynamically. Although the deadl&lt;/p&gt;
+</description>
+        
+          <description>&lt;p&gt;As a developer, you can get the chance to work on a lot of projects. Some are going to be easy, some are going to be stressful, and some are going to make you think outside of the box. This is one of those innovative projects. In April, I was approached by Brian from &lt;a href=&quot;http://goizueta.emory.edu/faculty/socialenterprise&quot;&gt;Social Enterprise @ Goizueta&lt;/a&gt; with a unique project to move his current project&amp;#39;s site off Wix, and build up more functionality. The concept was great, but I can&amp;#39;t do it justice, so Im going to let you &lt;a href=&quot;http://transparenttradecoffee.org/transparentcoffees&quot;&gt;see here&lt;/a&gt;. After a lunch meeting and some research, we came to the already known conclusion, Wix had to go.&lt;/p&gt;
+</description>
+        
+        <pubDate>Mon, 14 Sep 2015 00:00:00 -0400</pubDate>
+        <link>http://matthewtrask.net/blog/How-We-Rebuilt-TTC/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/How-We-Rebuilt-TTC/</guid>
+        
+        <category>PHP,</category>
+        
+        <category>Tools,</category>
+        
+        <category>Frameworks,</category>
+        
+        <category>Coffee</category>
+        
+        
+      </item>
+      
     
       
       <item>
@@ -20,9 +158,9 @@
 
 &lt;h2&gt;The User Group&lt;/h2&gt;
 
-&lt;p&gt;The user group is &lt;em&gt;the&lt;/em&gt; place to be in terms of interacting with the community. Most major cities have a user group, and they all run in a simple fashion. There is a period of conversation amongst users, generally friends, about work or projects. Food can be provided, sometimes beer, and then the group gets going. At &lt;a href=&quot;atlantaphp.org&quot;&gt;AtlantaPHP&lt;/a&gt; we have a mini talk. Can be about anything, but usually its someone testing a talk or idea, or showing off a project they think others will use. Then the big talk, which is more about concepts of programming and PHP. I&amp;#39;ve been fortunate enough to see a few good talks, with plenty to come.&lt;/p&gt;
+&lt;p&gt;The user group is &lt;em&gt;the&lt;/em&gt; place to be in terms of interacting with the community. Most major cities have a user group, and they all run in a simple fashion. There is a period of conversation amongst users, generally friends, about work or projects. Food can be provided, sometimes beer, and then the group gets going. At &lt;a href=&quot;http://atlantaphp.org&quot;&gt;AtlantaPHP&lt;/a&gt; we have a mini talk. Can be about anything, but usually its someone testing a talk or idea, or showing off a project they think others will use. Then the big talk, which is more about concepts of programming and PHP. I&amp;#39;ve been fortunate enough to see a few good talks, with plenty to come.&lt;/p&gt;
 
-&lt;p&gt;One thing I notice with newer developers is a sense of fear. Part of our mission at &lt;a href=&quot;lampcamp.guru&quot;&gt;LAMP Camp&lt;/a&gt; is getting these developers out in front of people to meet others. But you need to make the effort. Developers are people too, same as CTO&amp;#39;s, CEO&amp;#39;s and others. Introduce yourself, let them ask questions. Especially if you are apart of a program, or just learning. I know for me, my first time was a little nervewracking, but being with my boss and fellow coworkers allowed me to break out of my shell and get involved. In fact, I&amp;#39;ll be giving a talk next week at AtlantaPHP. Unfortunately, or fortunately, some people arent close to a user group, so what can you do about it? Well there is a few things. &lt;/p&gt;
+&lt;p&gt;One thing I notice with newer developers is a sense of fear. Part of our mission at &lt;a href=&quot;http://lampcamp.guru&quot;&gt;LAMP Camp&lt;/a&gt; is getting these developers out in front of people to meet others. But you need to make the effort. Developers are people too, same as CTO&amp;#39;s, CEO&amp;#39;s and others. Introduce yourself, let them ask questions. Especially if you are apart of a program, or just learning. I know for me, my first time was a little nervewracking, but being with my boss and fellow coworkers allowed me to break out of my shell and get involved. In fact, I&amp;#39;ll be giving a talk next week at AtlantaPHP. Unfortunately, or fortunately, some people arent close to a user group, so what can you do about it? Well there is a few things. &lt;/p&gt;
 
 &lt;h2&gt;The Virtual Hallway&lt;/h2&gt;
 
@@ -48,7 +186,7 @@
 &lt;p&gt;A few weeks ago, members of the PHP community were up in arms over a divisive issue. The issue? It was the always popular, debated framework Laravel. Of course the tweet, which is an awful mode of communication of ideas, sparked the debate which got personal fast. It spread to Reddit, which is the bastion of cool headedness and reasonable thought. Do I need the sarcasm tag there? &lt;/p&gt;
 </description>
         
-        <pubDate>Mon, 17 Aug 2015 00:00:00 -0400</pubDate>
+        <pubDate>Tue, 25 Aug 2015 00:00:00 -0400</pubDate>
         <link>http://matthewtrask.net/blog/community/</link>
         <guid isPermaLink="true">http://matthewtrask.net/blog/community/</guid>
         

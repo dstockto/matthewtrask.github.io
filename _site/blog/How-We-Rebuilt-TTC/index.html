@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>About Me</title>
+    <title>How we rebuilt Transparent Trade Coffee</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
@@ -20,7 +20,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="http://matthewtrask.net/about.html">
+    <link rel="canonical" href="http://matthewtrask.net/blog/How-We-Rebuilt-TTC/">
 
     <!-- Modernizr -->
     <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
@@ -52,7 +52,7 @@
                      <a href="/index.html">Home</a>
                  </li>
                  
-                 <li class="element  current ">
+                 <li class="element   ">
                      <a href="/about">About</a>
                  </li>
                  
@@ -73,43 +73,69 @@
 
    <div class="content">
       <div class="container">
-         <h1>About Me</h1>
+         <div class="post">
+  
+  <h1 class="postTitle">How we rebuilt Transparent Trade Coffee</h1>
+  <p class="meta">September 14, 2015 | <span class="time">3</span> Minute Read</p>
 
-<p>I&#39;m a web developer with a passion for learning. I don&#39;t stop learning. From the hour I take at work daily to learn, to what I do at home; I try not to let a day go without a chapter read. Everyone needs a break, but to fuel the fire in me, I keep turing the pages. Learning how to leverage Javascript in a better way, how to build secure PHP applications, or what non-profit group needs help is what wakes me up in the morning. </p>
+  <p>As a developer, you can get the chance to work on a lot of projects. Some are going to be easy, some are going to be stressful, and some are going to make you think outside of the box. This is one of those innovative projects. In April, I was approached by Brian from <a href="http://goizueta.emory.edu/faculty/socialenterprise">Social Enterprise @ Goizueta</a> with a unique project to move his current project&#39;s site off Wix, and build up more functionality. The concept was great, but I can&#39;t do it justice, so Im going to let you <a href="http://transparenttradecoffee.org/transparentcoffees">see here</a>. After a lunch meeting and some research, we came to the already known conclusion, Wix had to go.</p>
 
-<h1>A Few More Things</h1>
+<h2>Framework, CMS or from scratch?</h2>
 
-<p>As I&#39;ve been talking to more and more people on IRC, Twitter, and actual life, here is a few places you will always find me. </p>
+<p>My friend Justin and I put heads together to figure out how we were going to do it. There was talk or just writing the whole thing ourselves with a few packages. Then we thought, what if we used something like PyroCMS, or Drupal? Well, yea it could work, but theres a learning curve to how Drupal or Pyro works. We decided to pick up a copy of <a href="https://simplemvcframework.com">SimpleMVC</a>. Its what made the most sense at the time. With SimpleMVC, we were able to leverage our knowledge of PHP with a very simplistic framework. One of the deciding factors about not going with PyroCMS is the paid modules. While I know Ryan works hard on them, as well as the rest of the team; we wanted to keep this as low budget as we possibly could. So we picked up a copy of SimpleMVC and got to work.</p>
 
-<ul>
-<li>Twitter: @matthewtrask</li>
-<li>IRC: matthewtrask | Rooms: #phpmentoring, #coderabbi, #phpc, #jquery</li>
-<li>AtlantaPHP User Group</li>
-<li>Code for Atlanta</li>
-<li>I will be at ConnectJS this year in Atlanta, and Nodevember in Nashville. </li>
-<li>/r/webdev, /r/php, /r/phphelp, /r/atlanta</li>
-</ul>
+<h2>The other tools we used</h2>
 
-<p>To keep up with everything going on, I read the following blogs:</p>
+<p>With a semi-tight deadline, we set out with the standard thing first. A Github repo. We started up with what we knew, and added issues and set up a <a href="https://waffle.io">Waffle.io</a> board to track issues. After that, we set up a gulp.js file. If you aren&#39;t familiar with <a href="https://gulpjs.com">Gulp.js</a>, its a task runner that allows us to write <a href="https://sass-lang.com">Sass</a> and automatically compile it down to CSS. Its as awesome as it sounds. So, gulpfile.js set up, we picked up a copy of <a href="https://foundation.zurb.com">Foundation</a> framework for the CSS. No point in rewriting CSS someone else has already done. After that, we were set to get to work.</p>
 
-<ul>
-<li><a href="https://benramsey.com">benramsey.com</a></li>
-<li><a href="https://coderabbi.github.io/">coderabbi.com</a></li>
-<li><a href="scotch.io">scotch.io</a></li>
-<li><a href="https://scaleyourcode.com/">scaleyourcode.com</a></li>
-<li><a href="codinghorror.com">codinghorror.com</a></li>
-</ul>
+<h2>Roadmap</h2>
 
-<p>Podcasts that I listen too:</p>
+<p>The roadmap was simple. First, copy the site from Wix to our own site. Easy enough right? We used the dev tools of Firefox and Chrome to get the right sizes so that the site mirrored Wix.</p>
 
-<ul>
-<li><a href="phptownhall.com">phpTownHall</a></li>
-<li><a href="http://devhell.info/">/dev/hell</a></li>
-<li><a href="https://voicesoftheelephpant.com/">Voices of the Elephpant</a></li>
-<li><a href="nocapes.net">nocapes</a></li>
-<li><a href="revolutionspodcast.com">revolutions</a> Honestly, this is captivating. Mike Duncan planned on spending 12 to 15 episodes on 6 revolutions, and its turned into an in depth look at the French Revolutions. Never knew how complicated that one was. </li>
-<li><a href="historyofrome.typepad.com">the History of Rome</a> 78 hours of the history of Rome. Its bloody, its messy and its amazing to know the history of one of the greatest Empires in the world. </li>
-</ul>
+<p>Next up, we had to make an upload form, with multiple image upload points. Logos, receipts, proof of payment, all sorts of uploads. But thats not it. We learned they wanted a full on admin panel with multiple points of updating datas, sending emails and writing a blog(insights). So we started gathering our tools and bringing in what we needed.</p>
+
+<p>We had to decide on a few other things as well. Where would this project live? What was the architecture of the backend, or the MySQL table structure.</p>
+
+<h2>You need what?</h2>
+
+<p>While we kept plucking away at what we knew, emails kept coming in to tell us that something else was needed. Lots of code was written with Javascript for the AJAX calls, models were creatively coded to make them updated tables dynamically. Although the deadl</p>
+
+  If you liked this post, you can
+<a href="https://twitter.com/intent/tweet?url=http://matthewtrask.net/blog/How-We-Rebuilt-TTC/&text=How we rebuilt Transparent Trade Coffee&via=matthewtrask"
+   target="_blank">
+  share it with your followers</a>
+or
+<a href="https://twitter.com/matthewtrask">
+  follow me on Twitter</a>!
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'matthewtrask'; // Required - Replace '<example>' with your forum shortname
+      //var disqus_developer = 1; // Comment out when the site is live
+      var disqus_identifier = "/blog/How-We-Rebuilt-TTC/";
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <!-- POST NAVIGATION -->
+  <div class="postNav clearfix">
+    
+      <a class="prev" href="/blog/community/"><span>&laquo;&nbsp;On Community</span>
+      
+    </a>
+    
+    
+      <a class="next" href="/blog/preconceived-notions-are-bad/"><span>Technology, inclusion and how to do better&nbsp;&raquo;</span>
+      
+      </a>
+    
+  </div>
+</div>
 
       </div>
    </div><!-- end .content -->
