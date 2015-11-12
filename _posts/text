@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "How we rebuilt Transparent Trade Coffee"
+date:   2015-09-14
+comments: yes
+description: A friend and I were asked to rebuild a site and add functionality. Heres how we did it.
+tags: PHP, Tools, Frameworks, Coffee
+---
+
+As a developer, you can get the chance to work on a lot of projects. Some are going to be easy, some are going to be stressful, and some are going to make you think outside of the box. This is one of those innovative projects. In April, I was approached by Brian from [Social Enterprise @ Goizueta](http://goizueta.emory.edu/faculty/socialenterprise) with a unique project to move his current project's site off Wix, and build up more functionality. The concept was great, but I can't do it justice, so Im going to let you [see here](http://transparenttradecoffee.org/transparentcoffees). After a lunch meeting and some research, we came to the already known conclusion, Wix had to go.
+
+## Framework, CMS or from scratch?
+
+My friend Justin and I put heads together to figure out how we were going to do it. There was talk or just writing the whole thing ourselves with a few packages. Then we thought, what if we used something like PyroCMS, or Drupal? Well, yea it could work, but theres a learning curve to how Drupal or Pyro works. We decided to pick up a copy of [SimpleMVC](https://simplemvcframework.com). Its what made the most sense at the time. With SimpleMVC, we were able to leverage our knowledge of PHP with a very simplistic framework. One of the deciding factors about not going with PyroCMS is the paid modules. While I know Ryan works hard on them, as well as the rest of the team; we wanted to keep this as low budget as we possibly could. So we picked up a copy of SimpleMVC and got to work.
+
+## The other tools we used
+
+With a semi-tight deadline, we set out with the standard thing first. A Github repo. We started up with what we knew, and added issues and set up a [Waffle.io](https://waffle.io) board to track issues. After that, we set up a gulp.js file. If you aren't familiar with [Gulp.js](https://gulpjs.com), its a task runner that allows us to write [Sass](https://sass-lang.com) and automatically compile it down to CSS. Its as awesome as it sounds. So, gulpfile.js set up, we picked up a copy of [Foundation](https://foundation.zurb.com) framework for the CSS. No point in rewriting CSS someone else has already done. After that, we were set to get to work.
+
+## Roadmap
+
+The roadmap was simple. First, copy the site from Wix to our own site. Easy enough right? We used the dev tools of Firefox and Chrome to get the right sizes so that the site mirrored Wix.
+
+Next up, we had to make an upload form, with multiple image upload points. Logos, receipts, proof of payment, all sorts of uploads. But thats not it. We learned they wanted a full on admin panel with multiple points of updating datas, sending emails and writing a blog(insights). So we started gathering our tools and bringing in what we needed.
+
+We had to decide on a few other things as well. Where would this project live? What was the architecture of the backend, or the MySQL table structure.
+
+## You need what?
+
+While we kept plucking away at what we knew, emails kept coming in to tell us that something else was needed. Lots of code was written with Javascript for the AJAX calls, models were creatively coded to make them updated tables dynamically. Although the deadl

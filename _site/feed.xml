@@ -5,9 +5,227 @@
     <description>My travels from the start to now.</description>
     <link>http://matthewtrask.net/</link>
     <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 27 Sep 2015 21:15:52 -0400</pubDate>
-    <lastBuildDate>Sun, 27 Sep 2015 21:15:52 -0400</lastBuildDate>
+    <pubDate>Wed, 11 Nov 2015 22:49:14 -0500</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2015 22:49:14 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      
+      <item>
+        <title>Let&#39;s build a website, pt 1.</title>
+        <description>&lt;h2&gt;Composing a great website&lt;/h2&gt;
+
+&lt;p&gt;It&amp;#39;s no secret that creating a website has undergone a transition right? First it was basic HTML, CSS, some fun Javascript and there you go. Then, as Jeffery Way says &lt;a href=&quot;https://youtu.be/mDotS5BDqRM?t=11m6s&quot;&gt;here&lt;/a&gt;, its just not those three anymore. Now, as developers, we need a lot of things. Tools like:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTML&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;CSS -&amp;gt; Bootstrap/Foundation&lt;/li&gt;
+&lt;li&gt;Javascript&lt;/li&gt;
+&lt;li&gt;jQuery &lt;/li&gt;
+&lt;li&gt;Angular, Vue, React, Ember or whatever cool framework it is now.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But then we need someway to validate data and parse it on a server so:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;Ruby&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How will we save our data? Well we cant just keep it in a session. So&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SQL&lt;/li&gt;
+&lt;li&gt;MongoDB&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But it doesnt stop there! As Jeffery keeps on going, theres so many tools out there just to build a simple website. So whats needed, and whats not? Well, that is completely up to you! So lets talk about what we are doing. Our project, which Im documenting, is going to be a rebuild of &lt;a href=&quot;https://atlantaphp.org&quot;&gt;AtlantaPHP.org&lt;/a&gt;. &lt;/p&gt;
+
+&lt;h2&gt;What do we need to start?&lt;/h2&gt;
+
+&lt;p&gt;Well, if you truly want to follow along, you will need the following tools:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://vagrantup.com&quot;&gt;vagrant&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https:getcomposer.org&quot;&gt;composer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://box.scotch.io&quot;&gt;Scotch Box&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These 4 tools will be the base of my project. As an aside, there are a few other developers working on this project, but Im leading the project. So once you get Vagrant up, lets build our composer.json file. Take a look!&lt;/p&gt;
+
+&lt;pre&gt;
+    &lt;code class=&#39;javascript&#39; style=&quot;font-size: 12px&quot;&gt;
+    {
+        &quot;name&quot;: &quot;Atlanta/AtlantaPHP&quot;, 
+        &quot;description&quot;: &quot;PHP User Group for Atlanta, GA. Meets first Thursday of every month at Atlantic Station&quot;,
+        &quot;type&quot;: &quot;Website&quot;,
+        &quot;license&quot;: &quot;MIT&quot;,
+        &quot;authors&quot;: [
+            {   
+            &quot;name&quot;:&quot;Matt Trask&quot;, 
+            &quot;email&quot;: &quot;mjftrask@gmail.com&quot;
+            }
+        ],
+        &quot;require&quot;: {
+            &quot;slim/slim&quot;: &quot;^3.0@beta&quot;,
+            &quot;slim/views&quot;: &quot;0.1.3&quot;,
+            &quot;slim/pdo&quot;: &quot;1.8.*&quot;, 
+            &quot;twig/twig&quot;: &quot;1.23.*&quot;, 
+            &quot;slim/logger&quot;: &quot;0.1.*&quot;,
+            &quot;ircmaxell/password-compat&quot;: &quot;1.0.4&quot;,
+            &quot;phpmailer/phpmailer&quot;: &quot;5.2.14&quot;,
+            &quot;guzzlehttp/guzzle&quot;: &quot;6.1.*&quot;,
+            &quot;nesbot/carbon&quot;: &quot;1.14.*&quot;,
+            &quot;dms/meetup-api-client&quot;: &quot;2.0.*&quot;
+        },
+        &quot;require-dev&quot;: {
+            &quot;phpunit/phpunit&quot;: &quot;4.8.18&quot;,
+            &quot;phploc/phploc&quot;: &quot;*&quot;,
+            &quot;fzaninotto/faker&quot;: &quot;1.5.*&quot;,
+            &quot;squizlabs/php_codesniffer&quot;: &quot;2.3.*&quot;
+        }
+    }
+    &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;So lets break down this file so you know whats going on. And it can be a good intro into Composer. &lt;/p&gt;
+
+&lt;p&gt;Composer first and foremost is a PHP Package Manager. I put in the packages I want, with constrants to the version numbers. If you like at the first require statement, these are all what I want to build the website.I am asking Composer to find and pull in the &lt;a href=&quot;https://slimframework.com&quot;&gt;Slim&lt;/a&gt; framework at version 3. Now I have to pull it in different cause technically Slim v3 isnt in production yet, but stable enough to use. &lt;/p&gt;
+
+&lt;p&gt;Going back a step, if you look at the file, its all based around JSON Arrays. The top part is just general meta data about the project. Name of the project, who is working on it, how can they be contacted, etc. If this were a package I was publishing, I would be adding keywords as well as requirements like PHP version numbers, so that way people know what is needed for my library to run. Right now, we are just doing that should someone come to the project and want to know who to talk to. Which is me, currently. &lt;/p&gt;
+
+&lt;h2&gt;SemVer&lt;/h2&gt;
+
+&lt;p&gt;This is a good point to bring up something called Semantic Versioning. If you look at the numbers in my composer.json file, they all follow the pattern of &amp;#39;1.2.3&amp;#39; where each numbered spot has a posiion. &lt;/p&gt;
+
+&lt;h3&gt;1 means Major&lt;/h3&gt;
+
+&lt;p&gt;The first place, the 1 in my example, represents a major package. When you hit 1, 2, 3, 4, etc you are releaseing code that in the package that is not backwards compatibilty and will be breaking to versions under it. So if i release Slim 4.x, you shoul expect it will not play well with Slim 3.x, or Slim 2.x
+Major releases are usually annouced, and with some fanfare. I see people start a watch for the next Laravel major relase. Its kind of a big deal. &lt;/p&gt;
+
+&lt;h3&gt;2 means Minor&lt;/h3&gt;
+
+&lt;p&gt;Minor patches or changes are less violent in terms of API changes. These patches, the x.1.x changes, will allow for backwards compatibility. Usually these types of fixes are features that couldnt be built into the initial 1.x.x release, so the developers bundle it up into a x.1.x release to make sure the feature is going to work the way its expected. &lt;/p&gt;
+
+&lt;h3&gt;3 means Bugs&lt;/h3&gt;
+
+&lt;p&gt;Just like is says, a x.x.1 release is just a bug fix. Misspelt a function, or the function is returning n+1, well thats a quick bug fix will not affect the code you are bringing in. These are the most frequent changes you will run into as a developer. &lt;/p&gt;
+
+&lt;p&gt;So anyways, with Composer, we have a few types of options to do. We can hard lock our dependencies:
+&lt;pre&gt;
+    &lt;code type=&quot;javascript&quot;&gt;
+        &amp;quot;require&amp;quot;: {
+            &amp;quot;slim/views&amp;quot;: &amp;quot;0.1.3&amp;quot;
+        }
+    &lt;/code&gt;
+&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;which means that no matter how many times I run &lt;/p&gt;
+
+&lt;pre&gt;
+    &lt;code type=&quot;javascript&quot;&gt;
+        /var/www/public composer install
+    &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;the code for &amp;#39;Slim/Views&amp;#39; will always return 0.1.3. as the version and codebase I will use to create a templating engine in Slim. &lt;/p&gt;
+
+&lt;h2&gt;Hard Locking can be dangerous&lt;/h2&gt;
+
+&lt;p&gt;While some apps, and some people, hard lock the composer dependencies, for this project, and the amount of code distribution, we will want to allow for a little variance in the code. If Im writing a project on my own, and I know what I want, I will hard lock the dependencies. But for right now, its ok to allow variance. Generally, I will hard lock to the minor version, just to be safe, but bug fixes can come in randomly. &lt;/p&gt;
+
+&lt;p&gt;Other ways you can pull in code, is with the &amp;#39;^&amp;#39; symbol and &amp;#39;~&amp;#39; symbol. Both are more soft dependency types, allowing for code base fluctuation. &lt;/p&gt;
+
+&lt;h2&gt;Require-Dev&lt;/h2&gt;
+
+&lt;p&gt;The next, and one the most important parts of the composer.json is whats in the &amp;quot;require-dev&amp;quot; array. If you look, I have:
+&lt;pre&gt;
+    &lt;code type=&quot;javascript&quot;&gt;
+        &amp;quot;require-dev&amp;quot;: {
+            &amp;quot;phpunit/phpunit&amp;quot;: &amp;quot;4.8.18&amp;quot;,
+            &amp;quot;phploc/phploc&amp;quot;: &amp;quot;&lt;em&gt;&amp;quot;,
+            &amp;quot;fzaninotto/faker&amp;quot;: &amp;quot;1.5.&lt;/em&gt;&amp;quot;,
+            &amp;quot;squizlabs/php_codesniffer&amp;quot;: &amp;quot;2.3.*&amp;quot;
+        }
+    &lt;/code&gt;
+&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;These allow me to test my code (phpunit), see the amount of code/methods/classes in the code (phploc), a way to fake data to test my code, (faker) and PHP_codesniffer to lint the PHP I wil write for the project. These libraries are used in the dev stage only, and not to be pushed to the server. But generally these code libraries are invaluable to developers.  &lt;/p&gt;
+
+&lt;p&gt;According to Jordi Baggiano, who wrote Composer, require-dev is installed on composer update only, unless explicitely stated on the install command:&lt;/p&gt;
+
+&lt;blockquote style=&quot;font-size: 14px&quot;&gt;
+The update command now installs dev requirements by default. This makes sense since you should only run it on dev environments. No more update --dev, the dev flag is now implicit and if you really don&#39;t want these packages installed you can use update --no-dev instead.
+
+
+The install command on the other hand remains the same. It does not install dev dependencies by default, and it will actually remove them if they were previously installed and you run it without --dev. Again this makes sense since in production you should only run install to get the last verified state (stored in composer.lock) of your dependencies installed. 
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Now what?&lt;/h2&gt;
+
+&lt;p&gt;Well, once you run &amp;quot;composer install&amp;quot;, it will pull in all the code of the composer file, and set up the libraries in the callable &amp;#39;vendor&amp;#39; directory. From there we can use the specific libraries for the methods we need them for. &lt;/p&gt;
+
+&lt;p&gt;Before you run composer install, you wont have a Vendor directory. Then you should run composer update to get the require-dev packages. Afterwards, it will appear. If you open it up, you will see a lot of separate folders with packages that you have now pulled in. Open them up and explore a bit! We will start with bringing in SlimPHP to our project. That will come next time!&lt;/p&gt;
+
+&lt;h2&gt;Next time.&lt;/h2&gt;
+
+&lt;p&gt;Part 2 will explore building a base Slim PHP project. We will talk briefly on Slim, Twig, a little more composer stuff, such as the lock file, and how to distribute code via Github to a team. We will also look at NPM and Bower.io for front end package management as well. Stay Tuned! &lt;/p&gt;
+</description>
+        
+          <description>&lt;h2&gt;Composing a great website&lt;/h2&gt;
+</description>
+        
+        <pubDate>Wed, 11 Nov 2015 00:00:00 -0500</pubDate>
+        <link>http://matthewtrask.net/blog/Lets-Build-A-Site/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/Lets-Build-A-Site/</guid>
+        
+        <category>Composer,</category>
+        
+        <category>AtlantaPHP,</category>
+        
+        <category>PHP,</category>
+        
+        <category>SlimPHP,</category>
+        
+        <category>Packagist,</category>
+        
+        <category>Getting</category>
+        
+        <category>Started</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>16 Hours, 4 Parks, 1 Day. A Challenge</title>
+        <description>&lt;h1&gt;Lets break records&lt;/h1&gt;
+
+&lt;p&gt;The current record looks to be inside 17 hours. A team, the team who started it, is the current record holders. What record? Well, its the #WDW46 Challenge, which is this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In a single operating day, from the first opening park to the final park closure, you must ride all 46* rides in Walt Disney World&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        
+          <description>&lt;h1&gt;Lets break records&lt;/h1&gt;
+</description>
+        
+        <pubDate>Mon, 28 Sep 2015 00:00:00 -0400</pubDate>
+        <link>http://matthewtrask.net/blog/16-Hours-4-Parks-1-Day/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/16-Hours-4-Parks-1-Day/</guid>
+        
+        <category>Disney,</category>
+        
+        <category>Vacation,</category>
+        
+        <category>Challenge</category>
+        
+        
+      </item>
+      
     
       
       <item>
@@ -97,51 +315,6 @@
         <category>Technology,</category>
         
         <category>Inclusion</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>How we rebuilt Transparent Trade Coffee</title>
-        <description>&lt;p&gt;As a developer, you can get the chance to work on a lot of projects. Some are going to be easy, some are going to be stressful, and some are going to make you think outside of the box. This is one of those innovative projects. In April, I was approached by Brian from &lt;a href=&quot;http://goizueta.emory.edu/faculty/socialenterprise&quot;&gt;Social Enterprise @ Goizueta&lt;/a&gt; with a unique project to move his current project&amp;#39;s site off Wix, and build up more functionality. The concept was great, but I can&amp;#39;t do it justice, so Im going to let you &lt;a href=&quot;http://transparenttradecoffee.org/transparentcoffees&quot;&gt;see here&lt;/a&gt;. After a lunch meeting and some research, we came to the already known conclusion, Wix had to go.&lt;/p&gt;
-
-&lt;h2&gt;Framework, CMS or from scratch?&lt;/h2&gt;
-
-&lt;p&gt;My friend Justin and I put heads together to figure out how we were going to do it. There was talk or just writing the whole thing ourselves with a few packages. Then we thought, what if we used something like PyroCMS, or Drupal? Well, yea it could work, but theres a learning curve to how Drupal or Pyro works. We decided to pick up a copy of &lt;a href=&quot;https://simplemvcframework.com&quot;&gt;SimpleMVC&lt;/a&gt;. Its what made the most sense at the time. With SimpleMVC, we were able to leverage our knowledge of PHP with a very simplistic framework. One of the deciding factors about not going with PyroCMS is the paid modules. While I know Ryan works hard on them, as well as the rest of the team; we wanted to keep this as low budget as we possibly could. So we picked up a copy of SimpleMVC and got to work.&lt;/p&gt;
-
-&lt;h2&gt;The other tools we used&lt;/h2&gt;
-
-&lt;p&gt;With a semi-tight deadline, we set out with the standard thing first. A Github repo. We started up with what we knew, and added issues and set up a &lt;a href=&quot;https://waffle.io&quot;&gt;Waffle.io&lt;/a&gt; board to track issues. After that, we set up a gulp.js file. If you aren&amp;#39;t familiar with &lt;a href=&quot;https://gulpjs.com&quot;&gt;Gulp.js&lt;/a&gt;, its a task runner that allows us to write &lt;a href=&quot;https://sass-lang.com&quot;&gt;Sass&lt;/a&gt; and automatically compile it down to CSS. Its as awesome as it sounds. So, gulpfile.js set up, we picked up a copy of &lt;a href=&quot;https://foundation.zurb.com&quot;&gt;Foundation&lt;/a&gt; framework for the CSS. No point in rewriting CSS someone else has already done. After that, we were set to get to work.&lt;/p&gt;
-
-&lt;h2&gt;Roadmap&lt;/h2&gt;
-
-&lt;p&gt;The roadmap was simple. First, copy the site from Wix to our own site. Easy enough right? We used the dev tools of Firefox and Chrome to get the right sizes so that the site mirrored Wix.&lt;/p&gt;
-
-&lt;p&gt;Next up, we had to make an upload form, with multiple image upload points. Logos, receipts, proof of payment, all sorts of uploads. But thats not it. We learned they wanted a full on admin panel with multiple points of updating datas, sending emails and writing a blog(insights). So we started gathering our tools and bringing in what we needed.&lt;/p&gt;
-
-&lt;p&gt;We had to decide on a few other things as well. Where would this project live? What was the architecture of the backend, or the MySQL table structure.&lt;/p&gt;
-
-&lt;h2&gt;You need what?&lt;/h2&gt;
-
-&lt;p&gt;While we kept plucking away at what we knew, emails kept coming in to tell us that something else was needed. Lots of code was written with Javascript for the AJAX calls, models were creatively coded to make them updated tables dynamically. Although the deadl&lt;/p&gt;
-</description>
-        
-          <description>&lt;p&gt;As a developer, you can get the chance to work on a lot of projects. Some are going to be easy, some are going to be stressful, and some are going to make you think outside of the box. This is one of those innovative projects. In April, I was approached by Brian from &lt;a href=&quot;http://goizueta.emory.edu/faculty/socialenterprise&quot;&gt;Social Enterprise @ Goizueta&lt;/a&gt; with a unique project to move his current project&amp;#39;s site off Wix, and build up more functionality. The concept was great, but I can&amp;#39;t do it justice, so Im going to let you &lt;a href=&quot;http://transparenttradecoffee.org/transparentcoffees&quot;&gt;see here&lt;/a&gt;. After a lunch meeting and some research, we came to the already known conclusion, Wix had to go.&lt;/p&gt;
-</description>
-        
-        <pubDate>Mon, 14 Sep 2015 00:00:00 -0400</pubDate>
-        <link>http://matthewtrask.net/blog/How-We-Rebuilt-TTC/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/How-We-Rebuilt-TTC/</guid>
-        
-        <category>PHP,</category>
-        
-        <category>Tools,</category>
-        
-        <category>Frameworks,</category>
-        
-        <category>Coffee</category>
         
         
       </item>
