@@ -14,6 +14,7 @@ tags: Goals, coding, life
  Its been quite a fun time. Quite an interesting year to say the least. It was filled with ups and downs, but by far the best year on record I would like to think.
  
  Some of the pluses of 2015:
+ 
  * Really dived deep into PHP
  
  * Became a community member of PHP
@@ -45,6 +46,7 @@ tags: Goals, coding, life
  Ive laid out some awesome goals for this year. They revolve around both coding and non-coding. 
  
  They include:
+
  * Reading a book every week. 
  
  * Running 6 5k's this year.
