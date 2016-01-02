@@ -6,7 +6,7 @@ comments: yes
 description: I dont feel any different. 
 tags: Goals, coding, life
 ---
- #It's the New Year. 
+ # It's the New Year. 
  
  Hello 2016. Goodbye 2015. 
  
@@ -27,18 +27,18 @@ tags: Goals, coding, life
  
  This year was tough. It was a struggle at times. But it is over and all I can do is look forward to the future, which is now. 
  
- ##2016 Goals
+ ## 2016 Goals
  
  Ive laid out some awesome goals for this year. They revolve around both coding and non-coding. 
  
  They include:
- * Reading a book every week. 
- * Running 6 5k's this year.
- * Code more. 
- * More meaningful commits.
- * Contribute to more open source.
- * Blog more.
- * Speak at a conference.
+ - Reading a book every week. 
+ - Running 6 5k's this year.
+ - Code more. 
+ - More meaningful commits.
+ - Contribute to more open source.
+ - Blog more.
+ - Speak at a conference.
  
  Outside of that list, its mostly going to be more thoughful, more logical. Push myself to new limits, and make sure I leave an impression on at least one person!
  
