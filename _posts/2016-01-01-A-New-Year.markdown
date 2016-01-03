@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "So this is the new year"
+date:   2016-01-01
+comments: yes
+description: I dont feel any different. 
+tags: Goals, coding, life
+---
+ 
+ ## It's the New Year. 
+ 
+ Hello 2016. Goodbye 2015. 
+ 
+ Its been quite a fun time. Quite an interesting year to say the least. It was filled with ups and downs, but by far the best year on record I would like to think.
+ 
+ Some of the pluses of 2015:
+ 
+ * Really dived deep into PHP
+ 
+ * Became a community member of PHP
+ 
+ * Gave 2 mini talks at [AtlantaPHP](https://atlantaphp.org)
+ 
+ * Became a co-organizer of AtlantaPHP
+ 
+ * Got to go to Hawaii for a week
+ 
+ * Got an awesome job with great potential
+ 
+ * Contributed to open source projects
+ 
+ * Joined an open source team to help maintain [Phergie](http://phergie.org) -- I am going to be a lot better about this in 2016
+ 
+ * Grew a pretty awesome beard. 
+ 
+ * Hung out with awesome people.
+ 
+ * Became friends with even more awesome people. 
+ 
+ * Attempted to ride all 46 rides at Walt Disney World in one day. 
+ 
+ This year was tough. It was a struggle at times. But it is over and all I can do is look forward to the future, which is now. 
+ 
+ ## 2016 Goals
+ 
+ Ive laid out some awesome goals for this year. They revolve around both coding and non-coding. 
+ 
+ They include:
+
+ * Reading a book every week. 
+ 
+ * Running 6 5k's this year.
+ 
+ * Code more. 
+ 
+ * More meaningful commits.
+ 
+ * Contribute to more open source.
+ 
+ * Blog more.
+ 
+ * Speak at a conference.
+ 
+ Outside of that list, its mostly going to be more thoughful, more logical. Push myself to new limits, and make sure I leave an impression on at least one person!
+ 
+ Here is to an awesome 2016!
