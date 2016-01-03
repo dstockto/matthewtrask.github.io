@@ -5,9 +5,36 @@
     <description>My travels from the start to now.</description>
     <link>http://matthewtrask.net/</link>
     <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Nov 2015 22:49:14 -0500</pubDate>
-    <lastBuildDate>Wed, 11 Nov 2015 22:49:14 -0500</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Sat, 02 Jan 2016 20:28:14 -0500</pubDate>
+    <lastBuildDate>Sat, 02 Jan 2016 20:28:14 -0500</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      
+      <item>
+        <title>Setting up a new Mac for development</title>
+        <description>&lt;h1&gt;Macs for development&lt;/h1&gt;
+</description>
+        
+          <description>&lt;h1&gt;Macs for development&lt;/h1&gt;
+</description>
+        
+        <pubDate>Sun, 29 Nov 2015 00:00:00 -0500</pubDate>
+        <link>http://matthewtrask.net/blog/setting-up-new-mac-for-devlopment/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/setting-up-new-mac-for-devlopment/</guid>
+        
+        <category>Zsh,</category>
+        
+        <category>Bash,</category>
+        
+        <category>Composer,</category>
+        
+        <category>Set</category>
+        
+        <category>Up</category>
+        
+        
+      </item>
+      
     
       
       <item>
@@ -193,35 +220,6 @@ The install command on the other hand remains the same. It does not install dev 
         <category>Getting</category>
         
         <category>Started</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>16 Hours, 4 Parks, 1 Day. A Challenge</title>
-        <description>&lt;h1&gt;Lets break records&lt;/h1&gt;
-
-&lt;p&gt;The current record looks to be inside 17 hours. A team, the team who started it, is the current record holders. What record? Well, its the #WDW46 Challenge, which is this:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;In a single operating day, from the first opening park to the final park closure, you must ride all 46* rides in Walt Disney World&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        
-          <description>&lt;h1&gt;Lets break records&lt;/h1&gt;
-</description>
-        
-        <pubDate>Mon, 28 Sep 2015 00:00:00 -0400</pubDate>
-        <link>http://matthewtrask.net/blog/16-Hours-4-Parks-1-Day/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/16-Hours-4-Parks-1-Day/</guid>
-        
-        <category>Disney,</category>
-        
-        <category>Vacation,</category>
-        
-        <category>Challenge</category>
         
         
       </item>
@@ -532,7 +530,7 @@ to the game make sense of this all? Lets start from the ground up.&lt;/p&gt;
 &lt;p&gt;I called this post &amp;quot;Hello World&amp;quot;, because as a programmer learning a new language, its generally considered a good
 benchmark to have your code return &amp;quot;Hello World&amp;quot;.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h1&gt;But who is this?&lt;/h1&gt;
 
