@@ -5,32 +5,54 @@
     <description>My travels from the start to now.</description>
     <link>http://matthewtrask.net/</link>
     <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Jan 2016 20:28:14 -0500</pubDate>
-    <lastBuildDate>Sat, 02 Jan 2016 20:28:14 -0500</lastBuildDate>
+    <pubDate>Tue, 05 Jan 2016 18:19:13 -0500</pubDate>
+    <lastBuildDate>Tue, 05 Jan 2016 18:19:13 -0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       
       <item>
-        <title>Setting up a new Mac for development</title>
-        <description>&lt;h1&gt;Macs for development&lt;/h1&gt;
+        <title>MVC, What The ...?</title>
+        <description>&lt;h1&gt;Lets talk MVC.&lt;/h1&gt;
+
+&lt;p&gt;So one of my resolutions is to blog more. Why not right? Its a great way to grasp concepts. I dont want to write something and seem like a complete fool, so I do my research, which in turn lets me learn more.&lt;/p&gt;
+
+&lt;p&gt;As some of y&amp;#39;all know, I help run a local chapter of Free Code Camp. If you havent heard of Free Code Camp, or FCC; its a way to get people to code for free. It covers the MEAN Stack, ya know Mongo DB, Node Js, Angular JS and Express JS. Thats a lot of Javascript. Even the database is Javascript/JSON based. Opinions aside, its a cool initiative to get people coding. They aim to get you real world experience through helping non-profits with some coding issues. Rad right? Pretty much yes. Well, as I&amp;#39;m one of the moderators and more senior programmers in the group, I help answer questions. One I get a lot is MVC frameworks, when to use them, why are they use etc.&lt;/p&gt;
+
+&lt;p&gt;Its funny though, because while I field these questions; certain angry yet brilliant German developers are teaching me how to let go of the MVC. However, its not something that is easily let go. I understand the flaws of it, and I understand the uses. So lets talk about that.&lt;/p&gt;
+
+&lt;h2&gt;Some Examples of MVC in the Wild.&lt;/h2&gt;
+
+&lt;p&gt;The first thing we should look at is some examples. Everyone loves a good example, and there are a lot to look at.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://laravel.com&quot;&gt;Laravel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://symfony.com&quot;&gt;Symfony&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://framework.zend.com&quot;&gt;Zend Framework 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://cakephp.org&quot;&gt;CakePHP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Outside of the PHP community we have&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://rubyonrails.org&quot;&gt;Ruby on Rails&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.djangoproject.com&quot;&gt;Django&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The list goes on. There are hybrids even. EmberJs, AngularJs, BackboneJs, and others are MV* types of frameworks. Mainly they are built on the Model-View layer, using both as a hybrid controller situation. Not a bad idea to use them, and combined with a more powerful back end framework, you can build some really powerful web apps with them. &lt;/p&gt;
 </description>
         
-          <description>&lt;h1&gt;Macs for development&lt;/h1&gt;
+          <description>&lt;h1&gt;Lets talk MVC.&lt;/h1&gt;
 </description>
         
-        <pubDate>Sun, 29 Nov 2015 00:00:00 -0500</pubDate>
-        <link>http://matthewtrask.net/blog/setting-up-new-mac-for-devlopment/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/setting-up-new-mac-for-devlopment/</guid>
+        <pubDate>Sat, 02 Jan 2016 00:00:00 -0500</pubDate>
+        <link>http://matthewtrask.net/blog/MVC-What-The/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/MVC-What-The/</guid>
         
-        <category>Zsh,</category>
+        <category>MVC,</category>
         
-        <category>Bash,</category>
+        <category>OOP,</category>
         
-        <category>Composer,</category>
-        
-        <category>Set</category>
-        
-        <category>Up</category>
+        <category>Concepts</category>
         
         
       </item>
@@ -38,188 +60,94 @@
     
       
       <item>
-        <title>Let&#39;s build a website, pt 1.</title>
-        <description>&lt;h2&gt;Composing a great website&lt;/h2&gt;
+        <title>So this is the new year</title>
+        <description>&lt;p&gt;## It&amp;#39;s the New Year. &lt;/p&gt;
 
-&lt;p&gt;It&amp;#39;s no secret that creating a website has undergone a transition right? First it was basic HTML, CSS, some fun Javascript and there you go. Then, as Jeffery Way says &lt;a href=&quot;https://youtu.be/mDotS5BDqRM?t=11m6s&quot;&gt;here&lt;/a&gt;, its just not those three anymore. Now, as developers, we need a lot of things. Tools like:&lt;/p&gt;
+&lt;p&gt;Hello 2016. Goodbye 2015. &lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;HTML&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;CSS -&amp;gt; Bootstrap/Foundation&lt;/li&gt;
-&lt;li&gt;Javascript&lt;/li&gt;
-&lt;li&gt;jQuery &lt;/li&gt;
-&lt;li&gt;Angular, Vue, React, Ember or whatever cool framework it is now.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Its been quite a fun time. Quite an interesting year to say the least. It was filled with ups and downs, but by far the best year on record I would like to think.&lt;/p&gt;
 
-&lt;p&gt;But then we need someway to validate data and parse it on a server so:&lt;/p&gt;
+&lt;p&gt;Some of the pluses of 2015:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;PHP&lt;/li&gt;
-&lt;li&gt;Ruby&lt;/li&gt;
-&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Really dived deep into PHP&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Became a community member of PHP&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Gave 2 mini talks at &lt;a href=&quot;https://atlantaphp.org&quot;&gt;AtlantaPHP&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Became a co-organizer of AtlantaPHP&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Got to go to Hawaii for a week&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Got an awesome job with great potential&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Contributed to open source projects&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Joined an open source team to help maintain &lt;a href=&quot;http://phergie.org&quot;&gt;Phergie&lt;/a&gt; -- I am going to be a lot better about this in 2016&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Grew a pretty awesome beard. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Hung out with awesome people.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Became friends with even more awesome people. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Attempted to ride all 46 rides at Walt Disney World in one day. &lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;How will we save our data? Well we cant just keep it in a session. So&lt;/p&gt;
+&lt;p&gt;This year was tough. It was a struggle at times. But it is over and all I can do is look forward to the future, which is now. &lt;/p&gt;
+
+&lt;p&gt;## 2016 Goals&lt;/p&gt;
+
+&lt;p&gt;Ive laid out some awesome goals for this year. They revolve around both coding and non-coding. &lt;/p&gt;
+
+&lt;p&gt;They include:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;SQL&lt;/li&gt;
-&lt;li&gt;MongoDB&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Reading a book every week. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Running 6 5k&amp;#39;s this year.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Code more. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;More meaningful commits.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Contribute to more open source.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Blog more.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Speak at a conference.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;But it doesnt stop there! As Jeffery keeps on going, theres so many tools out there just to build a simple website. So whats needed, and whats not? Well, that is completely up to you! So lets talk about what we are doing. Our project, which Im documenting, is going to be a rebuild of &lt;a href=&quot;https://atlantaphp.org&quot;&gt;AtlantaPHP.org&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Outside of that list, its mostly going to be more thoughful, more logical. Push myself to new limits, and make sure I leave an impression on at least one person!&lt;/p&gt;
 
-&lt;h2&gt;What do we need to start?&lt;/h2&gt;
-
-&lt;p&gt;Well, if you truly want to follow along, you will need the following tools:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://vagrantup.com&quot;&gt;vagrant&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https:getcomposer.org&quot;&gt;composer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://box.scotch.io&quot;&gt;Scotch Box&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;These 4 tools will be the base of my project. As an aside, there are a few other developers working on this project, but Im leading the project. So once you get Vagrant up, lets build our composer.json file. Take a look!&lt;/p&gt;
-
-&lt;pre&gt;
-    &lt;code class=&#39;javascript&#39; style=&quot;font-size: 12px&quot;&gt;
-    {
-        &quot;name&quot;: &quot;Atlanta/AtlantaPHP&quot;, 
-        &quot;description&quot;: &quot;PHP User Group for Atlanta, GA. Meets first Thursday of every month at Atlantic Station&quot;,
-        &quot;type&quot;: &quot;Website&quot;,
-        &quot;license&quot;: &quot;MIT&quot;,
-        &quot;authors&quot;: [
-            {   
-            &quot;name&quot;:&quot;Matt Trask&quot;, 
-            &quot;email&quot;: &quot;mjftrask@gmail.com&quot;
-            }
-        ],
-        &quot;require&quot;: {
-            &quot;slim/slim&quot;: &quot;^3.0@beta&quot;,
-            &quot;slim/views&quot;: &quot;0.1.3&quot;,
-            &quot;slim/pdo&quot;: &quot;1.8.*&quot;, 
-            &quot;twig/twig&quot;: &quot;1.23.*&quot;, 
-            &quot;slim/logger&quot;: &quot;0.1.*&quot;,
-            &quot;ircmaxell/password-compat&quot;: &quot;1.0.4&quot;,
-            &quot;phpmailer/phpmailer&quot;: &quot;5.2.14&quot;,
-            &quot;guzzlehttp/guzzle&quot;: &quot;6.1.*&quot;,
-            &quot;nesbot/carbon&quot;: &quot;1.14.*&quot;,
-            &quot;dms/meetup-api-client&quot;: &quot;2.0.*&quot;
-        },
-        &quot;require-dev&quot;: {
-            &quot;phpunit/phpunit&quot;: &quot;4.8.18&quot;,
-            &quot;phploc/phploc&quot;: &quot;*&quot;,
-            &quot;fzaninotto/faker&quot;: &quot;1.5.*&quot;,
-            &quot;squizlabs/php_codesniffer&quot;: &quot;2.3.*&quot;
-        }
-    }
-    &lt;/code&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;So lets break down this file so you know whats going on. And it can be a good intro into Composer. &lt;/p&gt;
-
-&lt;p&gt;Composer first and foremost is a PHP Package Manager. I put in the packages I want, with constrants to the version numbers. If you like at the first require statement, these are all what I want to build the website.I am asking Composer to find and pull in the &lt;a href=&quot;https://slimframework.com&quot;&gt;Slim&lt;/a&gt; framework at version 3. Now I have to pull it in different cause technically Slim v3 isnt in production yet, but stable enough to use. &lt;/p&gt;
-
-&lt;p&gt;Going back a step, if you look at the file, its all based around JSON Arrays. The top part is just general meta data about the project. Name of the project, who is working on it, how can they be contacted, etc. If this were a package I was publishing, I would be adding keywords as well as requirements like PHP version numbers, so that way people know what is needed for my library to run. Right now, we are just doing that should someone come to the project and want to know who to talk to. Which is me, currently. &lt;/p&gt;
-
-&lt;h2&gt;SemVer&lt;/h2&gt;
-
-&lt;p&gt;This is a good point to bring up something called Semantic Versioning. If you look at the numbers in my composer.json file, they all follow the pattern of &amp;#39;1.2.3&amp;#39; where each numbered spot has a posiion. &lt;/p&gt;
-
-&lt;h3&gt;1 means Major&lt;/h3&gt;
-
-&lt;p&gt;The first place, the 1 in my example, represents a major package. When you hit 1, 2, 3, 4, etc you are releaseing code that in the package that is not backwards compatibilty and will be breaking to versions under it. So if i release Slim 4.x, you shoul expect it will not play well with Slim 3.x, or Slim 2.x
-Major releases are usually annouced, and with some fanfare. I see people start a watch for the next Laravel major relase. Its kind of a big deal. &lt;/p&gt;
-
-&lt;h3&gt;2 means Minor&lt;/h3&gt;
-
-&lt;p&gt;Minor patches or changes are less violent in terms of API changes. These patches, the x.1.x changes, will allow for backwards compatibility. Usually these types of fixes are features that couldnt be built into the initial 1.x.x release, so the developers bundle it up into a x.1.x release to make sure the feature is going to work the way its expected. &lt;/p&gt;
-
-&lt;h3&gt;3 means Bugs&lt;/h3&gt;
-
-&lt;p&gt;Just like is says, a x.x.1 release is just a bug fix. Misspelt a function, or the function is returning n+1, well thats a quick bug fix will not affect the code you are bringing in. These are the most frequent changes you will run into as a developer. &lt;/p&gt;
-
-&lt;p&gt;So anyways, with Composer, we have a few types of options to do. We can hard lock our dependencies:
-&lt;pre&gt;
-    &lt;code type=&quot;javascript&quot;&gt;
-        &amp;quot;require&amp;quot;: {
-            &amp;quot;slim/views&amp;quot;: &amp;quot;0.1.3&amp;quot;
-        }
-    &lt;/code&gt;
-&lt;/pre&gt;&lt;/p&gt;
-
-&lt;p&gt;which means that no matter how many times I run &lt;/p&gt;
-
-&lt;pre&gt;
-    &lt;code type=&quot;javascript&quot;&gt;
-        /var/www/public composer install
-    &lt;/code&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;the code for &amp;#39;Slim/Views&amp;#39; will always return 0.1.3. as the version and codebase I will use to create a templating engine in Slim. &lt;/p&gt;
-
-&lt;h2&gt;Hard Locking can be dangerous&lt;/h2&gt;
-
-&lt;p&gt;While some apps, and some people, hard lock the composer dependencies, for this project, and the amount of code distribution, we will want to allow for a little variance in the code. If Im writing a project on my own, and I know what I want, I will hard lock the dependencies. But for right now, its ok to allow variance. Generally, I will hard lock to the minor version, just to be safe, but bug fixes can come in randomly. &lt;/p&gt;
-
-&lt;p&gt;Other ways you can pull in code, is with the &amp;#39;^&amp;#39; symbol and &amp;#39;~&amp;#39; symbol. Both are more soft dependency types, allowing for code base fluctuation. &lt;/p&gt;
-
-&lt;h2&gt;Require-Dev&lt;/h2&gt;
-
-&lt;p&gt;The next, and one the most important parts of the composer.json is whats in the &amp;quot;require-dev&amp;quot; array. If you look, I have:
-&lt;pre&gt;
-    &lt;code type=&quot;javascript&quot;&gt;
-        &amp;quot;require-dev&amp;quot;: {
-            &amp;quot;phpunit/phpunit&amp;quot;: &amp;quot;4.8.18&amp;quot;,
-            &amp;quot;phploc/phploc&amp;quot;: &amp;quot;&lt;em&gt;&amp;quot;,
-            &amp;quot;fzaninotto/faker&amp;quot;: &amp;quot;1.5.&lt;/em&gt;&amp;quot;,
-            &amp;quot;squizlabs/php_codesniffer&amp;quot;: &amp;quot;2.3.*&amp;quot;
-        }
-    &lt;/code&gt;
-&lt;/pre&gt;&lt;/p&gt;
-
-&lt;p&gt;These allow me to test my code (phpunit), see the amount of code/methods/classes in the code (phploc), a way to fake data to test my code, (faker) and PHP_codesniffer to lint the PHP I wil write for the project. These libraries are used in the dev stage only, and not to be pushed to the server. But generally these code libraries are invaluable to developers.  &lt;/p&gt;
-
-&lt;p&gt;According to Jordi Baggiano, who wrote Composer, require-dev is installed on composer update only, unless explicitely stated on the install command:&lt;/p&gt;
-
-&lt;blockquote style=&quot;font-size: 14px&quot;&gt;
-The update command now installs dev requirements by default. This makes sense since you should only run it on dev environments. No more update --dev, the dev flag is now implicit and if you really don&#39;t want these packages installed you can use update --no-dev instead.
-
-
-The install command on the other hand remains the same. It does not install dev dependencies by default, and it will actually remove them if they were previously installed and you run it without --dev. Again this makes sense since in production you should only run install to get the last verified state (stored in composer.lock) of your dependencies installed. 
-&lt;/blockquote&gt;
-
-&lt;h2&gt;Now what?&lt;/h2&gt;
-
-&lt;p&gt;Well, once you run &amp;quot;composer install&amp;quot;, it will pull in all the code of the composer file, and set up the libraries in the callable &amp;#39;vendor&amp;#39; directory. From there we can use the specific libraries for the methods we need them for. &lt;/p&gt;
-
-&lt;p&gt;Before you run composer install, you wont have a Vendor directory. Then you should run composer update to get the require-dev packages. Afterwards, it will appear. If you open it up, you will see a lot of separate folders with packages that you have now pulled in. Open them up and explore a bit! We will start with bringing in SlimPHP to our project. That will come next time!&lt;/p&gt;
-
-&lt;h2&gt;Next time.&lt;/h2&gt;
-
-&lt;p&gt;Part 2 will explore building a base Slim PHP project. We will talk briefly on Slim, Twig, a little more composer stuff, such as the lock file, and how to distribute code via Github to a team. We will also look at NPM and Bower.io for front end package management as well. Stay Tuned! &lt;/p&gt;
+&lt;p&gt;Here is to an awesome 2016!&lt;/p&gt;
 </description>
         
-          <description>&lt;h2&gt;Composing a great website&lt;/h2&gt;
+          <description>&lt;p&gt;## It&amp;#39;s the New Year. &lt;/p&gt;
+
+&lt;p&gt;Hello 2016. Goodbye 2015. &lt;/p&gt;
+
+&lt;p&gt;Its been quite a fun time. Quite an interesting year to say the least. It was filled with ups and downs, but by far the best year on record I would like to think.&lt;/p&gt;
+
+&lt;p&gt;Some of the pluses of 2015:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Really dived deep into PHP&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Became a community member of PHP&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Gave 2 mini talks at &lt;a href=&quot;https://atlantaphp.org&quot;&gt;AtlantaPHP&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Became a co-organizer of AtlantaPHP&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Got to go to Hawaii for a week&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Got an awesome job with great potential&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Contributed to open source projects&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Joined an open source team to help maintain &lt;a href=&quot;http://phergie.org&quot;&gt;Phergie&lt;/a&gt; -- I am going to be a lot better about this in 2016&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Grew a pretty awesome beard. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Hung out with awesome people.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Became friends with even more awesome people. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Attempted to ride all 46 rides at Walt Disney World in one day. &lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This year was tough. It was a struggle at times. But it is over and all I can do is look forward to the future, which is now. &lt;/p&gt;
+
+&lt;p&gt;## 2016 Goals&lt;/p&gt;
+
+&lt;p&gt;Ive laid out some awesome goals for this year. They revolve around both coding and non-coding. &lt;/p&gt;
+
+&lt;p&gt;They include:&lt;/p&gt;
 </description>
         
-        <pubDate>Wed, 11 Nov 2015 00:00:00 -0500</pubDate>
-        <link>http://matthewtrask.net/blog/Lets-Build-A-Site/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/Lets-Build-A-Site/</guid>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 -0500</pubDate>
+        <link>http://matthewtrask.net/blog/A-New-Year/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/A-New-Year/</guid>
         
-        <category>Composer,</category>
+        <category>Goals,</category>
         
-        <category>AtlantaPHP,</category>
+        <category>coding,</category>
         
-        <category>PHP,</category>
-        
-        <category>SlimPHP,</category>
-        
-        <category>Packagist,</category>
-        
-        <category>Getting</category>
-        
-        <category>Started</category>
+        <category>life</category>
         
         
       </item>
