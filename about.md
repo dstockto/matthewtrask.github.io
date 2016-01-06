@@ -20,6 +20,13 @@ As I've been talking to more and more people on IRC, Twitter, and actual life, h
 * I will be at ConnectJS this year in Atlanta, and Nodevember in Nashville.
 * /r/webdev, /r/php, /r/phphelp, /r/atlanta
 
+I support:
+
+* [phptherightway.com](http://phptherightway.com)
+* [phpwomen](http://phpwomen.com)
+* [phpmentoring](http://phpmentoring.org)
+* [codeforatlanta](http://codeforatlanta.org)
+
 To keep up with everything going on, I read the following blogs:
 
 * [benramsey.com](https://benramsey.com)
