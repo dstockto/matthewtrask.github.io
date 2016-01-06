@@ -5,8 +5,8 @@
     <description>My travels from the start to now.</description>
     <link>http://matthewtrask.net/</link>
     <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 05 Jan 2016 19:06:43 -0500</pubDate>
-    <lastBuildDate>Tue, 05 Jan 2016 19:06:43 -0500</lastBuildDate>
+    <pubDate>Tue, 05 Jan 2016 22:16:18 -0500</pubDate>
+    <lastBuildDate>Tue, 05 Jan 2016 22:16:18 -0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       
@@ -38,7 +38,31 @@
 &lt;li&gt;&lt;a href=&quot;https://www.djangoproject.com&quot;&gt;Django&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The list goes on. There are hybrids even. EmberJs, AngularJs, BackboneJs, and others are MV* types of frameworks. Mainly they are built on the Model-View layer, using both as a hybrid controller situation. Not a bad idea to use them, and combined with a more powerful back end framework, you can build some really powerful web apps with them. &lt;/p&gt;
+&lt;p&gt;The list goes on. There are hybrids even. EmberJs, AngularJs, BackboneJs, and others are MV* types of frameworks. Mainly they are built on the Model-View layer, using both as a hybrid controller situation. Not a bad idea to use them, and combined with a more powerful back end framework, you can build some really powerful web apps with them.&lt;/p&gt;
+
+&lt;h2&gt;What is it exactly?&lt;/h2&gt;
+
+&lt;p&gt;The MVC pattern creates a separation of concern. It allows you to create reusable code, yet separate the logic from the views from the data modeling. Lets look deeper. First, what does MVC stand for? M is for Model, which is where we model the data for our database. Should names be split to firstName and lastName, or fullName? Well, thats the models job, to take the data passed to it, and pass it to a database the way the tables are expecting it. Next, we have V for View. Views only have the purpose of displaying data for the user. Admin sections, blogs, user pages, etc are all views you could have in an application. And that&amp;#39;s it! The view should, and is, inherently stupid. The view should have absolutely no responsibility, no logic. It should display or take in data via a form. If you have anything else in the view, you have completely broken the MVC paradigm. Last but not lease, the most powerful component of the MVC is the C, which is for Controller. Before we go further, Controllers should have specific rules. Those rules being the SOLID concept:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Single Responsibility Principle&lt;/li&gt;
+&lt;li&gt;Open/Close Principle&lt;/li&gt;
+&lt;li&gt;Liskov Substitution Principle&lt;/li&gt;
+&lt;li&gt;Interface segregation principle&lt;/li&gt;
+&lt;li&gt;Dependency Inversion Principle&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first four are fairly simple and straight forward. The fifth is always one developers have a tough time with. Its a complete shift in thinking. But Im not going deep into those concepts right now. Thats for a later post. Back to the controller, the logic of your application lives here. Users assigned to a sales rep, sales people assigned to an office, users shopping carts and check out are all hanlded in the controller. Its the glue, or, its the traffic cop. It directs the traffic of your application as it enters the app from the view.&lt;/p&gt;
+
+&lt;h2&gt;A basic MVC application&lt;/h2&gt;
+
+&lt;p&gt;So lets walk through a simple idea. A blog for instance. We have a model. Our models are responsible for three actions. Remember two things, one we are working towards the SOLID idea I just mentioned, and we are going simple. There is a lot of functionality Im skipping right now for the sake of reading. Anyways, our model with pass data to the SQL tables, another model method will fetch all posts, and one more model will handle any updates we want to do. So three models? Yes. A little granular, but I figure why not? Lets follow the Single Responsibility Principle(SRP) as closely as we can. So each model has one method. Does this satisfy the SRP? Yes! Score!&lt;/p&gt;
+
+&lt;p&gt;For our controllers, we will have one that takes in the post from the user, and another controller that passes the data to the views. With a router, we can dictate how the blog responds to requests. We would set /blog/ as the last 5 blog posts we make. Anything after that is a specific post, like /blog/april/my-birthday which is a specific post. That is all controlled by the controller, and dispatched in a request to a router. Most MVC based frameworks will have a router in place for you. Now, based on the request the router gets will determine which view we get. Do we get the past posts, or a specific or the view to edit our post, thats the job of the controller and router. And then the view is hanging out, just waiting to be used in some way. It has the data and form, it just needs a friend.&lt;/p&gt;
+
+&lt;h2&gt;Wrap Up&lt;/h2&gt;
+
+&lt;p&gt;Obviously the example wasnt a full blown example of a blog, or big MVC application, but its the most granular level of an application. While we mentioned SOLID, I didnt do it justice. That is coming up shortly in another post. What I hope you take away from this is an understanding of the MVC framework style. While it may not always be the best answer, it can work well for a lot of simple situations. Now go out and code something awesome!&lt;/p&gt;
 </description>
         
           <description>&lt;h1&gt;Lets talk MVC.&lt;/h1&gt;
