@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Contact Me
-permalink: /contact
 ---
 
 <div id="contact">
