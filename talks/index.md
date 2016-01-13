@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Talks
+permalink: /talks
 ---
 ## Conference and User Group Talks
 

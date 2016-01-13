@@ -1,12 +1,14 @@
 ---
 layout: default
 title: Contact Me
+permalink: /contact
 ---
 
 <div id="contact">
   <h1 class="pageTitle">Contact Me</h1>
   <div class="contactContent">
     <p>Care to contact me for work? Or an idea for an article? How bout if you are just looking for some advice? Feel free to reach out! Ill get back to you as soon as I can!</p>
+    <p>You can also find me on twitter: <a href="https://twitter.com/matthewtrask">@matthewtrask</a></p>
   </div>
   <form action="http://formspree.io/mjftrask@gmail.com" method="POST">
     <label for="name">Name</label>

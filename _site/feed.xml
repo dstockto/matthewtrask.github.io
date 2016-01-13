@@ -5,9 +5,67 @@
     <description>My travels from the start to now.</description>
     <link>http://matthewtrask.net/</link>
     <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 05 Jan 2016 22:16:18 -0500</pubDate>
-    <lastBuildDate>Tue, 05 Jan 2016 22:16:18 -0500</lastBuildDate>
+    <pubDate>Tue, 12 Jan 2016 21:42:01 -0500</pubDate>
+    <lastBuildDate>Tue, 12 Jan 2016 21:42:01 -0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      
+      <item>
+        <title>Why I helped out with Hour of Code</title>
+        <description>&lt;h2&gt;Give an hour of your time.&lt;/h2&gt;
+
+&lt;p&gt;I gave two hours, plus the time to drive to and back. What I got in return was well worth it. Its shiny, it tells the time, this watch is rad. Kidding of course. Although I did arrange to pick up an Apple Watch in that area. But what I am really talking about is Hour of Code! Its an initiative by &lt;a href=&quot;https://code.org&quot;&gt;code.org&lt;/a&gt; to introduce coding to students at an early age and hopefully inspire them to learn some.&lt;/p&gt;
+
+&lt;p&gt;I had seen links for Hour of Code floating around on twitter, and decided this year I would take action and participate. I love mentoring, I love helping out, so why not? Well, its definitely an interesting experience!&lt;/p&gt;
+
+&lt;h2&gt;How much money do you make?&lt;/h2&gt;
+
+&lt;p&gt;Within a few days of signing up, a teacher emailed me, and asked if I could come to her classroom and help out. After running it by the boss people at the office, it was a go. A few weeks go by and then as the week arrives, I learn that the main teacher of the class is going to be out. While I wasn;t too nervous, it wasn&amp;#39;t exactly inducing calmness in me. Besides being a bearded dude at a middle school, what was I actually doing? Was I supposed to show the students some code, was I supposed to live code, or was it more of a talk?&lt;/p&gt;
+
+&lt;p&gt;I invited my friend, Krista, to join me. As a substitute teacher, she was invaluable in keeping the kids on point. So when we got there and checked in, the substitute teacher came out and talked to us quickly. She asked what I wanted to do. Well, at this point, I wanted a beer, but I said we could answer some questions. Sure enough, the kids had a ton of questions, a lot of which they weren&amp;#39;t shy about.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How much money do I make?&lt;/li&gt;
+&lt;li&gt;Do I like my job?&lt;/li&gt;
+&lt;li&gt;Am I a hacker?&lt;/li&gt;
+&lt;li&gt;Is it live TV?&lt;/li&gt;
+&lt;li&gt;What is the coolest thing you&amp;#39;ve done with code?&lt;/li&gt;
+&lt;li&gt;Can I do it?&lt;/li&gt;
+&lt;li&gt;Is it free?&lt;/li&gt;
+&lt;li&gt;Will I make a lot of money?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As you can see, those kids have their priorities straight. I think, looking back, what really helped was making a fast connection to Minecraft. Now, Ive never really played Minecraft, but I know its the cool thing to do as a kid these days. All I hear about is Minecraft this and that. Of course, its a computer program, so to make a connection to the kids, I immediately talked about how Minecraft came to be, and how Microsoft bought it for something like $1 Billion. This set off lights. The students were instantly perked up. &amp;quot;You mean I can make money, and play Minecraft?&amp;quot;, yes you can.&lt;/p&gt;
+
+&lt;h2&gt;Lets live edit a page.&lt;/h2&gt;
+
+&lt;p&gt;When the older students came in, I decided to give them something cool to enjoy. Aside from the questions, mostly repeats of the younger kids, they asked me if I could hack. Well, in the most non-political ways possible, I gave them an idea of what a hacker is. Obviously the evil hacker who takes digital information, but there is also good hacking like when a government censors information. That aside, they had great questions, and I was happy to answer them. The fun came when I ssh&amp;#39;d into a Digital Ocean server I had running and essentially added a heading tag and some text on the fly. I have never seen faces brighten up so fast like theirs did. Of course, seeing the terminal, they legitimately thought I was a hacker.&lt;/p&gt;
+
+&lt;h2&gt;Code.org&lt;/h2&gt;
+
+&lt;p&gt;After &amp;quot;hacking&amp;quot; my own website for a few minutes, the students then hoped on to their own computers and did some code.org exercises. They could pick the theme such as Minecraft, Star Wars or some other ones and using Scratch, write very basic code. One thing I kept trying to point out is looking at the code, so they could recognize what code looked like. Some where able to clearly walk me through the code and show me what they did.&lt;/p&gt;
+
+&lt;h2&gt;Thoughts&lt;/h2&gt;
+
+&lt;p&gt;All in all, this was an amazing and powerful experience. I would highly recommend this to any developer I know. Even if you arent a teacher or mentor, give it a try. It will really give you a new perspective on coding and who some of the bright thinkers of tomorrow will be!&lt;/p&gt;
+</description>
+        
+          <description>&lt;h2&gt;Give an hour of your time.&lt;/h2&gt;
+</description>
+        
+        <pubDate>Wed, 06 Jan 2016 00:00:00 -0500</pubDate>
+        <link>http://matthewtrask.net/blog/Hour-Of-Code/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/Hour-Of-Code/</guid>
+        
+        <category>Volunteering,</category>
+        
+        <category>mentoring,</category>
+        
+        <category>students</category>
+        
+        
+      </item>
+      
     
       
       <item>
@@ -16,7 +74,7 @@
 
 &lt;p&gt;So one of my resolutions is to blog more. Why not right? Its a great way to grasp concepts. I dont want to write something and seem like a complete fool, so I do my research, which in turn lets me learn more.&lt;/p&gt;
 
-&lt;p&gt;As some of y&amp;#39;all know, I help run a local chapter of Free Code Camp. If you havent heard of Free Code Camp, or FCC; its a way to get people to code for free. It covers the MEAN Stack, ya know Mongo DB, Node Js, Angular JS and Express JS. Thats a lot of Javascript. Even the database is Javascript/JSON based. Opinions aside, its a cool initiative to get people coding. They aim to get you real world experience through helping non-profits with some coding issues. Rad right? Pretty much yes. Well, as I&amp;#39;m one of the moderators and more senior programmers in the group, I help answer questions. One I get a lot is MVC frameworks, when to use them, why are they use etc.&lt;/p&gt;
+&lt;p&gt;As some of y&amp;#39;all know, I help run a local chapter of Free Code Camp. If you havent heard of Free Code Camp, or FCC; its a way to get people to code for free. It covers the MEAN Stack, ya know Mongo DB, Node Js, Angular JS and Express JS. Thats a lot of Javascript. Even the database is Javascript/JSON based. Opinions aside, its a cool initiative to get people coding. They aim to get you real world experience through helping non-profits with some coding issues. Rad right? Pretty much yes. Well, as I&amp;#39;m one of the moderators and more senior programmers in the group, I help answer questions. One I recently was asked was what is the MVC pattern, when to use it, why is it use, etc.&lt;/p&gt;
 
 &lt;p&gt;Its funny though, because while I field these questions; certain angry yet brilliant German developers are teaching me how to let go of the MVC. However, its not something that is easily let go. I understand the flaws of it, and I understand the uses. So lets talk about that.&lt;/p&gt;
 
@@ -42,7 +100,7 @@
 
 &lt;h2&gt;What is it exactly?&lt;/h2&gt;
 
-&lt;p&gt;The MVC pattern creates a separation of concern. It allows you to create reusable code, yet separate the logic from the views from the data modeling. Lets look deeper. First, what does MVC stand for? M is for Model, which is where we model the data for our database. Should names be split to firstName and lastName, or fullName? Well, thats the models job, to take the data passed to it, and pass it to a database the way the tables are expecting it. Next, we have V for View. Views only have the purpose of displaying data for the user. Admin sections, blogs, user pages, etc are all views you could have in an application. And that&amp;#39;s it! The view should, and is, inherently stupid. The view should have absolutely no responsibility, no logic. It should display or take in data via a form. If you have anything else in the view, you have completely broken the MVC paradigm. Last but not lease, the most powerful component of the MVC is the C, which is for Controller. Before we go further, Controllers should have specific rules. Those rules being the SOLID concept:&lt;/p&gt;
+&lt;p&gt;The MVC pattern creates a separation of concern. It allows you to create reusable code, yet separate the logic from the views from the data modeling. Lets look deeper. First, what does MVC stand for? M is for Model, which is where we model the data for our database. Should names be split to firstName and lastName, or fullName? Well, thats the models job, to take the data passed to it, and pass it to a database the way the tables are expecting it. Next, we have V for View. Views only have the purpose of displaying data for the user. Admin sections, blogs, user pages, etc are all views you could have in an application. And that&amp;#39;s it! The view should be, and is, inherently stupid. The view should have absolutely no responsibility, no logic. It should display or take in data via a form. If you have anything else in the view, you have completely broken the MVC paradigm. Last but not lease, the most powerful component of the MVC is the C, which is for Controller. Before we go further, Controllers should have specific rules. Those rules being the SOLID concept:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Single Responsibility Principle&lt;/li&gt;
@@ -52,13 +110,17 @@
 &lt;li&gt;Dependency Inversion Principle&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The first four are fairly simple and straight forward. The fifth is always one developers have a tough time with. Its a complete shift in thinking. But Im not going deep into those concepts right now. Thats for a later post. Back to the controller, the logic of your application lives here. Users assigned to a sales rep, sales people assigned to an office, users shopping carts and check out are all hanlded in the controller. Its the glue, or, its the traffic cop. It directs the traffic of your application as it enters the app from the view.&lt;/p&gt;
+&lt;p&gt;The first four are fairly simple and straight forward. The fifth is always one developers have a tough time with. Its a complete shift in thinking. But Im not going deep into those concepts right now. Thats for a later post. Back to the controller, the logic of your application lives here. Users assigned to a sales rep, sales people assigned to an office, users shopping carts and check out are all handled in the controller. Its the glue, or, its the traffic cop. It directs the traffic of your application as it enters the app from the view.&lt;/p&gt;
 
 &lt;h2&gt;A basic MVC application&lt;/h2&gt;
 
 &lt;p&gt;So lets walk through a simple idea. A blog for instance. We have a model. Our models are responsible for three actions. Remember two things, one we are working towards the SOLID idea I just mentioned, and we are going simple. There is a lot of functionality Im skipping right now for the sake of reading. Anyways, our model with pass data to the SQL tables, another model method will fetch all posts, and one more model will handle any updates we want to do. So three models? Yes. A little granular, but I figure why not? Lets follow the Single Responsibility Principle(SRP) as closely as we can. So each model has one method. Does this satisfy the SRP? Yes! Score!&lt;/p&gt;
 
 &lt;p&gt;For our controllers, we will have one that takes in the post from the user, and another controller that passes the data to the views. With a router, we can dictate how the blog responds to requests. We would set /blog/ as the last 5 blog posts we make. Anything after that is a specific post, like /blog/april/my-birthday which is a specific post. That is all controlled by the controller, and dispatched in a request to a router. Most MVC based frameworks will have a router in place for you. Now, based on the request the router gets will determine which view we get. Do we get the past posts, or a specific or the view to edit our post, thats the job of the controller and router. And then the view is hanging out, just waiting to be used in some way. It has the data and form, it just needs a friend.&lt;/p&gt;
+
+&lt;h2&gt;Is this perfect?&lt;/h2&gt;
+
+&lt;p&gt;Is the MVC pattern perfect? No. There was only room for one awesome thing in this blog, and its me. Kidding of course, but the MVC has its share of problems. One of them is it doesnt handle HTTP requests as well as other patterns can do. While that may be true, Ive personally never had an issue. That doesnt mean it doesnt exist. Another issue is a lot of developers take the MVC as OOP and forget to actually code with OOP in mind. It doesnt help to use a pattern that is aimed at abstracting logic and then hard coding values into the controller. So remember, like many things with programming, this isnt perfect for everything, but its a tool to have and to use when the time is right.&lt;/p&gt;
 
 &lt;h2&gt;Wrap Up&lt;/h2&gt;
 
