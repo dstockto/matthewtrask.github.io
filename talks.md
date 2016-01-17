@@ -1,11 +1,10 @@
 ---
 layout: default
-title: Talks
 permalink: /talks
 ---
 ## Conference and User Group Talks
 
-###User Groups:
+### User Groups:
 
 * Life as a Lamp Camper - Sept, 2015 - [AtlantaPHP](https://atlantaphp.org)
 * Composing Awesome Web Apps - Dec, 2015 - [AtlantaPHP](https://atlantaphp.org)
