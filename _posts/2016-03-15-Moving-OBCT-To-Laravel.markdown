@@ -39,3 +39,4 @@ start fresh. So I pulled the site down, and destroyed the server.
 
 ## Laravel new Obct
 
+So lets look at a few things behind the scenes before i get into more details with the move. Originally the site was built on a framework called [SimpleMVC](http://simplemvcframework.com). I, along with my friend and coworker Justin, had built [Transparent Trade Coffee](http://transparenttradecoffee.com) on the same platform. As the name implies, its dead simple. However, when they released 2.2, they introduced both new packages and breaking changes. If you know anything about SemVer, a X.1.X change should not be breaking. It can introduce new features, but should not break backwards compatibility. But I digress. Other then the framework, there wasnt much else to the site. I had a few packages, mainly Nesbot\Carbon for better time functions. I had the Foundation CSS framework in place. 
