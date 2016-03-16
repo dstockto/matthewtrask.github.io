@@ -40,3 +40,9 @@ start fresh. So I pulled the site down, and destroyed the server.
 ## Laravel new Obct
 
 So lets look at a few things behind the scenes before i get into more details with the move. Originally the site was built on a framework called [SimpleMVC](http://simplemvcframework.com). I, along with my friend and coworker Justin, had built [Transparent Trade Coffee](http://transparenttradecoffee.com) on the same platform. As the name implies, its dead simple. However, when they released 2.2, they introduced both new packages and breaking changes. If you know anything about SemVer, a X.1.X change should not be breaking. It can introduce new features, but should not break backwards compatibility. But I digress. Other then the framework, there wasnt much else to the site. I had a few packages, mainly Nesbot\Carbon for better time functions. I had the Foundation CSS framework in place. 
+
+Deciding to move frameworks is no small feat. And it was even harder when I was giving up my weekend. So Friday night, I ran the inital command and just started. Note that I had some beer. Was worth it. Laravel makes this easy too. With the artisan commands, I was up and running in moments. Starting first with 
+```command-line
+$ php artisan make:migration create_table
+```
+I had an easy way to start the data migration. I could have used a simple SQL import, but with these commands at my use, I figured I would give this a go. 
