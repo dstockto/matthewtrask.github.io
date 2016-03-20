@@ -5,9 +5,197 @@
     <description>My travels from the start to now.</description>
     <link>http://matthewtrask.net/</link>
     <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 Jan 2016 10:08:25 -0500</pubDate>
-    <lastBuildDate>Sun, 17 Jan 2016 10:08:25 -0500</lastBuildDate>
+    <pubDate>Sun, 20 Mar 2016 10:40:51 -0400</pubDate>
+    <lastBuildDate>Sun, 20 Mar 2016 10:40:51 -0400</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      
+      <item>
+        <title>Moving OBCT to Laravel</title>
+        <description>&lt;h1&gt;Laravel New OBCT&lt;/h1&gt;
+
+&lt;p&gt;I have this project. It&amp;#39;s not glamorous, its not a super profitable website, but it is one I enjoy working on. We developers tend to
+have one or two that are close to our hearts. No matter how frustrating it can be, you put this project first and make it happen.
+For me, its &lt;a href=&quot;http://offbroadwaykids.net&quot;&gt;OBCT&lt;/a&gt;. I taught guitar lessons there for a few years, and it was an absolutely wonderful
+place to be. The owners, Shannon and Chris, have done a great job fostering an amazing community there. Kids are able to come learn
+the art of dancing and music in a fun environment.&lt;/p&gt;
+
+&lt;p&gt;Well, when I moved to programming, they asked if I could update their site. Of course! Without going into too many details, the code
+for this site resembles my career. First it was a mess, includes and requires everywhere. Then I learned the joys of frameworks. So I
+moved the site to a framework. That wasn&amp;#39;t enough, as I learned about setting up my own servers. Tons of trials and errors. But now,
+we are at the point of this past week.&lt;/p&gt;
+
+&lt;h2&gt;Use Lets Encrypt they said.&lt;/h2&gt;
+
+&lt;p&gt;Its making the rounds now. Its an open source library that lets you place SSL, or Secure Socket Layer, certificates on your web server.
+If you dont know what it is, go visit a site, and click on the url at the top. You&amp;#39;ll see a locked symbol and hovering over it should
+reveal details about the SSL cert. Everyone was raving about it, so why not? An SSL is a great thing, it protects all web traffic data.
+And with some of the ideas I was coming up with for OBCT, an SSL was needed. (Sidenote, I tend to treat OBCT as a playground. I bring
+libraries in here and use them so I can see if I like them or not).&lt;/p&gt;
+
+&lt;p&gt;This past week I got a notice to update the cert. No biggie, I look and the command is something like&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-command-line&quot; data-lang=&quot;command-line&quot;&gt;  ./lets-encrypt renew
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;so I run it. It gives me the all good and I continue on with my day.  Soon after, I receieved an email saying all the links on the site
+were down. This seeming odd, I logged in both SSH&amp;#39;d to the server, and to the site. Sure enough, everything was a 404 error of awesome.
+At this point, I tried to undo the Let&amp;#39;s Encrypt process, but that was too late. Thinking fast, I knew it was time to blew things up and
+start fresh. So I pulled the site down, and destroyed the server.&lt;/p&gt;
+
+&lt;h2&gt;Laravel new Obct&lt;/h2&gt;
+
+&lt;p&gt;So lets look at a few things behind the scenes before I get into more details with the move. Originally the site was built on a framework called &lt;a href=&quot;http://simplemvcframework.com&quot;&gt;SimpleMVC&lt;/a&gt;. I, along with my friend and coworker Justin, had built &lt;a href=&quot;http://transparenttradecoffee.com&quot;&gt;Transparent Trade Coffee&lt;/a&gt; on the same platform. As the name implies, its dead simple. However, when they released 2.2, they introduced both new packages and breaking changes. If you know anything about SemVer, a X.1.X change should not be breaking. It can introduce new features, but should not break backwards compatibility. But I digress. Other then the framework, there wasnt much else to the site. I had a few packages, mainly Nesbot\Carbon for better time functions. I had the Foundation CSS framework in place.&lt;/p&gt;
+
+&lt;p&gt;Deciding to move frameworks is no small feat. And it was even harder when I was giving up my weekend. So Friday night, I ran the inital command and just started. Note that I had some beer. Was worth it. Laravel makes this easy too. With the artisan commands, I was up and running in moments. Starting first with&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-command-line&quot; data-lang=&quot;command-line&quot;&gt;$ php artisan make:migration create_table
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I had an easy way to start the data migration. I could have used a simple SQL import, but with these commands at my use, I figured I would give this a go. After the date was moved into the tables, all I needed was controllers. With Laravel, there is two options, either you can create your own controllers, or Laravel can build you an awesome HTTP Controller. What that means is that the controller will have specific functions mapped to the verbs of HTTP: Get, Post, Put, Delete, Patch. For this project, I went with custom controllers. Keeping with SOLID, life just got even easier. A mistake I made on the old version was that there was one controller for the whole project. For this project, theres already 10 controllers, and I plan on adding more.&lt;/p&gt;
+
+&lt;h2&gt;Auth&lt;/h2&gt;
+
+&lt;p&gt;The nice thing about Laravel, is that it is pre-packaged with an auth class, which makes users and passwords that much easier. I plan on writing a post specifically about that in the future. I have found the documentation for it wasnt great. But the idea with OBCT is two things, move the studio off its current platform of class sign ups, and allow people to buy tickets through the site. With the authc classes, these tasks will be insanely easy to accomplish. I already know I need to bring in the Leagues OmniPay package, as well as Fractal. Both these will help make these things happen.&lt;/p&gt;
+
+&lt;h2&gt;Thoughts&lt;/h2&gt;
+
+&lt;p&gt;I have always been weary of Laravel. Multiple times I started a project and got roadblocked fast. So why was it so easy this time? It is cause over the past few months, work has had me focused on POPO, or Plain Old PHP Objects. Using those, without the crutch of a library or framework made spinning up a Laravel application ten times easier. Now I have another tool in the library I can pull out and use.  &lt;/p&gt;
+</description>
+        
+          <description>&lt;h1&gt;Laravel New OBCT&lt;/h1&gt;
+</description>
+        
+        <pubDate>Tue, 15 Mar 2016 00:00:00 -0400</pubDate>
+        <link>http://matthewtrask.net/blog/Moving-OBCT-To-Laravel/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/Moving-OBCT-To-Laravel/</guid>
+        
+        <category>Laravel,</category>
+        
+        <category>Dev,</category>
+        
+        <category>PHP</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>My time at SunshinePHP</title>
+        <description>&lt;h1&gt;Conference Time!&lt;/h1&gt;
+
+&lt;p&gt;A few weekends ago, I finally made it. No, not to being 6&amp;#39;4 and beautiful, but to a conference. Its been on my list of things to do for about a year now with some near misses. After I tossed the idea to the boss people at work, we got it all worked out. After getting the hotel and flight set, I was on my way. Hopefully after this, you have more proof why a conference is worth the price. &lt;/p&gt;
+
+&lt;h2&gt;Why SunshinePHP?&lt;/h2&gt;
+
+&lt;p&gt;The first question to answer, is why &lt;a href=&quot;http://2016.sunshinephp.com&quot;&gt;SunshinePHP&lt;/a&gt;? Coworkers are leaving this week for &lt;a href=&quot;https://confoo.ca&quot;&gt;ConFoo&lt;/a&gt;, and there are other conferences, but why did I pick Sunshine? A few reasons, first is I opened my mouth and said Id be there, thus causing people I interact with online daily to be excited to finally get to put a face to my online personality. Also, Sunshine is great because its one of the more inexpensive conferences. Price doesnt dictate if a conference is going to be good or not, but with Sunshine being on the lower end of the price scale, it made sense. &lt;/p&gt;
+
+&lt;p&gt;The talks too were curated towards things I was interested in learning. Looking at Confoo, it has great talks. However, Sunshine is specifically PHP, which allows me to get the most of a conference. This isnt to say that language agnostic conferences are less then specific languages! Confoo looks awesome, and I truly wish I was going as well. But since I had to pick, I did what I thought was best for me. I strongly advise you to look at any confereneces that pop up and attend as many as you can!&lt;/p&gt;
+
+&lt;h2&gt;The First Day&lt;/h2&gt;
+
+&lt;p&gt;After I woke up at the crack of dawn, eating breakfast (and drinking) at the airport, I landed in sunny Miami around 12. After spending some time on South Beach, we got back in time for the hotel happy hour. It started out great, and I was able to start meeting some awesome people. After the happy hour ended, a group of us decided to go to dinner. At dinner, we had &lt;a href=&quot;https://twitter.com/lukestokes&quot;&gt;Luke Stokes&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/jwoodcock&quot;&gt;Jaques Woodcock&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/rmcfrazier&quot;&gt;Robert McFrazier&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/elstamey&quot;&gt;Emily Stamey&lt;/a&gt;, and so many more awesome people! After dinner, we were lucky enough to get to hang out more talking over all kinds of topics in Jaques&amp;#39; room with a few bottles of rum and scotch. &lt;/p&gt;
+
+&lt;h2&gt;The Second Day&lt;/h2&gt;
+
+&lt;p&gt;I would lie if I said I wasnt a little hung over. At least I played it cool by drinking straight liquor over mixed drinks so I kept the sugar count low, which helped me bounce back hard. Luckily, a few of us got together for some yoga just to get some energy into our day. After a solid breakfast offering, we got underway with a powerful keynote from Josh Holmes. During this talk, the theme of the conference was unvieled, Community and Working Together. Big appreciation to Josh for his talk, it was powerful and set the tone of the conference with a great bang. &lt;/p&gt;
+
+&lt;p&gt;After that, it was off to see the great &lt;a href=&quot;https://twitter.com/weaverryan&quot;&gt;Ryan Weaver&lt;/a&gt; talk about JWT and Security within Symfony. Although Im not a Symfony user, it was great to get some insight into it, and made me more interested in giving it a try. The next talk was &amp;quot;The Pattern to Design Patterns&amp;quot; by &lt;a href=&quot;https://twitter.com/crussell52_&quot;&gt;Chris Russell&lt;/a&gt; which was an awesome and different approach to design patterns. After lunch, we came back for the keynote and it was powerful. Sharon Steed grew up with a stutter, and decided that public speaking was the way to get over the stutter. Talk about taking on a challenge head on!&lt;/p&gt;
+
+&lt;p&gt;I got to sit in on a talk about REST Api&amp;#39;s with &lt;a href=&quot;https://twitter.com/AmbassadorAwsum&quot;&gt;Amanda Folson&lt;/a&gt; which was informing and gave me some ideas how to construct an API properly. After that, &lt;a href=&quot;https://twitter.com/geeh&quot;&gt;Gary Hockin&lt;/a&gt; did a great talk about PHPStorm and Step Debugging. Live coding took place, and Gary was hilarious when things didnt go great. Was fun to hang with &lt;a href=&quot;https://twitter.com/frankdejonge&quot;&gt;Frank De Jonge&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/assertchris&quot;&gt;Chris Pitt&lt;/a&gt; as well! Finally I ran into a challenge. The last block of the day had 3 great talks, and a Magento talk. Just giving Magento a hard time, but really there was a lot of great talks. I had to pick, and did a talk about Docker with &lt;a href=&quot;https://twitter.com/rmcfrazier&quot;&gt;Robert McFrazier&lt;/a&gt;. Docker is something Ive struggled with, so seeing it broke down to simpler terms made it easier and wanting me to pick up where I left off and get it working. &lt;/p&gt;
+
+&lt;p&gt;After that, I ran into &lt;a href=&quot;https://twitter.com/coderabbi&quot;&gt;CodeRabbi&lt;/a&gt; and gave &lt;a href=&quot;https://twitter.com/JessicaMauerhan&quot;&gt;Jessica Mauerhan&lt;/a&gt; a hard time from the back row. Following that, a night of drinking and fun. But on to day three!&lt;/p&gt;
+
+&lt;h2&gt;The Third Day&lt;/h2&gt;
+
+&lt;p&gt;This kind of feels like a post counting down to something. Christmas, CoC violation, something. Just wait and see!&lt;/p&gt;
+
+&lt;p&gt;Funny enough, I started this day hung over too, and skipped yoga cause the bed was comfy. Life in the fast lane I suppose. As I trudged down stairs to get food, I was excited to get started again. This time, we had &lt;a href=&quot;https://twitter.com/JessicaDunbar&quot;&gt;Jessica Dunbar&lt;/a&gt; who had great insight to dealing with people with different perspectives. Its not all about you, and she showed us how to make sure everyone worked together to achieve a common goal. After that, I was fortunate to see &lt;a href=&quot;https://twitter.com/assertchris&quot;&gt;Chris Pitt&lt;/a&gt; talk about writing asynchronous PHP. The &amp;#39;yield&amp;#39; keyword is magic. After being blown away, I finally got to see a talk from &lt;a href=&quot;https://twitter.com/philsturgeon&quot;&gt;Phil Sturgeon&lt;/a&gt;. He talked about things people dont talk about when dealing with API&amp;#39;s and REST. Fantastic stuff. After lunch, I decided a nap was the best idea possible, and then after that I skipped the session only cause I didnt see much that interested me. Unfortunately, after sitting around with &lt;a href=&quot;https://twitter.com/joepferguson&quot;&gt;Joe Ferguson&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/elstamey&quot;&gt;Emily Stamey&lt;/a&gt;, that &lt;a href=&quot;https://twitter.com/benmarks&quot;&gt;Magento dude&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/jmikola&quot;&gt;Jeremy Mikola&lt;/a&gt;, I had to run to catch &lt;a href=&quot;https://twitter.com/stauffermatt&quot;&gt;Matt Stauffer&lt;/a&gt; talk about from Idea to Prototype in 50 minutes with Laravel. Minus his apparent lack of breathing, he nailed it. &lt;/p&gt;
+
+&lt;p&gt;After &lt;a href=&quot;https://twitter.com/calevans&quot;&gt;Cal Evans&lt;/a&gt; did the closing keynote, and I took home a sweet, big red elephpant, I was able to sit in on the PHP Townhall. This is where it starts getting fun. So another person decided to ask about the whole raging CoC debate. After watching people I wont name saying things like &amp;quot;the opponents of CoC are jackasses and idiots&amp;quot; amongst other things, Jeremy Mikola organized a &lt;a href=&quot;https://twitter.com/wurstcon&quot;&gt;#wurstcon&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;It was something hilarious to be apart of. Except that one person, who I will refuse to name, made some fun (read dick) comments towards me. First, as we were sitting in the car about to go, she pops her in the car to say hi, and looked at me and said &amp;quot;fuck this guy&amp;quot;. Mind you, Ive never said more then 3 words to her before, and before the conference, Ive never met her. Whatever, I blow it off. No big deal, thats just how some people are. But later, while we are out, I was standing talking to someone. The same person from before comes up and says &amp;quot;You need to fuck off back to the shire, I need to sit down&amp;quot;. Now, I get it. Im short, I have a beard so I may look like a hobbit, but really? This person doesnt even know my name, but just told me that Im a hobbit, and need to fuck off so she can sit and eat. Another person over heard this, but I was so stunned at this comment I just left the area in silence. &lt;/p&gt;
+
+&lt;p&gt;As we got back to the hotel, I was talking with Jaques about it. This was a person who just said earlier that CoC was needed to make sure people were treated with respect. She stated that the community had a strong attitude, and that people are bullied often. So its ironic she would do something like this. And this shit happens alot, but I refuse to let it ruin my first conference experience. The last point I want to make is why didnt I tell the organizers. It came down to two reasons. One was this was after the conference was over. We werent even at the venue. The other is the sheer shock I was in, and the fact that even if I were to say something, what do I say and would it make a difference?&lt;/p&gt;
+
+&lt;h2&gt;The aftermath&lt;/h2&gt;
+
+&lt;p&gt;This conference was one of the best decisions of my career. Getting to meet so many awesome people, getting to hear new ways to code and write apps, and be around people smarter then I was amazing. I can tell you Im hooked and plan to attend as many as possible. If something like this, traveling to another city isnt possible, then get to the user groups in your area. Sometimes they have smaller conferences they help run which will help you get to go to a conference and share the experience I had!&lt;/p&gt;
+
+&lt;h2&gt;Edits!&lt;/h2&gt;
+
+&lt;p&gt;So in the recent days, someone has used my blog post to make an argument that the person in question isnt a viable choice to lead the PHP-FIG. First things first, Samantha almost instantly reached out to me when she read the post. From other sources, she was mortified to read the post and knew that it was her actions that caused me to write the post and detail things. Once she messaged me, we started talked, and both her and I arent so different. We use sarcasm and brashness as tools of humor. I cant fault her on that, cause I wouldnt want to be faulted on it. As we talked, we buried the hatchet so to speak, and have started on fresh ground. Next time I see Samantha at a conference, Im sure beers or drinks will be shared. Another member of the community, Maraget Staples messaged me. She was there at the incident, and through us talking, she said she was sorry for what happened, but now, Ive been officially welcomed to the PHP Conference Family. Only now I plan on speaking instead of visiting. Maybe 70/30 talking to speaking. &lt;/p&gt;
+
+&lt;p&gt;Now, on to something that is bothering me, which is someone on the FIG mailing list using an anonymouse email address to attack Samantha for what I wrote. Had this person read my blog, and the comments, they would have seen that the incident is behind us and we are now in a much better place. To use this one incident as something to discredit someone from a position they have been asked to fill isnt what this post is about. This isnt a post about being pro-CoC or anti-CoC. It was an incident I was involved in, and felt like airing my concerns. Would a CoC have fixed this? Well, I dont know. I dont feel like I wanna venture into that argument. All that I give a remote damn about is that I voiced a concern, Samantha was able to step up and do something I know a lot of people wouldnt have and come to me an immediately apologize and put this behind her. &lt;/p&gt;
+
+&lt;p&gt;I fully support her vote for the PHP-FIG Secretary, like I would if someone else had won the vote and had the same issues like I described in the blog post. &lt;/p&gt;
+</description>
+        
+          <description>&lt;h1&gt;Conference Time!&lt;/h1&gt;
+</description>
+        
+        <pubDate>Sat, 20 Feb 2016 00:00:00 -0500</pubDate>
+        <link>http://matthewtrask.net/blog/My-Time-At-SunshinePHP/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/My-Time-At-SunshinePHP/</guid>
+        
+        <category>Community,</category>
+        
+        <category>PHP,</category>
+        
+        <category>Conference,</category>
+        
+        <category>Travel</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Vue.Js Exeperiements</title>
+        <description></description>
+        
+          <description></description>
+        
+        <pubDate>Thu, 04 Feb 2016 00:00:00 -0500</pubDate>
+        <link>http://matthewtrask.net/blog/Vue-Js-Experiements/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/Vue-Js-Experiements/</guid>
+        
+        <category>Js,</category>
+        
+        <category>Javascript,</category>
+        
+        <category>Front</category>
+        
+        <category>End,</category>
+        
+        <category>PHP</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>PHP and the CoC</title>
+        <description>&lt;h1&gt;A battle rages&lt;/h1&gt;
+
+&lt;p&gt;hello&lt;/p&gt;
+</description>
+        
+          <description>&lt;h1&gt;A battle rages&lt;/h1&gt;
+</description>
+        
+        <pubDate>Sat, 30 Jan 2016 00:00:00 -0500</pubDate>
+        <link>http://matthewtrask.net/blog/PHP-and-the-CoC/</link>
+        <guid isPermaLink="true">http://matthewtrask.net/blog/PHP-and-the-CoC/</guid>
+        
+        <category>PHP,</category>
+        
+        <category>CoC,</category>
+        
+        <category>community</category>
+        
+        
+      </item>
+      
     
       
       <item>
@@ -465,119 +653,6 @@ helps keep it from getting dull after hours of looking at the terminal. Truly a 
         <category>APIs,</category>
         
         <category>frameworks</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>OOP &amp; Composer and PHP, oh my!</title>
-        <description>&lt;p&gt;When you get into coding and development, everything seems so foreign. OOP, MVC,
-MVVM, MV*, JSON, API, and XML. Let alone when a new person sees Angular, Node,
-Laravel, Django, Rails or Sass. So what is it all, and how can someone who is new
-to the game make sense of this all? Lets start from the ground up.&lt;/p&gt;
-
-&lt;h1&gt;Starting out&lt;/h1&gt;
-
-&lt;p&gt;One big question friends have asked me is where to start? Theres tons of places online
-that will help you start learning how to write code. I started on Codecademy, and
-its a good starting point. But will you code the next AirBnB? No, you will not. Will
-you be able to build something? Absolutely. Its all about what you do &lt;em&gt;outside&lt;/em&gt; of
-the Codecademy.com cirriculm. Thats the key! And its amazing how many people have
-yet to figure this out. Ive seen people go to /r/learnprogramming or /r/webdev and say
-that Codecademy.com isnt working for them. They say that teamtreehouse.com was great to
-start, but now they are stuck. But why are they stuck? Is it cause the videos do not
-go very deep into web development? Or is it that people arent being creative enough
-with that they have learned over the course of a video series. In the time I have spent
-working in this industry, that has been the biggest issue coming around. Not pushing deep
-enough while learning.&lt;/p&gt;
-
-&lt;h1&gt;After Codecademy&lt;/h1&gt;
-
-&lt;p&gt;So you&amp;#39;ve done some work with Codecademy, and you think you can build a page, that&amp;#39;s great!
-But what now?&lt;/p&gt;
-
-&lt;p&gt;You build something! Anything! Build yourself a simple website. It doesnt need to be great,
-but its a great place to work. When you are ready, then you can buy the domain and the hosting.
-Until then, just practice. The thing with Codecademy or Teamtreehouse is that you feel comfortable
-in their setting. Its a crutch. If you type something wrong during an exercise, a warning will appear
-and you will know that you messed something up. In the real world, you aren&amp;#39;t that fortunate.&lt;/p&gt;
-
-&lt;p&gt;However, after practicing, you begin to start recognizes things that are not working, and tips to make things
-work better! So what are you waiting for? Code something!&lt;/p&gt;
-</description>
-        
-          <description>&lt;p&gt;When you get into coding and development, everything seems so foreign. OOP, MVC,
-MVVM, MV*, JSON, API, and XML. Let alone when a new person sees Angular, Node,
-Laravel, Django, Rails or Sass. So what is it all, and how can someone who is new
-to the game make sense of this all? Lets start from the ground up.&lt;/p&gt;
-</description>
-        
-        <pubDate>Sun, 21 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://matthewtrask.net/blog/oop-composer-oh-my/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/oop-composer-oh-my/</guid>
-        
-        <category>Tools,</category>
-        
-        <category>PHP,</category>
-        
-        <category>OOP</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Hello World</title>
-        <description>&lt;p&gt;&lt;p class=&quot;intro&quot;&gt;This is my first blog post, and I hope its a good one. I&amp;#39;m writing this for a few reasons.&lt;/p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2&gt;Reasons&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Get more involved with the community&lt;/li&gt;
-&lt;li&gt;Help beginners&lt;/li&gt;
-&lt;li&gt;Allow me to learn more topics&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I called this post &amp;quot;Hello World&amp;quot;, because as a programmer learning a new language, its generally considered a good
-benchmark to have your code return &amp;quot;Hello World&amp;quot;.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1&gt;But who is this?&lt;/h1&gt;
-
-&lt;p&gt;Im Matt, Im a self taught PHP Developer. Im a supporter of open source software,
-as well as working to make the government more open. I contribute to groups like
-Code for Atlanta, Code for Nashville and Code for Hawaii. I do what I can to stay
-involved with projects that will make me a better developer, and I love turning
-around and helping new developers come up and become better developers themselves.&lt;/p&gt;
-
-&lt;p&gt;Outside of PHP, I love the craft beer scene in Atlanta. Ever since I was a bartender
-at Taco Mac, I was hooked on awesome beers. Im a Red Sox fan, but not a bandwagon fan.
-My family is from Boston, so I was taught/endoctrinated early on. Chelsea is my
-football/soccer team and I do too much fantasy football to really cheer for a team.&lt;/p&gt;
-
-&lt;p&gt;So thats me. Theres a lot more abut me, but thats a good overview. Im sure new posts
-will come that will show off more things like my tech stack, what I am working on,
-and what I hope to learn soon.&lt;/p&gt;
-</description>
-        
-          <description>&lt;p&gt;&lt;p class=&quot;intro&quot;&gt;This is my first blog post, and I hope its a good one. I&amp;#39;m writing this for a few reasons.&lt;/p&gt;&lt;br /&gt;&lt;/p&gt;
-</description>
-        
-        <pubDate>Mon, 15 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://matthewtrask.net/blog/hello-world/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/hello-world/</guid>
-        
-        <category>Hello</category>
-        
-        <category>World,</category>
-        
-        <category>PHP,</category>
-        
-        <category>Beginnings</category>
         
         
       </item>

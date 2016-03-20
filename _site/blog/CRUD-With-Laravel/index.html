@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Why I helped out with Hour of Code</title>
+    <title>CRUD With Laravel</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
@@ -20,7 +20,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="http://matthewtrask.net/blog/Hour-Of-Code/">
+    <link rel="canonical" href="http://matthewtrask.net/blog/CRUD-With-Laravel/">
 
     <!-- Modernizr -->
     <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
@@ -79,48 +79,87 @@
       <div class="container">
          <div class="post">
   
-  <h1 class="postTitle">Why I helped out with Hour of Code</h1>
-  <p class="meta">January 06, 2016 | <span class="time">4</span> Minute Read</p>
+  <h1 class="postTitle">CRUD With Laravel</h1>
+  <p class="meta">January 17, 2016 | <span class="time">4</span> Minute Read</p>
 
-  <h2>Give an hour of your time.</h2>
+  <h2>Hello, Laravel</h2>
 
-<p>I gave two hours, plus the time to drive to and back. What I got in return was well worth it. Its shiny, it tells the time, this watch is rad. Kidding of course. Although I did arrange to pick up an Apple Watch in that area. But what I am really talking about is Hour of Code! Its an initiative by <a href="https://code.org">code.org</a> to introduce coding to students at an early age and hopefully inspire them to learn some.</p>
+<p>Ive very opinionated in the frameworks I like and use. Its more interesting to use plain old PHP objects rather then a cumbersome framework to me. For the past 5 months, we have been focused on using SOLID principles in our code at work. No framework, no packages. Just simple PHP objects in a clean code setting. And its awesome! Really makes you step back and think about what you are coding. You must be wondering then why Im going to talk about Laravel, the current king of the PHP frameworks. Its funny, I was pretty against Laravel for a while. A lot of the community members for Laravel tend to be extremely opinionated in their mindset. Nothing wrong, but I have a feeling some Laravel developers are specifically Laravel, and if you took that away, how would/could they write their application? And this is by no means an attack, just my opinion.</p>
 
-<p>I had seen links for Hour of Code floating around on twitter, and decided this year I would take action and participate. I love mentoring, I love helping out, so why not? Well, its definitely an interesting experience!</p>
+<p>Last month, while in a car for 6 hours, I decided to grab a book off <a href="https://leanpub.com">leanpub</a> for the ride. I picked one on Laravel 5. Don&#39;t know why, maybe cause it was cheap? Probably the reason, sounds like me. As I was reading, things were clicking. Which finally made me sit down and see what Laravel can really do.</p>
 
-<h2>How much money do you make?</h2>
+<p>So without further adieu, lets build a simple blog with Laravel.</p>
 
-<p>Within a few days of signing up, a teacher emailed me, and asked if I could come to her classroom and help out. After running it by the boss people at the office, it was a go. A few weeks go by and then as the week arrives, I learn that the main teacher of the class is going to be out. While I wasn;t too nervous, it wasn&#39;t exactly inducing calmness in me. Besides being a bearded dude at a middle school, what was I actually doing? Was I supposed to show the students some code, was I supposed to live code, or was it more of a talk?</p>
+<h2>Setting up the environment</h2>
 
-<p>I invited my friend, Krista, to join me. As a substitute teacher, she was invaluable in keeping the kids on point. So when we got there and checked in, the substitute teacher came out and talked to us quickly. She asked what I wanted to do. Well, at this point, I wanted a beer, but I said we could answer some questions. Sure enough, the kids had a ton of questions, a lot of which they weren&#39;t shy about.</p>
+<p>If you want to follow along, great if you are just getting started with Laravel, you will need to download:</p>
 
 <ul>
-<li>How much money do I make?</li>
-<li>Do I like my job?</li>
-<li>Am I a hacker?</li>
-<li>Is it live TV?</li>
-<li>What is the coolest thing you&#39;ve done with code?</li>
-<li>Can I do it?</li>
-<li>Is it free?</li>
-<li>Will I make a lot of money?</li>
+<li><a href="https://virtualbox.org">VirtualBox</a></li>
+<li><a href="https://vagrantup.com">Vagrant</a></li>
 </ul>
 
-<p>As you can see, those kids have their priorities straight. I think, looking back, what really helped was making a fast connection to Minecraft. Now, Ive never really played Minecraft, but I know its the cool thing to do as a kid these days. All I hear about is Minecraft this and that. Of course, its a computer program, so to make a connection to the kids, I immediately talked about how Minecraft came to be, and how Microsoft bought it for something like $1 Billion. This set off lights. The students were instantly perked up. &quot;You mean I can make money, and play Minecraft?&quot;, yes you can.</p>
+<p>Why? Well, you can always do MAMP/WAMP/XAMPP and it&#39;ll work great. But with Vagrant, you get the added skill of working in the terminal and using commands in the shell.That translates well on to a resume and looking for a job. So take a minute and get those set up. When you are done, look at <a href="https://box.scotch.io">Scotch Vagrant Box</a>. There are hundreds of vagrantfiles out there. Theres a great website, <a href="https://puphet.com">puphpet</a> where you can configure all kinds of awesome things.</p>
 
-<h2>Lets live edit a page.</h2>
+<p>Simple set up, wherever you prefer your files to be, create a folder called &quot;blog&quot; or whatever. Inside of that folder, create a folder called &quot;public&quot;. In the blog folder, paste in the Vagrantfile you got from box.scotch.io. Your folder should look like:</p>
 
-<p>When the older students came in, I decided to give them something cool to enjoy. Aside from the questions, mostly repeats of the younger kids, they asked me if I could hack. Well, in the most non-political ways possible, I gave them an idea of what a hacker is. Obviously the evil hacker who takes digital information, but there is also good hacking like when a government censors information. That aside, they had great questions, and I was happy to answer them. The fun came when I ssh&#39;d into a Digital Ocean server I had running and essentially added a heading tag and some text on the fly. I have never seen faces brighten up so fast like theirs did. Of course, seeing the terminal, they legitimately thought I was a hacker.</p>
+<p><img src="/assets/img/blog.jpg" alt="blog directory"></p>
 
-<h2>Code.org</h2>
+<p>Next, you will want to open up your terminal and change directory (cd) into the blog directory like so:</p>
 
-<p>After &quot;hacking&quot; my own website for a few minutes, the students then hoped on to their own computers and did some code.org exercises. They could pick the theme such as Minecraft, Star Wars or some other ones and using Scratch, write very basic code. One thing I kept trying to point out is looking at the code, so they could recognize what code looked like. Some where able to clearly walk me through the code and show me what they did.</p>
+<p><img src="/assets/img/cd.jpg"></p>
 
-<h2>Thoughts</h2>
+<p>Now run vagrant up. If its your first time running this, it will take a few minutes to download everything. Once it is done, you need to run</p>
 
-<p>All in all, this was an amazing and powerful experience. I would highly recommend this to any developer I know. Even if you arent a teacher or mentor, give it a try. It will really give you a new perspective on coding and who some of the bright thinkers of tomorrow will be!</p>
+<figure class="highlight"><pre><code class="language-command-line" data-lang="command-line">[matthewtrask@Matthews-MacBook-Pro CRUD ]$ vagrant ssh</code></pre></figure>
+
+<p>The next thing you should see is:</p>
+
+<figure class="highlight"><pre><code class="language-command-line" data-lang="command-line">Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-55-generic x86_64)
+
+
+ $$$$$$\   $$$$$$\   $$$$$$\ $$$$$$$$\  $$$$$$\  $$\   $$\
+$$  __$$\ $$  __$$\ $$  __$$\\__$$  __|$$  __$$\ $$ |  $$ |
+$$ /  \__|$$ /  \__|$$ /  $$ |  $$ |   $$ /  \__|$$ |  $$ |
+\$$$$$$\  $$ |      $$ |  $$ |  $$ |   $$ |      $$$$$$$$ |
+ \____$$\ $$ |      $$ |  $$ |  $$ |   $$ |      $$  __$$ |
+$$\   $$ |$$ |  $$\ $$ |  $$ |  $$ |   $$ |  $$\ $$ |  $$ |
+\$$$$$$  |\$$$$$$  | $$$$$$  |  $$ |   \$$$$$$  |$$ |  $$ |
+ \______/  \______/  \______/   \__|    \______/ \__|  \__|
+
+$$$$$$$\   $$$$$$\  $$\   $$\
+$$  __$$\ $$  __$$\ $$ |  $$ |
+$$ |  $$ |$$ /  $$ |\$$\ $$  |
+$$$$$$$\ |$$ |  $$ | \$$$$  /
+$$  __$$\ $$ |  $$ | $$  $$&lt;
+$$ |  $$ |$$ |  $$ |$$  /\$$\
+$$$$$$$  | $$$$$$  |$$ /  $$ |
+\_______/  \______/ \__|  \__|
+
+For help, please visit box.scotch.io or scotch.io. Follow us on Twitter at @scotch_io and at @nickforthought.
+
+
+Last login: Mon Jan 25 01:46:11 2016 from 10.0.2.2
+vagrant@scotchbox:~$</code></pre></figure>
+
+<p>And so now we are successfully in our vagrant server! Now, lets get to the good stuff. CD into /var/www/public first and then lets install a fresh Laravel instance. We can do that in two ways, either through the Laravel installer or with Composer. Ill be honest, I prefer Composer, so lets run this:</p>
+
+<figure class="highlight"><pre><code class="language-command-line" data-lang="command-line">[matthewtrask@Matthews-MacBook-Pro CRUD ]$ composer create-project --prefer-dist laravel/laravel blog</code></pre></figure>
+
+<p>Let it run through its thing, and you will see everyhting you are bringing into the instance to run Laravel.</p>
+
+<p>Once it says its done, go to 192.168.33.10, and you should see the Laravel 5 Intro Page. Success?!</p>
+
+<h2>What do you want now?</h2>
+
+<p>So lets take a moment and see what we need? Well, if we want to do a simple CRUD Blog, we need a few things. A page to display our posts, a place for us to update our posts or write new ones, as well as delete ones. We also will want a table to store our posts.</p>
+
+<p>So lets set up our tables first. For this to work, we are going to use the Laravel Migrations. Its an awesome Artisan tool that is packages with Laravel. So in your terminal, type</p>
+
+<figure class="highlight"><pre><code class="language-command-line" data-lang="command-line">php artisan make:migrate create_post_seeder</code></pre></figure>
 
   If you liked this post, you can
-<a href="https://twitter.com/intent/tweet?url=http://matthewtrask.net/blog/Hour-Of-Code/&text=Why I helped out with Hour of Code&via=matthewtrask"
+<a href="https://twitter.com/intent/tweet?url=http://matthewtrask.net/blog/CRUD-With-Laravel/&text=CRUD With Laravel&via=matthewtrask"
    target="_blank">
   share it with your followers</a>
 or
@@ -132,7 +171,7 @@ or
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
       var disqus_shortname = 'matthewtrask'; // Required - Replace '<example>' with your forum shortname
       //var disqus_developer = 1; // Comment out when the site is live
-      var disqus_identifier = "/blog/Hour-Of-Code/";
+      var disqus_identifier = "/blog/CRUD-With-Laravel/";
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -144,14 +183,10 @@ or
   <!-- POST NAVIGATION -->
   <div class="postNav clearfix">
     
-      <a class="prev" href="/blog/MVC-What-The/"><span>&laquo;&nbsp;MVC, What The ...?</span>
+      <a class="prev" href="/blog/Hour-Of-Code/"><span>&laquo;&nbsp;Why I helped out with Hour of Code</span>
       
     </a>
     
-    
-      <a class="next" href="/blog/PHP-and-the-CoC/"><span>PHP and the CoC&nbsp;&raquo;</span>
-      
-      </a>
     
   </div>
 </div>

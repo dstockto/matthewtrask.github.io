@@ -9,6 +9,7 @@ title: Talks
 * Life as a Lamp Camper - Sept, 2015 - [AtlantaPHP](https://atlantaphp.org)
 * Composing Awesome Web Apps - Dec, 2015 - [AtlantaPHP](https://atlantaphp.org)
 * Illumenating the web with Lumen - Jan, 2016 - [AtlantaPHP](https://atlantaphp.org)
+* Developing the Developer - March, 2016 - [Great Wide Open](http://greatwideopen.org)
 
 If you would like me to come to your user group, please message me via twitter, @matthewtrask,
 so we can arrange something.
