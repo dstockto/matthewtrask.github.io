@@ -8,4 +8,7 @@ tags: Laravel, Dev, PHP, MVC, CMS, Wordpress, Drupal
 ---
 
 ## Mvc vs CMS
-### Let the games begin!
+
+A debate rages in programming communities. Its a good question, one that overwhelms junior developers and splits senior developers. The question is when to use a CMS over an MVC and vice versa. Both are fantastic tools and I am not out to slander either set. I have my personal preference and to each their own. But trying to keep away bias', lets look at when is the right time for a CMS and the right time for an MVC application. First lets define what each is. A CMS, or Content Management System, is a software platform that allows for total control over the content of the webpage. Themes can be changed with the click of a button, and non-technical people can use them with great ease. Wordpress, Drupal, Bolt, are Joomla! are currently the biggest players in the CMS arena. Others are coming around, but these currently hold the mass marketshare. Wordpress alone powers 25% of the internet. Thats a huge number. On the flip side, MVC is Model-View-Controller. This pais with the Singleton design pattern, which allows access of the global state throughout the entire application. You see already where I am headed, in that to use and build something with the MVC pattern, you need some overhead knowledge of programming. Laravel (php), Rails (ruby) and Django (python) are the current reigning champions of MVC. Plenty more are around, but to keep it short and simple, we will look at these three as the ones you should know for MVC.
+
+
