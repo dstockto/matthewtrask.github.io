@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "MVC vs CMS: Best tool for the job"
+date:   2016-03-15
+comments: yes
+description: You dont get a hammer when you need to tighten a screw, so why overarchitect an application? 
+tags: Laravel, Dev, PHP, MVC, CMS, Wordpress, Drupal
+---
+
+## Mvc vs CMS
+### Let the games begin!
