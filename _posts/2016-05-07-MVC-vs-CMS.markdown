@@ -11,4 +11,19 @@ tags: Laravel, Dev, PHP, MVC, CMS, Wordpress, Drupal
 
 A debate rages in programming communities. Its a good question, one that overwhelms junior developers and splits senior developers. The question is when to use a CMS over an MVC and vice versa. Both are fantastic tools and I am not out to slander either set. I have my personal preference and to each their own. But trying to keep away bias', lets look at when is the right time for a CMS and the right time for an MVC application. First lets define what each is. A CMS, or Content Management System, is a software platform that allows for total control over the content of the webpage. Themes can be changed with the click of a button, and non-technical people can use them with great ease. Wordpress, Drupal, Bolt, are Joomla! are currently the biggest players in the CMS arena. Others are coming around, but these currently hold the mass marketshare. Wordpress alone powers 25% of the internet. Thats a huge number. On the flip side, MVC is Model-View-Controller. This pais with the Singleton design pattern, which allows access of the global state throughout the entire application. You see already where I am headed, in that to use and build something with the MVC pattern, you need some overhead knowledge of programming. Laravel (php), Rails (ruby) and Django (python) are the current reigning champions of MVC. Plenty more are around, but to keep it short and simple, we will look at these three as the ones you should know for MVC.
 
+## When to use a CMS
+
+Are you building an application for the marketing team that should just work? Are you on a swamped IT team that cant handle maintaining an application? This calls for a CMS. They are made for non technical people to use and manage their content without a developer doing it for them. Now, this isnt to say that you cant make a CMS with Laravel. You definitely can. However at this point, Wordpress has name recognition as well as features that people want, why reinvent the wheel? With Wordpress and others though, the admin panel is designed to be intuitive and easy to use. You would spend years rebuilding it with something else.
+
+## When to use an MVC application
+
+Got a app you want to create? Wanna use some APIs? Easily done in the MVC style. Generally with an MVC application, its not about continuous updates, but more code driven updates. The code base can also hande heavy functions. While you can make a CMS out of an MVC application, the features that Wordpress has would cause months or even years of development. Instead, use MVC to focus on applications that will help the business such as a user portal, point of sale system, event tracking and let the CMS handle the client facing content website. 
+
+## Thoughts
+
+Both CMS and MVC applications have their place in the world of application development. Its up to you to learn when to pick the best tool for the job. Hopefully this gives you a good insight to the basics of the differences! 
+
+
+Cheers.
+
 
