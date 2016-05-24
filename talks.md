@@ -11,7 +11,10 @@ title: Talks
 * Illumenating the web with Lumen - Jan, 2016 - [AtlantaPHP](https://atlantaphp.org)
 * Developing the Developer - March, 2016 - [Great Wide Open](http://greatwideopen.org)
 * Zero To Hero: API Development - May, 2016 - [AtlantaPHP](https://atlantaphp.org) * 
-* Design Patterns and PHP - May, 2016 - [UpstatePHP](http://upstatephp.com/)
+  - Slides [Here](https://github.com/rocketpastsix/zeroToHeroApi) | On the master branch
+* Zero To Hero: API Development - May, 2016 - [UpstatePHP](http://upstatephp.com/)
+  - Slides [Here](https://github.com/rocketpastsix/zeroToHeroApi) | On the full-talk branch
+* Dockerizing PHP Applications - July 2016 - [NashvillePHP](http://nashvillephp.com)
 
 The (*) denotes that it was a lightning talk.
 
