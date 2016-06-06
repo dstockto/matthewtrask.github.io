@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Speaking at Upstate PHP"
+title:  "Building an API with Lumen"
 date:   2016-05-23
 comments: yes
 description: After talking about API's and reading about them, I wanted to build one from scratch and talk about it some more.
@@ -20,5 +20,6 @@ what about building your own api? Lets give it a try!
 Lets keep it simple, and use [Lumen](https://lumen.laravel.com). Its a micro framework from Laravel that is perfect for this type of work.
 Install with composer like so 
 ```
-composer create-project --prefer-dist laravel/lumen
+composer create-project --prefer-dist laravel/lumen api-demo
 ```
+.
