@@ -14,6 +14,7 @@ title: Talks
   - Slides [Here](https://github.com/rocketpastsix/zeroToHeroApi) | On the master branch
 * Zero To Hero: API Development - May, 2016 - [UpstatePHP](http://upstatephp.com/)
   - Slides [Here](https://github.com/rocketpastsix/zeroToHeroApi) | On the full-talk branch
+* Writing your first unit test - June 2016 - [NomadPHP[(https://nomadphp.com)
 * Dockerizing PHP Applications - July 2016 - [NashvillePHP](http://nashvillephp.org)
 
 The (*) denotes that it was a lightning talk.
