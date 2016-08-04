@@ -1,1 +1,10 @@
+---
+layout: post
+title:  "Goals"
+date:   2016-08-03
+comments: yes
+description: Taking some time for myself, I pondered my goals and how I can be better
+tags: Php, Goals, Programming, Career
+---
 
+# Goals
