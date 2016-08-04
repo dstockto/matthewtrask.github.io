@@ -7,4 +7,6 @@ description: Taking some time for myself, I pondered my goals and how I can be b
 tags: Php, Goals, Programming, Career
 ---
 
-# Goals
+## Holding myself accountable. To myself.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Its officially the second half of the year. Did you accomplish goals for the first part? Set new ones? What are they?</p>&mdash; HTTP 1.1 GET /matt (@matthewtrask) <a href="https://twitter.com/matthewtrask/status/760087193234780160">August 1, 2016</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
