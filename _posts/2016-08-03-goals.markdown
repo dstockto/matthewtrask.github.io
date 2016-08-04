@@ -7,6 +7,28 @@ description: Taking some time for myself, I pondered my goals and how I can be b
 tags: Php, Goals, Programming, Career
 ---
 
-## Holding myself accountable. To myself.
+### Holding myself accountable. To myself.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Its officially the second half of the year. Did you accomplish goals for the first part? Set new ones? What are they?</p>&mdash; HTTP 1.1 GET /matt (@matthewtrask) <a href="https://twitter.com/matthewtrask/status/760087193234780160">August 1, 2016</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Two days agoI posted that tweet. It was simple enough, over the weekend I had to drive to Columbia, SC for my brother's engagement party. While we were driving, my girlfriend asleep in the passenger seat, our dog chilling in the back. The quiet gave me time to think and with the time of the year, I naturally looked back at the year so far. I cant believe its over half finished and yet theres so much to do. So lets take a trip back and see where I started and where I am today. Hopefully this post gets you going as well. 
+
+#### First Half
+
+The first half of the year helped me cross off one huge goal, getting to a conference. There is a blog post about it, but suffice to say it, it was a great time. I was happy to put names to twitter handles, shake hands, learn and start making a name for myself. Little did I know I would do that quickly. 
+
+One of my biggest goals that extended from last year was learning how to be better at testing. I was fortunate enough (read: coworker was sick) that I took over the CI position at our office. It was a small foray into devops, which really interested me. I was extremely fortunate that the person who helped me learn the idea of CI was the man, the myth, the legend Sebastian Bergmann himself. Learning CI helped another goal, learning to manage a code base with tests. Testing is something that I love. I love the idea of testing. Actually writing tests? Wellllllll, eh. But the idea is pretty awesome. 
+
+Another goal, one realized sooner then later was leaving Insight Global. It was a great stepping stone, but it was quickly apparent that it was a stepping stone rather then a place that was suited for a long term career. Issues were all over, with a true lack of sense in terms of the development team. I was fortunate enough that Jacques Woodock from Tandum was impressed with how I held myself at Sunshine PHP and on twitter. My quest to learn made him want to bring me on, which greatly helped my career. Ive been lucky enough to work under Elizabeth Smith, who is brilliant and has helped me learn to simplify and write better code. 
+
+Outside of work, I finally moved into Atlanta, bought a bike and have been biking around Atlanta. Its a great workout, something I tend to do during lunch. My amazing girlfriend has moved in as well, which makes life even better. I told myself I would speak as often as I could. I spoke at one conference, Great Wide Open, and three different user groups: AtlantaPHP, UpstatePHP and NashvillePHP. I did a lightning talk for NomadPHP as well. Ive started to make more contributions to open source. What was once a scary world of the unknown as turned into a great group of friends I can call on for help and advice and likewise them of me. 
+
+#### Second Half
+
+So what are my second half goals? One more conference would be great. I know Im speaking at two more user groups in September, and I need to get my talks ready. As for work, I aim to continue working hard at Tandum. Its been a challenge with some roadblocks and bumps, but its been so worth it. I was scared to make the jump but its been great so far. I hope it continues. I plan on making more blog posts. One thing Ive started is a small journal. After every day, I finish up with a quick entry. What did I do, what could I have done better and what was something I learned are all things I cover. I add my bike routes too. 
+
+Outside of work, I want to travel more, I want to stop rushing through life. Id like to start averaging 60 plus miles a week. Id love to blog more as well. I have some planned, including a website update Id like to do. The blog is most important. It helps me learn. So Im going to start picking libraries and packages and frameworks and build something and then blog quickly. Will it be the best blog ever? No. But itll be fun to do!
+
+I want to be more prominent in the open source community as well. I dont want to be afraid of failure. I want to make PR's, help with other PR's, and be someone people look up too like how I look up to others. Most importantly, I want to learn. 
+
+*I want to learn*
