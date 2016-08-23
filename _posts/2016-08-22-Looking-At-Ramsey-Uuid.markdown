@@ -9,7 +9,7 @@ tags: Php, Uuid, Open Source, Libraries, Programming
 
 ## Its all about that Uuid
 
-Welcome to the first installment in my 2113918230981 part series, "Better know a Package!". Tonight's package: the famous/infamous Uuid package that that taught us all what Ramsey is in Scottish, Rhumsaa. Created to give PHP a libray to generate Universal Unique Identifiers, this library has been a stallwort in the community. Ben Ramsey created it first under the Rhumsaa namesapce before moving it to the Ramsey namespace, saving us all from learning more Scottish then we needed to ever learn. 
+Welcome to the first installment in my 2113918230981 part series, "Better know a Package!". Tonight's package: the famous/infamous Uuid package that that taught us all what Ramsey is in Scottish, Rhumsaa. Created to give PHP a library to generate Universal Unique Identifiers, this library has been a stallwort in the community. Ben Ramsey created it first under the Rhumsaa namesapce before moving it to the Ramsey namespace, saving us all from learning more Scottish then we needed to ever learn. 
 
 ## What is an UUID?
 
@@ -255,7 +255,7 @@ After looking at the 4 types of Uuid's the Ramsey\Uuid library provides, its tim
 
 For version's 3 and 5, the fun thing is that they are completely reproducable with the same algorithm. So if you lose the Uuid, you can re-generate it with the same code provided you still have the code laying around. Now why would you use this? Thats one thing Im looking at. I guess you could use it to securely pass around website ideas on the open web, but unless you are trying to hide the website from public view then you shouldnt have it on the open web. If you have a list of websites from where people are coming from, you can run a check against uuid's in that sense, but I dont think that creates a good use case. 
 
-Version 4 is the one most people use and its easy to see the use case here. As the Phil Sturgeon article points out, using and exposing an auto-incrementing id through an API is a fast way to let the competition run a script against the endpoint and get a rough esitmate of your database. So this works in protecting your database and user base from competition trying to size you up. Also, using an Uuid v4 allows for greater uniqueness. Rather then come up with a complex id system to track the various id's floating in your system (user_id, business_id, job_id, etc), you can create a ```Uuid::uuid4()``` for each one and never have to work on concurrent id's across a system. 
+Version 4 is the one most people use and its easy to see the use case here. As the Phil Sturgeon article points out, using and exposing an auto-incrementing id through an API is a fast way to let the competition run a script against the endpoint and get a rough esitmate of your database. So this works in protecting your database and user base from competition trying to size you up. Also, using an Uuid v4 allows for greater uniqueness. Rather then come up with a complex id system to track the various id's floating in your system (user_id/job_id/transaction_id), you can create a ```Uuid::uuid4()``` for each one and never have to work on concurrent id's across a system. 
 
 ## Thoughts
 
