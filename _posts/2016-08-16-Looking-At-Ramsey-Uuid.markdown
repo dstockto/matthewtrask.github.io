@@ -141,7 +141,7 @@ which will return
  
  Notice how all values change based on input, but they repeat for the inputed value. 
  
-## Uuid version 4 - Super Duper So Rad Random
+## Version 4 - Super Duper So Rad Random
  
  Uuid version 4 is currently the one my company uses to identify all the things. Its great because its random. Its the perfect id mechanism. Even better, its great for exposing things to the world without others being able to run a script against our APi and get a general idea of the size of our DB. [Phil Sturgeon](https://twitter.com/philsturgeon) writes about why we should expose uuids over ids in [this article he wrote](https://philsturgeon.uk/http/2015/09/03/auto-incrementing-to-destruction/). So lets see what we get returned to us when we run this script. 
  
@@ -193,6 +193,74 @@ returns to us:
  */
  ```
  
- AS you can see there thery are random, with from what I can see, only spot in the uuid sharing the same number across all 5 generated uuid's.
+ As you can see there thery are random, with from what I can see, only spot in the uuid sharing the same number across all 5 generated uuid's. We will talk about use cases in a bit, but I wanted you to notice that this has so much potential for many different use cases in your application. 
+ 
+## Version 5
+
+Version 5 of the Uuid spec is extremely similiar to Version 3 in that it is namespace based but instead of using md5 it utilizies the sha1 hash. Lets take a look:
+
+```
+<?php
+
+namespace Blog\Uuid;
+
+use Ramsey\Uuid\Uuid;
+
+class VersionFive
+{
+    public function uuid()
+    {
+        $uuid = Uuid::uuid5(Uuid::NAMESPACE_DNS, 'http://matthewtrask.net');
+
+        return $uuid->toString();
+    }
+}
+```
+
+with the bootstrap:
+
+```
+<?php
+
+require __DIR__ . "/../vendor/autoload.php";
+
+use Blog\Uuid\VersionFive;
+
+$uuid5 = new VersionFive();
+
+for($i = 1; $i <= 5; $i++){
+    $uuid = $uuid5->uuid();
+    echo $uuid . "\n";
+}
+```
+
+which returns to us:
+
+```
+/**
+ * Uuid5
+ * 0fcbe08b-1a1b-552a-8406-9c68e20106f6
+ * 0fcbe08b-1a1b-552a-8406-9c68e20106f6
+ * 0fcbe08b-1a1b-552a-8406-9c68e20106f6
+ * 0fcbe08b-1a1b-552a-8406-9c68e20106f6
+ * 0fcbe08b-1a1b-552a-8406-9c68e20106f6
+ */
+ ```
+ 
+ Again, all 5 are the same, cause its based on the input. I passed ```http://matthewtrask.net``` and get the uuid backed based on that namespace. 
+ 
+## Use Cases for Uuids
+
+After looking at the 4 types of Uuid's the Ramsey\Uuid library provides, its time to look at how you want to use these. Its simple to look at version one and say that you can use that to identify work stations in a data center or enterprise level business with hundreds of work stations. But you should take note, that this isnt a Uuid you should use for security, its guessable through MAC Address sppofing. 
+
+For version's 3 and 5, the fun thing is that they are completely reproducable with the same algorithm. So if you lose the Uuid, you can re-generate it with the same code provided you still have the code laying around. Now why would you use this? Thats one thing Im looking at. I guess you could use it to securely pass around website ideas on the open web, but unless you are trying to hide the website from public view then you shouldnt have it on the open web. If you have a list of websites from where people are coming from, you can run a check against uuid's in that sense, but I dont think that creates a good use case. 
+
+Version 4 is the one most people use and its easy to see the use case here. As the Phil Sturgeon article points out, using and exposing an auto-incrementing id through an API is a fast way to let the competition run a script against the endpoint and get a rough esitmate of your database. So this works in protecting your database and user base from competition trying to size you up. Also, using an Uuid v4 allows for greater uniqueness. Rather then come up with a complex id system to track the various id's floating in your system (user_id, business_id, job_id, etc), you can create a ```Uuid::uuid4()``` for each one and never have to work on concurrent id's across a system. 
+
+## Thoughts
+
+As I finish up the first installment of my 1231923808 series of "Better Know a Library!", it was a lot of fun to look deeper in to Uuids. Ive seen Ben give a talk about Uuid's, but running scripts to see them for myself greatly helped me understand them better. 
+
+Until next time, have fun uuid-ing everything in your system!
 
 
