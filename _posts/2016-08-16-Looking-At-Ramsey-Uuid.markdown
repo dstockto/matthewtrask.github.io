@@ -141,7 +141,7 @@ which will return
  
  Notice how all values change based on input, but they repeat for the inputed value. 
  
- ## Uuid version 4 - Super Duper So Rad Random
+## Uuid version 4 - Super Duper So Rad Random
  
  Uuid version 4 is currently the one my company uses to identify all the things. Its great because its random. Its the perfect id mechanism. Even better, its great for exposing things to the world without others being able to run a script against our APi and get a general idea of the size of our DB. [Phil Sturgeon](https://twitter.com/philsturgeon) writes about why we should expose uuids over ids in [this article he wrote](https://philsturgeon.uk/http/2015/09/03/auto-incrementing-to-destruction/). So lets see what we get returned to us when we run this script. 
  
