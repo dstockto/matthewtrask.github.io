@@ -9,7 +9,7 @@ tags: Php, Uuid, Open Source, Libraries, Programming
 
 ## Its all about that Uuid
 
-Welcome to the first installment in my 2113918230981 part series, "Better know a Package!". Tonight's package: the famous/infamous Uuid package that that taught us all what Ramsey is in Scottish, Rhumsaa. Created to give PHP a library to generate Universal Unique Identifiers, this library has been a stallwort in the community. Ben Ramsey created it first under the Rhumsaa namesapce before moving it to the Ramsey namespace, saving us all from learning more Scottish then we needed to ever learn. 
+Welcome to the first installment in my 2113918230981 part series, "Better know a Package!". Tonight's package: the famous/infamous [Ramsey\Uuid](https://github.com/ramsey/uuid) package that that taught us all what Ramsey is in Scottish, Rhumsaa. Created to give PHP a library to generate Universal Unique Identifiers, this library has been a stallwort in the community. Ben Ramsey created it first under the Rhumsaa namesapce before moving it to the Ramsey namespace, saving us all from learning more Scottish then we needed to ever learn. 
 
 ## What is an UUID?
 
