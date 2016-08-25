@@ -25,12 +25,3 @@ so we can arrange something.
 I'm in Atlanta, GA and can make a day to most of the groups in the southeast area. Anything else
 would require working out some transportation.
 
-## Talk Ideas
-
-* Sessions
-* Modernizing Legacy Apps - The German Way
-* So you want to code?
-* How to be a good student - Mentoring done right
-* API Development
-
-If any of these talks would fit good with your user group, please message me. I can also skype/google hangouts into the user group meet up as well!
