@@ -10,6 +10,12 @@ I'm an open source PHP Developer who loves developing around different domains. 
 
 Outside of programming I love new craft beers and riding my bike around Atlanta, especially the Beltline. You can find me in any number of coffee shops around town. Mainly Dancing Goats, cause the patio is nice and I like to read books in their comfy chairs. 
 
+## Open Source Work
+
+- Currently a maintainer on the [Phergie project](https://phergie.org)
+- Contributes to the PHP-Fig
+- Help answer questions in the PHPUnit IRC room about unit testing
+
 <img src="http://matthewtrask.net/matt.jpg">
 
 You can find me online at:
