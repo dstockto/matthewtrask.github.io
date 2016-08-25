@@ -12,11 +12,11 @@ Outside of programming I love new craft beers and riding my bike around Atlanta,
 
 You can find me online at:
 
-IRC (Freenode): matthewtrask
+**IRC (Freenode)**: matthewtrask
 
-Twitter: @matthewtrask
+**Twitter**: @matthewtrask
 
-Github: rocketpastsix
+**Github**: rocketpastsix
 
 <a href="http://matthewtrask.net/matttraskresume.pdf" target="_blank">Download My Resume</a>
 
