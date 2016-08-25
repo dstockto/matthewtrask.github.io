@@ -20,5 +20,5 @@ You can find me online at:
 
 **Github**: rocketpastsix
 
-<a href="http://matthewtrask.net/matttraskresume.pdf" target="_blank">Download My Resume</a>
+<a href="http://matthewtrask.net/MattTraskResume.pdf" target="_blank">Download My Resume</a>
 
