@@ -58,6 +58,14 @@ To run PHPUnit, it takes a simple config file using XML. Ah yea, XML, that old f
 </phpunit>
 ```
 
+Its important to note that you can put this anywhere in the directory of your app, but it generally is seen in the root of your project. 
+
 The first thing to note is our bootstrap. We are telling PHPUnit that it should use the Composer autoload.php found in ```vendor/```. The test suite and filter sections should be self-explainatory but we are telling it the tests live in ```tests/``` and the code we are testing on is in ```src/```. Dont worry, PHPUnit is strict, like German strict. So if you get it wrong, it'll complain and tell you what you did wrong. 
 
 The next part is the logging. This is an optional set of flags you can set if you want the HTML/Clover code coverage. And we will talk about that more in depth. But it has colors, which is highly appealing to people who aren't developers.
+
+To test that it is working, in the terminal, you can ```cd``` to the root of your project and run ```php ./vendor/bin/phpunit``` and it should output Sebastian's name, the name of the library (PHPUnit) and that no tests were executed. If you got an error, it should give you a pointer as to where to look for what you didn't do right. 
+
+## Lets Test 
+
+So it works? Great. Grab a beer, you deserve. Or some chocolate. Whatever you want. 
