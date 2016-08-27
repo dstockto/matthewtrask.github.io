@@ -69,3 +69,72 @@ To test that it is working, in the terminal, you can ```cd``` to the root of you
 ## Lets Test 
 
 So it works? Great. Grab a beer, you deserve. Or some chocolate. Whatever you want. 
+
+We should stop for a second and look at what unit testing is. Amongst the many forms of testing, unit is the smallest type of tests. Using unit tests, we are testing code in the smallest bit. We arent testing if your class can parse a file, edit the file, update the file, and return the file to the user at once. We want to test can it all individually. Can it parse the file? Good. Does it edit properly? Great. As we build up our unit tests, we start making acceptance and edge tests too. Acceptance tests are tests that run the whole class as one. Many unit tests make up an acceptance test, but there is no reason why you shouldnt do both. And if you are writing your code in a way that you are writing tests and code at the same time, it should all be in the estimate together. 
+
+So lets test something. Lets say we have a class called ```UserAction``` and it is a class that gets user information and outputs it to a json file so we can send it to our front end for data display. What could that class look like? Well here is what I have:
+
+```
+<?php
+
+namespace User;
+
+class UserAction
+{
+    /**
+     * @var int
+     */
+    protected $userId;
+
+    /**
+     * @var UserRepository
+     */
+    protected $userRepository;
+
+
+    /**
+     * UserAction constructor.
+     * @param UserRepository $userRepository
+     * @param int $userId
+     */
+    public function __construct(UserRepository $userRepository, int $userId)
+    {
+        $this->userRepository = $userRepository;
+        $this->ensureIdIsInt($userId);
+        $this->userId = $userId;
+    }
+
+    /**
+     * @returns array $users
+     */
+    public function getUsers()
+    {
+        $users = $this->userRepository->getUsers();
+
+        if(!$users){
+            throw new Exception('There are no users');
+        }
+
+        return $users;
+    }
+
+    /**
+     * @returns array $user
+     */
+    public function getUser()
+    {
+        $user = $this->userRepository->getUserById($this->userId);
+
+        if(!$user){
+            throw new Exception(sprintf('There is no user with the user id of %s', $this->userId));
+        }
+    }
+
+    private function ensureIdIsInt($userId)
+    {
+        if(!is_int($userId)){
+            throw new Exception(sprintf('The id passed in is not an integer: %s'));
+        }
+    }
+}
+```
