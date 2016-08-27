@@ -6,3 +6,5 @@ comments: yes
 description: Hi, Im Matt and I like testing code
 tags: Php, PHPUnit, Open Source, Libraries, Programming
 ---
+
+## $this->assertTrue('I always test');
