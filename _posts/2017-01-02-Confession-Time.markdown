@@ -24,5 +24,13 @@ So it comes back to the point, who cares? When these types of arguments pop up o
 
 If you want to lobby criticism to the developers of the tool you do not like, open a PR, submit some code, get invovled. If you are a developer who developed a tool, be prepared for people to have critiques and handle them in a way that makes users of the tools proud to use your stuff. To lambast someone on twitter is what I consider a low. With a 140 character limit, responses are limited, conversation stymed and at the end of the day everyone loses. 
 
+## Final Thoughts
+
+Tweets are great to get thoughts out fast, but understand your tweets can open up a can of worms. If you want to say something 
+be prepared to have a conversation and back up your thoughts. If the developer of the framework replies, try to help understand each other. We can all use a little more empathy in our conversations rather then being blunt.
+
+Remember, we are all fighting the same battles, we are just using different tools to do our work. 
+
+Happy 2017!
 
 
