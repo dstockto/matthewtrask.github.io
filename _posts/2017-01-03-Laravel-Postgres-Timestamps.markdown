@@ -19,6 +19,24 @@ and it disables the ```getDateFormat()``` method from Eloquent. The reason an is
 
 ## One more way
 
-Another way to solve this issue is a little more complex, but easily implemented. It would be to create a model called ```PostGresModel``` and extend the ```Illuminate\Database\Eloquent\Model```. In this new model class, which you will extend all your models from now, you would create a new ```getDateFormat()``` method and inside it, return ```'Y-m-d H:i:s.u'``` which is how you handle timestamps with Postgres. And there you go! We override the base Eloquent ```getDateFormat()``` method to handle Postgres, and now its publicaly availble to your models as long as you extend the new PostgresModel. 
+Another way to solve this issue is a little more complex, but easily implemented. It would be to create a model called ```PostGresModel``` and extend the ```Illuminate\Database\Eloquent\Model```. In this new model class, which you will extend all your models from now, you would create a new ```getDateFormat()``` method and inside it, return ```'Y-m-d H:i:s.u'``` which is how you handle timestamps with Postgres. The whole model would look liked this:
+
+```
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class PostgresModel extends Model
+{
+  public function getDateFormat()
+  {
+    return 'Y-m-d H:i:s.u';
+  }  
+} 
+```
+
+And there you go! We override the base Eloquent ```getDateFormat()``` method to handle Postgres, and now its publicaly availble to your models as long as you extend the new PostgresModel. 
 
 Hopefully these two solutions will help others in the same spot!
