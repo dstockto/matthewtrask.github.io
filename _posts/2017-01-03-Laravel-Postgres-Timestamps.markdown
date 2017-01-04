@@ -12,7 +12,7 @@ tags: Php, Laravel, Postgres
 Tonight we were working on an issue with timestamps coming from our Postgres database and rendered in Laravel. However we noticed that Carbon hated them and would throw exceptions rather then just manipulate our timestamps. We looked around and found a few ideas, but the one we liked most was this:
 
 ```
-publuc $timestamps = false;
+public $timestamps = false;
 ```
 
 and it disables the ```getDateFormat()``` method from Eloquent. The reason an issue is caused is that the ```getDateFormat()``` is built for MySQL. Since Postgres handles timestamps a bit differently, it gets screwed up when run through the ```getDateFormat()``` method. By setting the timestamp value to false, you are passing a raw Unix timestamp up to Carbon which Carbon can interpret and manipulate. 
