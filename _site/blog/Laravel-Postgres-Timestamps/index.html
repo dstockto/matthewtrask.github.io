@@ -9,18 +9,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>CRUD With Laravel</title>
+    <title>Two ways to fix the Laravel Postgres Timestamp issue</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Matt Trask" href="http://matthewtrask.net/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Matt Trask" href="http://localhost:4000/feed.xml" />
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="http://matthewtrask.net/blog/CRUD-With-Laravel/">
+    <link rel="canonical" href="http://localhost:4000/blog/Laravel-Postgres-Timestamps/">
 
     <!-- Modernizr -->
     <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
@@ -79,87 +79,39 @@
       <div class="container">
          <div class="post">
   
-  <h1 class="postTitle">CRUD With Laravel</h1>
-  <p class="meta">January 17, 2016 | <span class="time">4</span> Minute Read</p>
+  <h1 class="postTitle">Two ways to fix the Laravel Postgres Timestamp issue</h1>
+  <p class="meta">January 03, 2017 | <span class="time">1</span> Minute Read</p>
 
-  <h2>Hello, Laravel</h2>
+  <h2>Laravel vs Postgres.</h2>
 
-<p>Ive very opinionated in the frameworks I like and use. Its more interesting to use plain old PHP objects rather then a cumbersome framework to me. For the past 5 months, we have been focused on using SOLID principles in our code at work. No framework, no packages. Just simple PHP objects in a clean code setting. And its awesome! Really makes you step back and think about what you are coding. You must be wondering then why Im going to talk about Laravel, the current king of the PHP frameworks. Its funny, I was pretty against Laravel for a while. A lot of the community members for Laravel tend to be extremely opinionated in their mindset. Nothing wrong, but I have a feeling some Laravel developers are specifically Laravel, and if you took that away, how would/could they write their application? And this is by no means an attack, just my opinion.</p>
+<p>Tonight we were working on an issue with timestamps coming from our Postgres database and rendered in Laravel. However we noticed that Carbon hated them and would throw exceptions rather then just manipulate our timestamps. We looked around and found a few ideas, but the one we liked most was this:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">public $timestamps = false;
+</code></pre></div>
+<p>and it disables the <code>getDateFormat()</code> method from Eloquent. The reason an issue is caused is that the <code>getDateFormat()</code> is built for MySQL. Since Postgres handles timestamps a bit differently, it gets screwed up when run through the <code>getDateFormat()</code> method. By setting the timestamp value to false, you are passing a raw Unix timestamp up to Carbon which Carbon can interpret and manipulate. </p>
 
-<p>Last month, while in a car for 6 hours, I decided to grab a book off <a href="https://leanpub.com">leanpub</a> for the ride. I picked one on Laravel 5. Don&#39;t know why, maybe cause it was cheap? Probably the reason, sounds like me. As I was reading, things were clicking. Which finally made me sit down and see what Laravel can really do.</p>
+<h2>One more way</h2>
 
-<p>So without further adieu, lets build a simple blog with Laravel.</p>
+<p>Another way to solve this issue is a little more complex, but easily implemented. It would be to create a model called <code>PostGresModel</code> and extend the <code>Illuminate\Database\Eloquent\Model</code>. In this new model class, which you will extend all your models from now, you would create a new <code>getDateFormat()</code> method and inside it, return <code>&#39;Y-m-d H:i:s.u&#39;</code> which is how you handle timestamps with Postgres. The whole model would look liked this:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">&lt;?php
 
-<h2>Setting up the environment</h2>
+namespace App;
 
-<p>If you want to follow along, great if you are just getting started with Laravel, you will need to download:</p>
+use Illuminate\Database\Eloquent\Model;
 
-<ul>
-<li><a href="https://virtualbox.org">VirtualBox</a></li>
-<li><a href="https://vagrantup.com">Vagrant</a></li>
-</ul>
+class PostgresModel extends Model
+{
+    public function getDateFormat()
+    {
+      return 'Y-m-d H:i:s.u';
+    }  
+} 
+</code></pre></div>
+<p>And there you go! We override the base Eloquent <code>getDateFormat()</code> method to handle Postgres, and now its publicaly availble to your models as long as you extend the new PostgresModel. </p>
 
-<p>Why? Well, you can always do MAMP/WAMP/XAMPP and it&#39;ll work great. But with Vagrant, you get the added skill of working in the terminal and using commands in the shell.That translates well on to a resume and looking for a job. So take a minute and get those set up. When you are done, look at <a href="https://box.scotch.io">Scotch Vagrant Box</a>. There are hundreds of vagrantfiles out there. Theres a great website, <a href="https://puphet.com">puphpet</a> where you can configure all kinds of awesome things.</p>
-
-<p>Simple set up, wherever you prefer your files to be, create a folder called &quot;blog&quot; or whatever. Inside of that folder, create a folder called &quot;public&quot;. In the blog folder, paste in the Vagrantfile you got from box.scotch.io. Your folder should look like:</p>
-
-<p><img src="/assets/img/blog.jpg" alt="blog directory"></p>
-
-<p>Next, you will want to open up your terminal and change directory (cd) into the blog directory like so:</p>
-
-<p><img src="/assets/img/cd.jpg"></p>
-
-<p>Now run vagrant up. If its your first time running this, it will take a few minutes to download everything. Once it is done, you need to run</p>
-
-<figure class="highlight"><pre><code class="language-command-line" data-lang="command-line">[matthewtrask@Matthews-MacBook-Pro CRUD ]$ vagrant ssh</code></pre></figure>
-
-<p>The next thing you should see is:</p>
-
-<figure class="highlight"><pre><code class="language-command-line" data-lang="command-line">Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-55-generic x86_64)
-
-
- $$$$$$\   $$$$$$\   $$$$$$\ $$$$$$$$\  $$$$$$\  $$\   $$\
-$$  __$$\ $$  __$$\ $$  __$$\\__$$  __|$$  __$$\ $$ |  $$ |
-$$ /  \__|$$ /  \__|$$ /  $$ |  $$ |   $$ /  \__|$$ |  $$ |
-\$$$$$$\  $$ |      $$ |  $$ |  $$ |   $$ |      $$$$$$$$ |
- \____$$\ $$ |      $$ |  $$ |  $$ |   $$ |      $$  __$$ |
-$$\   $$ |$$ |  $$\ $$ |  $$ |  $$ |   $$ |  $$\ $$ |  $$ |
-\$$$$$$  |\$$$$$$  | $$$$$$  |  $$ |   \$$$$$$  |$$ |  $$ |
- \______/  \______/  \______/   \__|    \______/ \__|  \__|
-
-$$$$$$$\   $$$$$$\  $$\   $$\
-$$  __$$\ $$  __$$\ $$ |  $$ |
-$$ |  $$ |$$ /  $$ |\$$\ $$  |
-$$$$$$$\ |$$ |  $$ | \$$$$  /
-$$  __$$\ $$ |  $$ | $$  $$&lt;
-$$ |  $$ |$$ |  $$ |$$  /\$$\
-$$$$$$$  | $$$$$$  |$$ /  $$ |
-\_______/  \______/ \__|  \__|
-
-For help, please visit box.scotch.io or scotch.io. Follow us on Twitter at @scotch_io and at @nickforthought.
-
-
-Last login: Mon Jan 25 01:46:11 2016 from 10.0.2.2
-vagrant@scotchbox:~$</code></pre></figure>
-
-<p>And so now we are successfully in our vagrant server! Now, lets get to the good stuff. CD into /var/www/public first and then lets install a fresh Laravel instance. We can do that in two ways, either through the Laravel installer or with Composer. Ill be honest, I prefer Composer, so lets run this:</p>
-
-<figure class="highlight"><pre><code class="language-command-line" data-lang="command-line">[matthewtrask@Matthews-MacBook-Pro CRUD ]$ composer create-project --prefer-dist laravel/laravel blog</code></pre></figure>
-
-<p>Let it run through its thing, and you will see everyhting you are bringing into the instance to run Laravel.</p>
-
-<p>Once it says its done, go to 192.168.33.10, and you should see the Laravel 5 Intro Page. Success?!</p>
-
-<h2>What do you want now?</h2>
-
-<p>So lets take a moment and see what we need? Well, if we want to do a simple CRUD Blog, we need a few things. A page to display our posts, a place for us to update our posts or write new ones, as well as delete ones. We also will want a table to store our posts.</p>
-
-<p>So lets set up our tables first. For this to work, we are going to use the Laravel Migrations. Its an awesome Artisan tool that is packages with Laravel. So in your terminal, type</p>
-
-<figure class="highlight"><pre><code class="language-command-line" data-lang="command-line">php artisan make:migrate create_post_seeder</code></pre></figure>
+<p>Hopefully these two solutions will help others in the same spot!</p>
 
   If you liked this post, you can
-<a href="https://twitter.com/intent/tweet?url=http://matthewtrask.net/blog/CRUD-With-Laravel/&text=CRUD With Laravel&via=matthewtrask"
+<a href="https://twitter.com/intent/tweet?url=http://localhost:4000/blog/Laravel-Postgres-Timestamps/&text=Two ways to fix the Laravel Postgres Timestamp issue&via=matthewtrask"
    target="_blank">
   share it with your followers</a>
 or
@@ -171,7 +123,7 @@ or
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
       var disqus_shortname = 'matthewtrask'; // Required - Replace '<example>' with your forum shortname
       //var disqus_developer = 1; // Comment out when the site is live
-      var disqus_identifier = "/blog/CRUD-With-Laravel/";
+      var disqus_identifier = "/blog/Laravel-Postgres-Timestamps/";
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -183,10 +135,14 @@ or
   <!-- POST NAVIGATION -->
   <div class="postNav clearfix">
     
-      <a class="prev" href="/blog/Hour-Of-Code/"><span>&laquo;&nbsp;Why I helped out with Hour of Code</span>
+      <a class="prev" href="/blog/Confession-Time/"><span>&laquo;&nbsp;Hi, Im Matt. And I use Laravel.</span>
       
     </a>
     
+    
+      <a class="next" href="/blog/One-Year-Later/"><span>One year later - a look back at my year since SunshinePHP&nbsp;&raquo;</span>
+      
+      </a>
     
   </div>
 </div>
@@ -196,7 +152,7 @@ or
 
    <div class="footer">
    <div class="container">
-      <p class="copy">&copy; 2016 <a href="http://matthewtrask.net">Matthew Trask.</a> Powered by <a href="http://jekyllrb.com">Jekyll</a></p>
+      <p class="copy">&copy; 2017 <a href="http://matthewtrask.net">Matthew Trask.</a> Powered by <a href="http://jekyllrb.com">Jekyll</a></p>
 
       <div class="footer-links">
          <ul class="noList">
@@ -209,7 +165,7 @@ or
             </a></li>
             
             
-            <li><a href="https://github.com/rocketpastsix">
+            <li><a href="https://github.com/matthewtrask">
                   <svg id="github" class="custom-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" style="height: 30px; width: 30px;"><circle class="outer-shape" cx="50" cy="50" r="48" style="opacity: 1;"></circle>
                   <path class="inner-shape" style="opacity: 1;" transform="translate(25,25) scale(0.5)" d="M50,1C22.938,1,1,22.938,1,50s21.938,49,49,49s49-21.938,49-49S77.062,1,50,1z M79.099,79.099 c-3.782,3.782-8.184,6.75-13.083,8.823c-1.245,0.526-2.509,0.989-3.79,1.387v-7.344c0-3.86-1.324-6.699-3.972-8.517 c1.659-0.16,3.182-0.383,4.57-0.67c1.388-0.287,2.855-0.702,4.402-1.245c1.547-0.543,2.935-1.189,4.163-1.938 c1.228-0.75,2.409-1.723,3.541-2.919s2.082-2.552,2.847-4.067s1.372-3.334,1.818-5.455c0.446-2.121,0.67-4.458,0.67-7.01 c0-4.945-1.611-9.155-4.833-12.633c1.467-3.828,1.308-7.991-0.478-12.489l-1.197-0.143c-0.829-0.096-2.321,0.255-4.474,1.053 c-2.153,0.798-4.57,2.105-7.249,3.924c-3.797-1.053-7.736-1.579-11.82-1.579c-4.115,0-8.039,0.526-11.772,1.579 c-1.69-1.149-3.294-2.097-4.809-2.847c-1.515-0.75-2.727-1.26-3.637-1.532c-0.909-0.271-1.754-0.439-2.536-0.503 c-0.782-0.064-1.284-0.079-1.507-0.048c-0.223,0.031-0.383,0.064-0.478,0.096c-1.787,4.53-1.946,8.694-0.478,12.489 c-3.222,3.477-4.833,7.688-4.833,12.633c0,2.552,0.223,4.889,0.67,7.01c0.447,2.121,1.053,3.94,1.818,5.455 c0.765,1.515,1.715,2.871,2.847,4.067s2.313,2.169,3.541,2.919c1.228,0.751,2.616,1.396,4.163,1.938 c1.547,0.543,3.014,0.957,4.402,1.245c1.388,0.287,2.911,0.511,4.57,0.67c-2.616,1.787-3.924,4.626-3.924,8.517v7.487 c-1.445-0.43-2.869-0.938-4.268-1.53c-4.899-2.073-9.301-5.041-13.083-8.823c-3.782-3.782-6.75-8.184-8.823-13.083 C9.934,60.948,8.847,55.56,8.847,50s1.087-10.948,3.231-16.016c2.073-4.899,5.041-9.301,8.823-13.083s8.184-6.75,13.083-8.823 C39.052,9.934,44.44,8.847,50,8.847s10.948,1.087,16.016,3.231c4.9,2.073,9.301,5.041,13.083,8.823 c3.782,3.782,6.75,8.184,8.823,13.083c2.143,5.069,3.23,10.457,3.23,16.016s-1.087,10.948-3.231,16.016 C85.848,70.915,82.88,75.317,79.099,79.099L79.099,79.099z"></path>
                   </svg>

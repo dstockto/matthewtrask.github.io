@@ -3,11 +3,603 @@
   <channel>
     <title>Matt Trask</title>
     <description>My travels from the start to now.</description>
-    <link>http://matthewtrask.net/</link>
-    <atom:link href="http://matthewtrask.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Mar 2016 10:40:51 -0400</pubDate>
-    <lastBuildDate>Sun, 20 Mar 2016 10:40:51 -0400</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 23 Apr 2017 07:31:14 -0500</pubDate>
+    <lastBuildDate>Sun, 23 Apr 2017 07:31:14 -0500</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      
+      <item>
+        <title>One year later - a look back at my year since SunshinePHP</title>
+        <description>&lt;h2&gt;You might be a hobbit if...&lt;/h2&gt;
+
+&lt;p&gt;Once upon a time, I was called a hobbit. Well, not a hobbit per se, but I was told in no uncertain terms my place was in the shire. Dont get me wrong, there is some cool shit that goes on in the shire Im sure. Adventures to Mordor (Lets not talk about how they could have used Eagles and saved us a few hours), dragon fireworks, drinking, tons of food. Freaking paradise right? Well, it wasnt that nice, but after that incident and subsequent blog post I noticed it put in to motion a whole list of things that helped boost my career. But, in reality, the only thing Ive learned is that Im more like an ewok rather then a hobbit.&lt;/p&gt;
+
+&lt;h3&gt;SunshinePHP 2016&lt;/h3&gt;
+
+&lt;p&gt;SunshinePHP 2016 was my first conference. I brought it up and got the go ahead from my boss at the time. It was awesome, I felt like a kid in the lego aisle. Full of excitment and ready to have a good time. I knew a few people going, but it was the people I encountered that I can say changed my life. And not in some cheesy, feel good way. But I walked away from SunshingPHP emboldened to put my name out there. Because of that, 3 months after the conference, I got asked to join a start up. Got asked. I didnt have to apply, rather Jacques watched my progress on twitter and felt that I would add something to his team. I got to work with Elizabeth Smith, which was just amazing. From there, I kept pushing to be involved in the conversations around PHP. Internals, FIG, projects, anything I could. It culminated in my experience at SunshinePHP 2017.&lt;/p&gt;
+
+&lt;h3&gt;SunshinePHP 2017&lt;/h3&gt;
+
+&lt;p&gt;Besides the fact I had to be up at an ungodly hour, I arrived at Sunshine on Thursday and felt a surge of excitement. The biggest difference this year over last year is that rather then walking into this massive hotel alone and unsure of who is there, people were waiting for me to arrive. When I got there, I was immediately greeted by Emily Stamey, got to meet Elizabeth Smith in person (yes, we worked remote together and never got to meet in person) and Chris Hartjes, Cal Evans, Adam Culp, Joe Ferguson and so many more. Its because of my tenacity to be involved I went from &amp;quot;Hey, Im Matt. Nice to meet you&amp;quot; to &amp;quot;Its great to see you again, how are things?&amp;quot;. It truly made for a better conference. The speakers dinner was absolutely phenominal. It was at a place called Cafe Versailles, one of the oldest Cuban restaurants in Miami. I had the pleasure to sit with Gabi D&amp;#39;Avilla, Anthony Ferrera and Elizabeth Smith. This would provide both fun conversation that night as well as multiple conversations and the start of great friendships over the weekend.&lt;/p&gt;
+
+&lt;p&gt;The conference could not have started on a better page. Cal had a great talk, something that I felt was a real inspiration for everyone. I got a chance to see a sneak peak of it, and was happy to see it presented. He had 10 principles as badges which he treats like the badges we see for code coverage/version/maintainers. Even though there were some great talks lined up, I spent most of the day in the uncon and hallway track. Its such a struggle when there are great talks taking place, and yet everyone says find time to get into the hallway track. The first uncon talk was a loosely structured conversation about the internals from Internals developers Elizabeth Smith, Davey Shafik, and Anthony Ferrera. It was awesome to have some of the PHP source code demysitifed a bit by the people who have had a hand in shaping it.&lt;/p&gt;
+
+&lt;p&gt;The continued on with a great talk from David Stanley about how they migrated a production database and wrote a migration tool with the Symfony Console Component. After that it was mostly hanging out.&lt;/p&gt;
+</description>
+        
+          <description>&lt;h2&gt;You might be a hobbit if...&lt;/h2&gt;
+</description>
+        
+        <pubDate>Thu, 02 Feb 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/blog/One-Year-Later/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/One-Year-Later/</guid>
+        
+        <category>Progress</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Two ways to fix the Laravel Postgres Timestamp issue</title>
+        <description>&lt;h2&gt;Laravel vs Postgres.&lt;/h2&gt;
+
+&lt;p&gt;Tonight we were working on an issue with timestamps coming from our Postgres database and rendered in Laravel. However we noticed that Carbon hated them and would throw exceptions rather then just manipulate our timestamps. We looked around and found a few ideas, but the one we liked most was this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;public $timestamps = false;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and it disables the &lt;code&gt;getDateFormat()&lt;/code&gt; method from Eloquent. The reason an issue is caused is that the &lt;code&gt;getDateFormat()&lt;/code&gt; is built for MySQL. Since Postgres handles timestamps a bit differently, it gets screwed up when run through the &lt;code&gt;getDateFormat()&lt;/code&gt; method. By setting the timestamp value to false, you are passing a raw Unix timestamp up to Carbon which Carbon can interpret and manipulate. &lt;/p&gt;
+
+&lt;h2&gt;One more way&lt;/h2&gt;
+
+&lt;p&gt;Another way to solve this issue is a little more complex, but easily implemented. It would be to create a model called &lt;code&gt;PostGresModel&lt;/code&gt; and extend the &lt;code&gt;Illuminate\Database\Eloquent\Model&lt;/code&gt;. In this new model class, which you will extend all your models from now, you would create a new &lt;code&gt;getDateFormat()&lt;/code&gt; method and inside it, return &lt;code&gt;&amp;#39;Y-m-d H:i:s.u&amp;#39;&lt;/code&gt; which is how you handle timestamps with Postgres. The whole model would look liked this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class PostgresModel extends Model
+{
+    public function getDateFormat()
+    {
+      return 'Y-m-d H:i:s.u';
+    }  
+} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And there you go! We override the base Eloquent &lt;code&gt;getDateFormat()&lt;/code&gt; method to handle Postgres, and now its publicaly availble to your models as long as you extend the new PostgresModel. &lt;/p&gt;
+
+&lt;p&gt;Hopefully these two solutions will help others in the same spot!&lt;/p&gt;
+</description>
+        
+          <description>&lt;h2&gt;Laravel vs Postgres.&lt;/h2&gt;
+</description>
+        
+        <pubDate>Tue, 03 Jan 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/blog/Laravel-Postgres-Timestamps/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/Laravel-Postgres-Timestamps/</guid>
+        
+        <category>Php,</category>
+        
+        <category>Laravel,</category>
+        
+        <category>Postgres</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Hi, Im Matt. And I use Laravel.</title>
+        <description>&lt;h2&gt;&lt;em&gt;clears throat&lt;/em&gt; Hi, Im new here. Im Matt and I  use Laravel. (Or anything else).&lt;/h2&gt;
+
+&lt;p&gt;So today, a federal holiday here in America where we enjoy what is possibly labelled the worst hang over in 2017 by some people, or if you are me today you are nursing bruises from fighting with your bike as to what direction we want to go.
+However, as many people saw on Twitter, a &amp;quot;discussion&amp;quot; erupted over the architecture of a certain framework. I wont give it away but it starts with &amp;quot;L&amp;quot; and ends with &amp;quot;aravel&amp;quot;. Scrolling through the tweets it got noticably hostile because 140 characters is too little a space to have a fruitful and engaged conversation. Also, people in the conversation can not discern between sarcasm or anything else. Now, this isnt just about Laravel, but its been the latest in the discussion.&lt;/p&gt;
+
+&lt;h2&gt;The community fractures everytime this happens&lt;/h2&gt;
+
+&lt;p&gt;Ever since I started with PHP, I have always noticed a divide in the community. If you are a Wordpress developer, then you are ostracized out. If you use Drupal, then you are just a little bit less then &amp;quot;true&amp;quot; PHP developers. And its bullshit. Look, Ill be the first to say I dont like Wordpress or Drupal. A lot of people don&amp;#39;t. There are people who do not like Laravel, or CakePHP (Ive ranted against this one), or Joomla!. All this does is make our community weak. There are reasons people use these tools. At first its to get used to the latest or greatest, or a tool that has been around since forever. People float between tools and people will use what gets the job done fastest. You know why? Shipped code is better then perfect code.&lt;/p&gt;
+
+&lt;p&gt;Shipped code makes money. Shipped code can convert visitors to a site and convert them to paying users. Shipped code can help change the world. Perfect code sits on your github repo, or local machine all day being refactored to the point of no return. If a dev can spin up an instance of Laravel and push out a site then why should anyone else care? If you are a developer who makes money by contracting out and fixing legacy apps, you should want developers pushing shipped code all day long. It just increases your chance of a phone call. Maybe not today, maybe not this year, but it will happen.&lt;/p&gt;
+
+&lt;p&gt;So it comes back to the point, who cares? When these types of arguments pop up on twitter, it only strengthens the divide of the community. And the community is already so fractured that it doesnt need anymore fracturing. We as a community barely survived the debate of the CoC, and its a known fact that certain developers feel left out and hide in their own silos. &lt;/p&gt;
+
+&lt;h2&gt;Criticism can help&lt;/h2&gt;
+
+&lt;p&gt;If you want to lobby criticism to the developers of the tool you do not like, open a PR, submit some code, get invovled. If you are a developer who developed a tool, be prepared for people to have critiques and handle them in a way that makes users of the tools proud to use your stuff. To lambast someone on twitter is what I consider a low. With a 140 character limit, responses are limited, conversation stymed and at the end of the day everyone loses. &lt;/p&gt;
+
+&lt;h2&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;Tweets are great to get thoughts out fast, but understand your tweets can open up a can of worms. If you want to say something 
+be prepared to have a conversation and back up your thoughts. If the developer of the framework replies, try to help understand each other. We can all use a little more empathy in our conversations rather then being blunt.&lt;/p&gt;
+
+&lt;p&gt;Remember, we are all fighting the same battles, we are just using different tools to do our work. &lt;/p&gt;
+
+&lt;p&gt;Happy 2017!&lt;/p&gt;
+</description>
+        
+          <description>&lt;h2&gt;&lt;em&gt;clears throat&lt;/em&gt; Hi, Im new here. Im Matt and I  use Laravel. (Or anything else).&lt;/h2&gt;
+</description>
+        
+        <pubDate>Mon, 02 Jan 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/blog/Confession-Time/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/Confession-Time/</guid>
+        
+        <category>Php,</category>
+        
+        <category>Community,</category>
+        
+        <category>Fighting,</category>
+        
+        <category>Laravel</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>2017 New Year Resolutions</title>
+        <description>&lt;h2&gt;Its the new year!&lt;/h2&gt;
+</description>
+        
+          <description>&lt;h2&gt;Its the new year!&lt;/h2&gt;
+</description>
+        
+        <pubDate>Fri, 30 Dec 2016 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/blog/New-Year-Resolutions/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/New-Year-Resolutions/</guid>
+        
+        <category>Php,</category>
+        
+        <category>Programming,</category>
+        
+        <category>Open</category>
+        
+        <category>Source,</category>
+        
+        <category>Financials</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Looking at Ramsey UUID</title>
+        <description>&lt;h2&gt;Its all about that Uuid&lt;/h2&gt;
+
+&lt;p&gt;Welcome to the first installment in my 2113918230981 part series, &amp;quot;Better know a Package!&amp;quot;. Tonight&amp;#39;s package: the famous/infamous &lt;a href=&quot;https://github.com/ramsey/uuid&quot;&gt;Ramsey\Uuid&lt;/a&gt; package that that taught us all what Ramsey is in Scottish, Rhumsaa. Created to give PHP a library to generate Universal Unique Identifiers, this library has been a stallwort in the community. Ben Ramsey created it first under the Rhumsaa namesapce before moving it to the Ramsey namespace, saving us all from learning more Scottish then we needed to ever learn. &lt;/p&gt;
+
+&lt;h2&gt;What is an UUID?&lt;/h2&gt;
+
+&lt;p&gt;A UUID, or Universally Unique Identifier, will generate a 128 bite unique key in different series based on the version you asked for. &lt;a href=&quot;https://tools.ietf.org/html/rfc4122&quot;&gt;RFC-4122&lt;/a&gt; dictates how Uuids should be generated, and recommends 4 types: a time and MAC address based uuid, a name based uuid with md5 hash, a random uuid and a name based uuid with sha1 hash. Each can be used however you want. So lets look as use cases and how we can utilize Ramsey\Uuid to build better software. &lt;/p&gt;
+
+&lt;h2&gt;Uuid version 1 - As Time goes by&lt;/h2&gt;
+
+&lt;p&gt;Uuid 1 is the time and MAC addressed based Uuid provided by Ramsey\Uuid. What this means is that if you run &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;?php
+
+require __DIR__ . &quot;/../vendor/autoload.php&quot;;
+
+use Blog\Uuid\VersionOne;
+
+$uuid1 = new VersionOne();
+
+for($i = 1; $i &amp;lt;= 5; $i++){
+    $uuid = $uuid1-&amp;gt;uuid();
+    echo $uuid . &quot;\n&quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and defined here:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;?php
+
+namespace Blog\Uuid;
+
+use Ramsey\Uuid\Uuid;
+
+class VersionOne
+{
+    public function uuid()
+    {
+        $uuid = Uuid::uuid1();
+
+        return $uuid-&amp;gt;toString();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;it will return 5 uuids, as seen here:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;
+/**
+ * Uuid1
+ * e110806e-68d3-11e6-98c2-f45c89b67421
+ * e1108ac8-68d3-11e6-9525-f45c89b67421
+ * e1108d02-68d3-11e6-b0ca-f45c89b67421
+ * e1108f14-68d3-11e6-98b1-f45c89b67421
+ * e1109112-68d3-11e6-b0ae-f45c89b67421
+ */
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can see both differences and similarities with the 5 uuids returned. This type of uuid creates a Uuid based on a single point of time on one computer. The plus is that since time never goes backwards, you wont get a collision of uuids. One thing to take into mind is that while computer do not share a MAC Address, they can be spoofed, thus potentially causing a collision of uuids. While this is very rare, it is a possibility in terms of security. &lt;/p&gt;
+
+&lt;h2&gt;Version 2&lt;/h2&gt;
+
+&lt;p&gt;There is a verion 2? Of course! Its set for DCE, but not an implementation of RFC 4122, so we wont worry about it. But if you want to learn something more, check it out!&lt;/p&gt;
+
+&lt;h2&gt;Version 3&lt;/h2&gt;
+
+&lt;p&gt;With version 3, we create uuids based on a namespace and then it is md5 hashed. For this example I ran my blog, &lt;code&gt;http://matthewtrask.net&lt;/code&gt; as the namespace to uuid.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;?php
+
+namespace Blog\Uuid;
+
+use Ramsey\Uuid\Uuid;
+
+class VersionThree
+{
+    public function uuid()
+    {
+        $uuidV3 = Uuid::uuid3(Uuid::NAMESPACE_DNS, 'http://matthewtrask.net');
+
+        return $uuidV3-&amp;gt;toString();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and the bootstrap is:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;?php
+
+require __DIR__ . &quot;/../vendor/autoload.php&quot;;
+
+use Blog\Uuid\VersionThree;
+
+$uuid3 = new VersionThree();
+
+for($i = 1; $i &amp;lt;= 5; $i++){
+    $uuid = $uuid3-&amp;gt;uuid();
+    echo $uuid . &quot;\n&quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;which will return &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;/**
+ * Uuid3
+ * 51e103b4-5333-388c-b72f-c362929a2b1f
+ * 51e103b4-5333-388c-b72f-c362929a2b1f
+ * 51e103b4-5333-388c-b72f-c362929a2b1f
+ * 51e103b4-5333-388c-b72f-c362929a2b1f
+ * 51e103b4-5333-388c-b72f-c362929a2b1f
+ */
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So what do we learn here? Well, Uuid::uuid3() is not random. It is generated based on what is inputted. So should we change the namespace to lets say: &lt;code&gt;https://waltdisneyworld.com&lt;/code&gt; we get the following:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt; /**
+ * WDW Uuid 3
+ * f815042b-3562-3d0d-8aea-e2ebf858725d
+ * f815042b-3562-3d0d-8aea-e2ebf858725d
+ * f815042b-3562-3d0d-8aea-e2ebf858725d
+ * f815042b-3562-3d0d-8aea-e2ebf858725d
+ * f815042b-3562-3d0d-8aea-e2ebf858725d
+ */
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notice how all values change based on input, but they repeat for the inputed value. &lt;/p&gt;
+
+&lt;h2&gt;Version 4 - Super Duper So Rad Random&lt;/h2&gt;
+
+&lt;p&gt;Uuid version 4 is currently the one my company uses to identify all the things. Its great because its random. Its the perfect id mechanism. Even better, its great for exposing things to the world without others being able to run a script against our APi and get a general idea of the size of our DB. &lt;a href=&quot;https://twitter.com/philsturgeon&quot;&gt;Phil Sturgeon&lt;/a&gt; writes about why we should expose uuids over ids in &lt;a href=&quot;https://philsturgeon.uk/http/2015/09/03/auto-incrementing-to-destruction/&quot;&gt;this article he wrote&lt;/a&gt;. So lets see what we get returned to us when we run this script. &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt; &amp;lt;?php
+
+namespace Blog\Uuid;
+
+use Ramsey\Uuid\Uuid;
+
+class VersionFour
+{
+    public function uuid()
+    {
+        $uuid = Uuid::uuid4();
+
+        return $uuid-&amp;gt;toString();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;with the bootstrap:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;?php
+
+require __DIR__ . &quot;/../vendor/autoload.php&quot;;
+
+use Blog\Uuid\VersionFour;
+
+$uuid4 = new VersionFour();
+
+for($i = 1; $i &amp;lt;= 5; $i++){
+    $uuid = $uuid4-&amp;gt;uuid();
+    echo $uuid . &quot;\n&quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;returns to us:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;/**
+ * Uuid v4
+ * 151f8d47-99c3-43c9-8993-e0ffb3a7704d
+ * a45c23a6-ad73-4417-aff9-604c4c195580
+ * f0668777-0ea5-4503-8ffe-abc3e740f553
+ * 64067149-1804-4f71-b754-38765add464b
+ * f4c5e9e0-d1a6-4cf1-b69b-4815439f4091
+ */
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As you can see there thery are random, with from what I can see, only spot in the uuid sharing the same number across all 5 generated uuid&amp;#39;s. We will talk about use cases in a bit, but I wanted you to notice that this has so much potential for many different use cases in your application. &lt;/p&gt;
+
+&lt;h2&gt;Version 5&lt;/h2&gt;
+
+&lt;p&gt;Version 5 of the Uuid spec is extremely similiar to Version 3 in that it is namespace based but instead of using md5 it utilizies the sha1 hash. Lets take a look:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;?php
+
+namespace Blog\Uuid;
+
+use Ramsey\Uuid\Uuid;
+
+class VersionFive
+{
+    public function uuid()
+    {
+        $uuid = Uuid::uuid5(Uuid::NAMESPACE_DNS, 'http://matthewtrask.net');
+
+        return $uuid-&amp;gt;toString();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;with the bootstrap:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;?php
+
+require __DIR__ . &quot;/../vendor/autoload.php&quot;;
+
+use Blog\Uuid\VersionFive;
+
+$uuid5 = new VersionFive();
+
+for($i = 1; $i &amp;lt;= 5; $i++){
+    $uuid = $uuid5-&amp;gt;uuid();
+    echo $uuid . &quot;\n&quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;which returns to us:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;/**
+ * Uuid5
+ * 0fcbe08b-1a1b-552a-8406-9c68e20106f6
+ * 0fcbe08b-1a1b-552a-8406-9c68e20106f6
+ * 0fcbe08b-1a1b-552a-8406-9c68e20106f6
+ * 0fcbe08b-1a1b-552a-8406-9c68e20106f6
+ * 0fcbe08b-1a1b-552a-8406-9c68e20106f6
+ */
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Again, all 5 are the same, cause its based on the input. I passed &lt;code&gt;http://matthewtrask.net&lt;/code&gt; and get the uuid backed based on that namespace. &lt;/p&gt;
+
+&lt;h2&gt;Use Cases for Uuids&lt;/h2&gt;
+
+&lt;p&gt;After looking at the 4 types of Uuid&amp;#39;s the Ramsey\Uuid library provides, its time to look at how you want to use these. Its simple to look at version one and say that you can use that to identify work stations in a data center or enterprise level business with hundreds of work stations. But you should take note, that this isnt a Uuid you should use for security, its guessable through MAC Address sppofing. &lt;/p&gt;
+
+&lt;p&gt;For version&amp;#39;s 3 and 5, the fun thing is that they are completely reproducable with the same algorithm. So if you lose the Uuid, you can re-generate it with the same code provided you still have the code laying around. Now why would you use this? Thats one thing Im looking at. I guess you could use it to securely pass around website ideas on the open web, but unless you are trying to hide the website from public view then you shouldnt have it on the open web. If you have a list of websites from where people are coming from, you can run a check against uuid&amp;#39;s in that sense, but I dont think that creates a good use case. &lt;/p&gt;
+
+&lt;p&gt;Version 4 is the one most people use and its easy to see the use case here. As the Phil Sturgeon article points out, using and exposing an auto-incrementing id through an API is a fast way to let the competition run a script against the endpoint and get a rough esitmate of your database. So this works in protecting your database and user base from competition trying to size you up. Also, using an Uuid v4 allows for greater uniqueness. Rather then come up with a complex id system to track the various id&amp;#39;s floating in your system (user&lt;em&gt;id/job&lt;/em&gt;id/transaction_id), you can create a &lt;code&gt;Uuid::uuid4()&lt;/code&gt; for each one and never have to work on concurrent id&amp;#39;s across a system. &lt;/p&gt;
+
+&lt;h2&gt;Thoughts&lt;/h2&gt;
+
+&lt;p&gt;As I finish up the first installment of my 1231923808 series of &amp;quot;Better Know a Library!&amp;quot;, it was a lot of fun to look deeper in to Uuids. Ive seen Ben give a talk about Uuid&amp;#39;s, but running scripts to see them for myself greatly helped me understand them better. &lt;/p&gt;
+
+&lt;p&gt;Until next time, have fun uuid-ing everything in your system!&lt;/p&gt;
+</description>
+        
+          <description>&lt;h2&gt;Its all about that Uuid&lt;/h2&gt;
+</description>
+        
+        <pubDate>Mon, 22 Aug 2016 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/blog/Looking-At-Ramsey-Uuid/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/Looking-At-Ramsey-Uuid/</guid>
+        
+        <category>Php,</category>
+        
+        <category>Uuid,</category>
+        
+        <category>Open</category>
+        
+        <category>Source,</category>
+        
+        <category>Libraries,</category>
+        
+        <category>Programming</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Goals</title>
+        <description>&lt;h3&gt;Holding myself accountable. To myself.&lt;/h3&gt;
+
+&lt;p&gt;&lt;blockquote style=&quot;margin-left: 5%&quot; class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Its officially the second half of the year. Did you accomplish goals for the first part? Set new ones? What are they?&lt;/p&gt;&amp;mdash; HTTP 1.1 GET /matt (@matthewtrask) &lt;a href=&quot;https://twitter.com/matthewtrask/status/760087193234780160&quot;&gt;August 1, 2016&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Two days agoI posted that tweet. It was simple enough, over the weekend I had to drive to Columbia, SC for my brother&amp;#39;s engagement party. While we were driving, my girlfriend asleep in the passenger seat, our dog chilling in the back. The quiet gave me time to think and with the time of the year, I naturally looked back at the year so far. I cant believe its over half finished and yet theres so much to do. So lets take a trip back and see where I started and where I am today. Hopefully this post gets you going as well. &lt;/p&gt;
+
+&lt;h4&gt;First Half&lt;/h4&gt;
+
+&lt;p&gt;The first half of the year helped me cross off one huge goal, getting to a conference. There is a blog post about it, but suffice to say it, it was a great time. I was happy to put names to twitter handles, shake hands, learn and start making a name for myself. Little did I know I would do that quickly. &lt;/p&gt;
+
+&lt;p&gt;One of my biggest goals that extended from last year was learning how to be better at testing. I was fortunate enough (read: coworker was sick) that I took over the CI position at our office. It was a small foray into devops, which really interested me. I was extremely fortunate that the person who helped me learn the idea of CI was the man, the myth, the legend Sebastian Bergmann himself. Learning CI helped another goal, learning to manage a code base with tests. Testing is something that I love. I love the idea of testing. Actually writing tests? Wellllllll, eh. But the idea is pretty awesome. &lt;/p&gt;
+
+&lt;p&gt;Another goal, one realized sooner then later was leaving Insight Global. It was a great stepping stone, but it was quickly apparent that it was a stepping stone rather then a place that was suited for a long term career. Issues were all over, with a true lack of sense in terms of the development team. I was fortunate enough that Jacques Woodock from Tandum was impressed with how I held myself at Sunshine PHP and on twitter. My quest to learn made him want to bring me on, which greatly helped my career. Ive been lucky enough to work under Elizabeth Smith, who is brilliant and has helped me learn to simplify and write better code. &lt;/p&gt;
+
+&lt;p&gt;Outside of work, I finally moved into Atlanta, bought a bike and have been biking around Atlanta. Its a great workout, something I tend to do during lunch. My amazing girlfriend has moved in as well, which makes life even better. I told myself I would speak as often as I could. I spoke at one conference, Great Wide Open, and three different user groups: AtlantaPHP, UpstatePHP and NashvillePHP. I did a lightning talk for NomadPHP as well. Ive started to make more contributions to open source. What was once a scary world of the unknown as turned into a great group of friends I can call on for help and advice and likewise them of me. &lt;/p&gt;
+
+&lt;h4&gt;Second Half&lt;/h4&gt;
+
+&lt;p&gt;So what are my second half goals? One more conference would be great. I know Im speaking at two more user groups in September, and I need to get my talks ready. As for work, I aim to continue working hard at Tandum. Its been a challenge with some roadblocks and bumps, but its been so worth it. I was scared to make the jump but its been great so far. I hope it continues. I plan on making more blog posts. One thing Ive started is a small journal. After every day, I finish up with a quick entry. What did I do, what could I have done better and what was something I learned are all things I cover. I add my bike routes too. &lt;/p&gt;
+
+&lt;p&gt;Outside of work, I want to travel more, I want to stop rushing through life. Id like to start averaging 60 plus miles a week. Id love to blog more as well. I have some planned, including a website update Id like to do. The blog is most important. It helps me learn. So Im going to start picking libraries and packages and frameworks and build something and then blog quickly. Will it be the best blog ever? No. But itll be fun to do!&lt;/p&gt;
+
+&lt;p&gt;I want to be more prominent in the open source community as well. I dont want to be afraid of failure. I want to make PR&amp;#39;s, help with other PR&amp;#39;s, and be someone people look up too like how I look up to others. Most importantly, I want to learn. &lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I want to learn&lt;/em&gt;&lt;/p&gt;
+</description>
+        
+          <description>&lt;h3&gt;Holding myself accountable. To myself.&lt;/h3&gt;
+</description>
+        
+        <pubDate>Wed, 03 Aug 2016 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/blog/goals/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/goals/</guid>
+        
+        <category>Php,</category>
+        
+        <category>Goals,</category>
+        
+        <category>Programming,</category>
+        
+        <category>Career</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Speaking at Upstate PHP</title>
+        <description>&lt;h2&gt;Welcome to Upstate PHP&lt;/h2&gt;
+
+&lt;p&gt;If you didnt pay attention to Twitter last week, you missed the tweet storm from &lt;a href=&quot;https://twitter.com/stevenwadejr&quot;&gt;Steven Wade Jr&lt;/a&gt;
+about my impending visit to &lt;a href=&quot;http://upstatephp.com&quot;&gt;UpstatePHP&lt;/a&gt; to speak about building awesome API&amp;#39;s. This was huge for me for a few 
+reasons. One is that I was invited, two was that it was a different user group and three it was another step into a goal of mine, speaking at a PHP conference.&lt;/p&gt;
+
+&lt;p&gt;Greenville, SC is only 2 hours from Atlanta. It was a straight shot up I-85, so easy drive. Going after work allowed me to avoid most traffic but unfortunately Atlanta
+doesnt have a good time to leave and avoid any kind of traffic. But once I was on the highway, it was easy going. I put on a podcast and was in for an easy, albeit boring
+drive. Once I got there, the AirBnB dude was a great host for me. I settled in and went over the slides again, checking to see what I could add or remove. &lt;/p&gt;
+
+&lt;p&gt;In the morning, I hit up a place called Coffee Underground which was perfect. Excellent coffee and breakfast sandwiches abound, it was a great coffee shop. Not super small
+so you could spread out, places to plug in and power up laptops and devices. One huge thing is that OpenWorks threw me a day pass, which helped me have a 
+dedicated place to do video chats, and work without having to be a bother to a coffee shop or their patrons. OpenWorks was a fantastic place, if you need
+a place to work in Greenville, I highly recommend them. &lt;/p&gt;
+
+&lt;h2&gt;Meeting Time&lt;/h2&gt;
+
+&lt;p&gt;After we finished up, Steven, Matt and I packed up and went over to Coffee Underground where we hung out for a few minutes before it was time to get the pizza. 
+After grabbing the pizza, we walked over to the meeting spot with the pizza and set things up. It was a good crowd, especially for a young meetup group. At lunch, Steven had asked me
+how to get the user group members interested in the community I owed my career too. I offered to do a &amp;quot;mini&amp;quot; (like 10 minutes if that) talk about the community. It was great, and 
+I saw people following others on Twitter, asking how to join the IRC rooms etc. One lady had posed the question to me about conferences when I realized that they were hungry to learn. 
+I had a pass to All Things Open which I gave away as well as a pass to Connect.Tech, a conference in Atlanta. After we did that, they split the group up so they newer people could
+continue their PHP Lessons while I talked to the experienced developers about REST API&amp;#39;s. &lt;/p&gt;
+
+&lt;p&gt;After it was all over, the flurry of tweets appeared which showed me I did a decent job. The morale of this story is if there is a user group near you, get to it. If there is one
+within a few hours drive and you can manage it, get to that one too! Having user groups cross pollenate will help grow the community. As it is with UpstatePHP, they have been 
+looking for speakers, so now they have one that can pop up and talk often. And now there is another experienced developer in their midst so people with questions can ask and connect. &lt;/p&gt;
+
+&lt;p&gt;Want me to come to your user group? Feel free to conect me! I can either come intown or talk over video chat. Either way, lets make some plans!&lt;/p&gt;
+</description>
+        
+          <description>&lt;h2&gt;Welcome to Upstate PHP&lt;/h2&gt;
+</description>
+        
+        <pubDate>Mon, 23 May 2016 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/blog/Speaking-At-Upstate-PHP/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/Speaking-At-Upstate-PHP/</guid>
+        
+        <category>Php,</category>
+        
+        <category>user</category>
+        
+        <category>groups,</category>
+        
+        <category>speaking</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Pushing past Imposter Syndrome</title>
+        <description>&lt;h1&gt;I have Imposter Syndrome.&lt;/h1&gt;
+
+&lt;h3&gt;And so does everyone else.&lt;/h3&gt;
+
+&lt;p&gt;Per Wikipedia.org: &amp;quot;Impostor syndrome (also spelled imposter syndrome, also known as impostor phenomenon or fraud syndrome) is a term coined in 1978 by clinical psychologists Dr. Pauline R. Clance and Suzanne A. Imes referring to high-achieving individuals marked by an inability to internalize their accomplishments and a persistent fear of being exposed as a &amp;quot;fraud&amp;quot;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;I have that exact problem. It sucks. Its been a driving force into why Im timid at times, its been a driving force of fear in my life. Ive accomplished some amazing things so far. And yet, as I look forward to new challenges, I never think that my past is the reason why I can succeed time and time again. &lt;/p&gt;
+
+&lt;p&gt;In fact, I just started working for Tandum, run by the awesome &lt;a href=&quot;https://twitter.com/jacqueswoodcock&quot;&gt;Jacques Woodcock&lt;/a&gt;. He personally asked him to come work for him. After being flattered he would ask me of all people, doubt flooded my brain. Its a start up, its going to be the biggest challenge Ive ever encountered. All through the interview process I did pretty good, cause they kept scheduling more interviews. Fun times right? When the offer came in, thats when it all hit me. The imposter syndrome flooded throughout me. I at one point even told Jacques thats its a no go. After he talked me off of that, I started my journey with him at Tandum. Its been a great time, but the reason Im writing this is cause this week was a big bout of the Imposter Syndrome. &lt;/p&gt;
+
+&lt;p&gt;What generally happens is either you have a job, project or even task. Immediately you look at it like ok seems easy enough, but then I personally freeze. Of course I know how to do {$php_action}. Make a key for an array, sure. Alter a SQL query, definitely. But then I freeze, Ill get overwhelmed. I forget the simple things. And suddenly a simple task has just become a monster looming over me. And this is my struggle. And I know its a struggle for a lot of people. And Im still looking for a solid answer on what to do when these things happen. Right now, its take a lot of notes, write things down, UML map it out. But thats cumbersome at times. One thing that has helped is a direct line to the senior developer, &lt;a href=&quot;https://twitter.com/auroraeosrose&quot;&gt;Elizabeth Smith&lt;/a&gt;. At my previous job, we had &amp;quot;ze Germans&amp;quot;, Arne Blankerts, Stefan Priebsch and Sebastian Bergmann. Wanna talk about getting hit with imposter syndrome? Try walking through code with those guys. Elizabeth is on the same levels as them. Wicked smart and wants me to succeed. Thats what everyone wants in the end. No one wants to hire someone and have them level in a few weeks. They want them to settle in and kick ass. Both the Germans and Jacques and Elizabeth want the same thing. Its something you should remind yourself everyday. And its why Im so damn proud of this community. While we are all busy, Elizabeth takes the time to reach out and see when if Im stuck, or what she can clear up for me. While Im not going to get better over night, she has helped immensely. &lt;/p&gt;
+
+&lt;p&gt;Unfortunately, this has extended into the open source programming I want to do. I would love nothing more then to contribute to a project, but this imposter syndrome has a rampant fear over me. Why? Shit I dont know. Sometimes its because I dont know how to replicate the issue, othertimes I look at a bug in the issues section of Github and while it looks easy, I get lost in it. The best advice I got about this was from Stefan Priebsch, who told me &amp;quot;At the simplest, all this is is taking data in and returning data. Thats all. So break it down to that point. When you get there, work on that small issue and build up&amp;quot;. Is it tough to do that, yea. But I wont lie, it helps.&lt;/p&gt;
+
+&lt;p&gt;If you are getting stuck with Imposter Syndrome, take heart in knowing its not just you. And remember, break the issue down to the smallest possible point, and build up from there. It works, I promise.&lt;/p&gt;
+
+&lt;p&gt;If you ever want someone to talk about it, please feel free to reach out. Im always happy to talk.&lt;/p&gt;
+</description>
+        
+          <description>&lt;h1&gt;I have Imposter Syndrome.&lt;/h1&gt;
+</description>
+        
+        <pubDate>Tue, 17 May 2016 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/blog/imposter-syndrome/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/imposter-syndrome/</guid>
+        
+        <category>Programming,</category>
+        
+        <category>Imposter</category>
+        
+        <category>Syndrome,</category>
+        
+        <category>Issues</category>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>MVC vs CMS: Best tool for the job</title>
+        <description>&lt;h2&gt;MVC vs CMS&lt;/h2&gt;
+
+&lt;p&gt;A debate rages in programming communities. Its a good question, one that overwhelms junior developers and splits senior developers. The question is when to use a CMS over an MVC and vice versa. Both are fantastic tools and I am not out to slander either set. I have my personal preference and to each their own. But trying to keep away bias&amp;#39;, lets look at when is the right time for a CMS and the right time for an MVC application. First lets define what each is. A CMS, or Content Management System, is a software platform that allows for total control over the content of the webpage. Themes can be changed with the click of a button, and non-technical people can use them with great ease. Wordpress, Drupal, Bolt, are Joomla! are currently the biggest players in the CMS arena. Others are coming around, but these currently hold the mass marketshare. Wordpress alone powers 25% of the internet. Thats a huge number. On the flip side, MVC is Model-View-Controller. This pais with the Singleton design pattern, which allows access of the global state throughout the entire application. You see already where I am headed, in that to use and build something with the MVC pattern, you need some overhead knowledge of programming. Laravel (php), Rails (ruby) and Django (python) are the current reigning champions of MVC. Plenty more are around, but to keep it short and simple, we will look at these three as the ones you should know for MVC.&lt;/p&gt;
+
+&lt;h2&gt;When to use a CMS&lt;/h2&gt;
+
+&lt;p&gt;Are you building an application for the marketing team that should just work? Are you on a swamped IT team that cant handle maintaining an application? This calls for a CMS. They are made for non technical people to use and manage their content without a developer doing it for them. Now, this isnt to say that you cant make a CMS with Laravel. You definitely can. However at this point, Wordpress has name recognition as well as features that people want, why reinvent the wheel? With Wordpress and others though, the admin panel is designed to be intuitive and easy to use. You would spend years rebuilding it with something else.&lt;/p&gt;
+
+&lt;h2&gt;When to use an MVC application&lt;/h2&gt;
+
+&lt;p&gt;Got a app you want to create? Wanna use some APIs? Easily done in the MVC style. Generally with an MVC application, its not about continuous updates, but more code driven updates. The code base can also hande heavy functions. While you can make a CMS out of an MVC application, the features that Wordpress has would cause months or even years of development. Instead, use MVC to focus on applications that will help the business such as a user portal, point of sale system, event tracking and let the CMS handle the client facing content website. &lt;/p&gt;
+
+&lt;h2&gt;Thoughts&lt;/h2&gt;
+
+&lt;p&gt;Both CMS and MVC applications have their place in the world of application development. Its up to you to learn when to pick the best tool for the job. Hopefully this gives you a good insight to the basics of the differences! &lt;/p&gt;
+
+&lt;p&gt;Cheers.&lt;/p&gt;
+</description>
+        
+          <description>&lt;h2&gt;MVC vs CMS&lt;/h2&gt;
+</description>
+        
+        <pubDate>Tue, 15 Mar 2016 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/blog/MVC-vs-CMS/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/MVC-vs-CMS/</guid>
+        
+        <category>Laravel,</category>
+        
+        <category>Dev,</category>
+        
+        <category>PHP,</category>
+        
+        <category>MVC,</category>
+        
+        <category>CMS,</category>
+        
+        <category>Wordpress,</category>
+        
+        <category>Drupal</category>
+        
+        
+      </item>
+      
     
       
       <item>
@@ -62,597 +654,15 @@ start fresh. So I pulled the site down, and destroyed the server.&lt;/p&gt;
           <description>&lt;h1&gt;Laravel New OBCT&lt;/h1&gt;
 </description>
         
-        <pubDate>Tue, 15 Mar 2016 00:00:00 -0400</pubDate>
-        <link>http://matthewtrask.net/blog/Moving-OBCT-To-Laravel/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/Moving-OBCT-To-Laravel/</guid>
+        <pubDate>Tue, 15 Mar 2016 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/blog/Moving-OBCT-To-Laravel/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/Moving-OBCT-To-Laravel/</guid>
         
         <category>Laravel,</category>
         
         <category>Dev,</category>
         
         <category>PHP</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>My time at SunshinePHP</title>
-        <description>&lt;h1&gt;Conference Time!&lt;/h1&gt;
-
-&lt;p&gt;A few weekends ago, I finally made it. No, not to being 6&amp;#39;4 and beautiful, but to a conference. Its been on my list of things to do for about a year now with some near misses. After I tossed the idea to the boss people at work, we got it all worked out. After getting the hotel and flight set, I was on my way. Hopefully after this, you have more proof why a conference is worth the price. &lt;/p&gt;
-
-&lt;h2&gt;Why SunshinePHP?&lt;/h2&gt;
-
-&lt;p&gt;The first question to answer, is why &lt;a href=&quot;http://2016.sunshinephp.com&quot;&gt;SunshinePHP&lt;/a&gt;? Coworkers are leaving this week for &lt;a href=&quot;https://confoo.ca&quot;&gt;ConFoo&lt;/a&gt;, and there are other conferences, but why did I pick Sunshine? A few reasons, first is I opened my mouth and said Id be there, thus causing people I interact with online daily to be excited to finally get to put a face to my online personality. Also, Sunshine is great because its one of the more inexpensive conferences. Price doesnt dictate if a conference is going to be good or not, but with Sunshine being on the lower end of the price scale, it made sense. &lt;/p&gt;
-
-&lt;p&gt;The talks too were curated towards things I was interested in learning. Looking at Confoo, it has great talks. However, Sunshine is specifically PHP, which allows me to get the most of a conference. This isnt to say that language agnostic conferences are less then specific languages! Confoo looks awesome, and I truly wish I was going as well. But since I had to pick, I did what I thought was best for me. I strongly advise you to look at any confereneces that pop up and attend as many as you can!&lt;/p&gt;
-
-&lt;h2&gt;The First Day&lt;/h2&gt;
-
-&lt;p&gt;After I woke up at the crack of dawn, eating breakfast (and drinking) at the airport, I landed in sunny Miami around 12. After spending some time on South Beach, we got back in time for the hotel happy hour. It started out great, and I was able to start meeting some awesome people. After the happy hour ended, a group of us decided to go to dinner. At dinner, we had &lt;a href=&quot;https://twitter.com/lukestokes&quot;&gt;Luke Stokes&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/jwoodcock&quot;&gt;Jaques Woodcock&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/rmcfrazier&quot;&gt;Robert McFrazier&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/elstamey&quot;&gt;Emily Stamey&lt;/a&gt;, and so many more awesome people! After dinner, we were lucky enough to get to hang out more talking over all kinds of topics in Jaques&amp;#39; room with a few bottles of rum and scotch. &lt;/p&gt;
-
-&lt;h2&gt;The Second Day&lt;/h2&gt;
-
-&lt;p&gt;I would lie if I said I wasnt a little hung over. At least I played it cool by drinking straight liquor over mixed drinks so I kept the sugar count low, which helped me bounce back hard. Luckily, a few of us got together for some yoga just to get some energy into our day. After a solid breakfast offering, we got underway with a powerful keynote from Josh Holmes. During this talk, the theme of the conference was unvieled, Community and Working Together. Big appreciation to Josh for his talk, it was powerful and set the tone of the conference with a great bang. &lt;/p&gt;
-
-&lt;p&gt;After that, it was off to see the great &lt;a href=&quot;https://twitter.com/weaverryan&quot;&gt;Ryan Weaver&lt;/a&gt; talk about JWT and Security within Symfony. Although Im not a Symfony user, it was great to get some insight into it, and made me more interested in giving it a try. The next talk was &amp;quot;The Pattern to Design Patterns&amp;quot; by &lt;a href=&quot;https://twitter.com/crussell52_&quot;&gt;Chris Russell&lt;/a&gt; which was an awesome and different approach to design patterns. After lunch, we came back for the keynote and it was powerful. Sharon Steed grew up with a stutter, and decided that public speaking was the way to get over the stutter. Talk about taking on a challenge head on!&lt;/p&gt;
-
-&lt;p&gt;I got to sit in on a talk about REST Api&amp;#39;s with &lt;a href=&quot;https://twitter.com/AmbassadorAwsum&quot;&gt;Amanda Folson&lt;/a&gt; which was informing and gave me some ideas how to construct an API properly. After that, &lt;a href=&quot;https://twitter.com/geeh&quot;&gt;Gary Hockin&lt;/a&gt; did a great talk about PHPStorm and Step Debugging. Live coding took place, and Gary was hilarious when things didnt go great. Was fun to hang with &lt;a href=&quot;https://twitter.com/frankdejonge&quot;&gt;Frank De Jonge&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/assertchris&quot;&gt;Chris Pitt&lt;/a&gt; as well! Finally I ran into a challenge. The last block of the day had 3 great talks, and a Magento talk. Just giving Magento a hard time, but really there was a lot of great talks. I had to pick, and did a talk about Docker with &lt;a href=&quot;https://twitter.com/rmcfrazier&quot;&gt;Robert McFrazier&lt;/a&gt;. Docker is something Ive struggled with, so seeing it broke down to simpler terms made it easier and wanting me to pick up where I left off and get it working. &lt;/p&gt;
-
-&lt;p&gt;After that, I ran into &lt;a href=&quot;https://twitter.com/coderabbi&quot;&gt;CodeRabbi&lt;/a&gt; and gave &lt;a href=&quot;https://twitter.com/JessicaMauerhan&quot;&gt;Jessica Mauerhan&lt;/a&gt; a hard time from the back row. Following that, a night of drinking and fun. But on to day three!&lt;/p&gt;
-
-&lt;h2&gt;The Third Day&lt;/h2&gt;
-
-&lt;p&gt;This kind of feels like a post counting down to something. Christmas, CoC violation, something. Just wait and see!&lt;/p&gt;
-
-&lt;p&gt;Funny enough, I started this day hung over too, and skipped yoga cause the bed was comfy. Life in the fast lane I suppose. As I trudged down stairs to get food, I was excited to get started again. This time, we had &lt;a href=&quot;https://twitter.com/JessicaDunbar&quot;&gt;Jessica Dunbar&lt;/a&gt; who had great insight to dealing with people with different perspectives. Its not all about you, and she showed us how to make sure everyone worked together to achieve a common goal. After that, I was fortunate to see &lt;a href=&quot;https://twitter.com/assertchris&quot;&gt;Chris Pitt&lt;/a&gt; talk about writing asynchronous PHP. The &amp;#39;yield&amp;#39; keyword is magic. After being blown away, I finally got to see a talk from &lt;a href=&quot;https://twitter.com/philsturgeon&quot;&gt;Phil Sturgeon&lt;/a&gt;. He talked about things people dont talk about when dealing with API&amp;#39;s and REST. Fantastic stuff. After lunch, I decided a nap was the best idea possible, and then after that I skipped the session only cause I didnt see much that interested me. Unfortunately, after sitting around with &lt;a href=&quot;https://twitter.com/joepferguson&quot;&gt;Joe Ferguson&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/elstamey&quot;&gt;Emily Stamey&lt;/a&gt;, that &lt;a href=&quot;https://twitter.com/benmarks&quot;&gt;Magento dude&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/jmikola&quot;&gt;Jeremy Mikola&lt;/a&gt;, I had to run to catch &lt;a href=&quot;https://twitter.com/stauffermatt&quot;&gt;Matt Stauffer&lt;/a&gt; talk about from Idea to Prototype in 50 minutes with Laravel. Minus his apparent lack of breathing, he nailed it. &lt;/p&gt;
-
-&lt;p&gt;After &lt;a href=&quot;https://twitter.com/calevans&quot;&gt;Cal Evans&lt;/a&gt; did the closing keynote, and I took home a sweet, big red elephpant, I was able to sit in on the PHP Townhall. This is where it starts getting fun. So another person decided to ask about the whole raging CoC debate. After watching people I wont name saying things like &amp;quot;the opponents of CoC are jackasses and idiots&amp;quot; amongst other things, Jeremy Mikola organized a &lt;a href=&quot;https://twitter.com/wurstcon&quot;&gt;#wurstcon&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;It was something hilarious to be apart of. Except that one person, who I will refuse to name, made some fun (read dick) comments towards me. First, as we were sitting in the car about to go, she pops her in the car to say hi, and looked at me and said &amp;quot;fuck this guy&amp;quot;. Mind you, Ive never said more then 3 words to her before, and before the conference, Ive never met her. Whatever, I blow it off. No big deal, thats just how some people are. But later, while we are out, I was standing talking to someone. The same person from before comes up and says &amp;quot;You need to fuck off back to the shire, I need to sit down&amp;quot;. Now, I get it. Im short, I have a beard so I may look like a hobbit, but really? This person doesnt even know my name, but just told me that Im a hobbit, and need to fuck off so she can sit and eat. Another person over heard this, but I was so stunned at this comment I just left the area in silence. &lt;/p&gt;
-
-&lt;p&gt;As we got back to the hotel, I was talking with Jaques about it. This was a person who just said earlier that CoC was needed to make sure people were treated with respect. She stated that the community had a strong attitude, and that people are bullied often. So its ironic she would do something like this. And this shit happens alot, but I refuse to let it ruin my first conference experience. The last point I want to make is why didnt I tell the organizers. It came down to two reasons. One was this was after the conference was over. We werent even at the venue. The other is the sheer shock I was in, and the fact that even if I were to say something, what do I say and would it make a difference?&lt;/p&gt;
-
-&lt;h2&gt;The aftermath&lt;/h2&gt;
-
-&lt;p&gt;This conference was one of the best decisions of my career. Getting to meet so many awesome people, getting to hear new ways to code and write apps, and be around people smarter then I was amazing. I can tell you Im hooked and plan to attend as many as possible. If something like this, traveling to another city isnt possible, then get to the user groups in your area. Sometimes they have smaller conferences they help run which will help you get to go to a conference and share the experience I had!&lt;/p&gt;
-
-&lt;h2&gt;Edits!&lt;/h2&gt;
-
-&lt;p&gt;So in the recent days, someone has used my blog post to make an argument that the person in question isnt a viable choice to lead the PHP-FIG. First things first, Samantha almost instantly reached out to me when she read the post. From other sources, she was mortified to read the post and knew that it was her actions that caused me to write the post and detail things. Once she messaged me, we started talked, and both her and I arent so different. We use sarcasm and brashness as tools of humor. I cant fault her on that, cause I wouldnt want to be faulted on it. As we talked, we buried the hatchet so to speak, and have started on fresh ground. Next time I see Samantha at a conference, Im sure beers or drinks will be shared. Another member of the community, Maraget Staples messaged me. She was there at the incident, and through us talking, she said she was sorry for what happened, but now, Ive been officially welcomed to the PHP Conference Family. Only now I plan on speaking instead of visiting. Maybe 70/30 talking to speaking. &lt;/p&gt;
-
-&lt;p&gt;Now, on to something that is bothering me, which is someone on the FIG mailing list using an anonymouse email address to attack Samantha for what I wrote. Had this person read my blog, and the comments, they would have seen that the incident is behind us and we are now in a much better place. To use this one incident as something to discredit someone from a position they have been asked to fill isnt what this post is about. This isnt a post about being pro-CoC or anti-CoC. It was an incident I was involved in, and felt like airing my concerns. Would a CoC have fixed this? Well, I dont know. I dont feel like I wanna venture into that argument. All that I give a remote damn about is that I voiced a concern, Samantha was able to step up and do something I know a lot of people wouldnt have and come to me an immediately apologize and put this behind her. &lt;/p&gt;
-
-&lt;p&gt;I fully support her vote for the PHP-FIG Secretary, like I would if someone else had won the vote and had the same issues like I described in the blog post. &lt;/p&gt;
-</description>
-        
-          <description>&lt;h1&gt;Conference Time!&lt;/h1&gt;
-</description>
-        
-        <pubDate>Sat, 20 Feb 2016 00:00:00 -0500</pubDate>
-        <link>http://matthewtrask.net/blog/My-Time-At-SunshinePHP/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/My-Time-At-SunshinePHP/</guid>
-        
-        <category>Community,</category>
-        
-        <category>PHP,</category>
-        
-        <category>Conference,</category>
-        
-        <category>Travel</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Vue.Js Exeperiements</title>
-        <description></description>
-        
-          <description></description>
-        
-        <pubDate>Thu, 04 Feb 2016 00:00:00 -0500</pubDate>
-        <link>http://matthewtrask.net/blog/Vue-Js-Experiements/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/Vue-Js-Experiements/</guid>
-        
-        <category>Js,</category>
-        
-        <category>Javascript,</category>
-        
-        <category>Front</category>
-        
-        <category>End,</category>
-        
-        <category>PHP</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>PHP and the CoC</title>
-        <description>&lt;h1&gt;A battle rages&lt;/h1&gt;
-
-&lt;p&gt;hello&lt;/p&gt;
-</description>
-        
-          <description>&lt;h1&gt;A battle rages&lt;/h1&gt;
-</description>
-        
-        <pubDate>Sat, 30 Jan 2016 00:00:00 -0500</pubDate>
-        <link>http://matthewtrask.net/blog/PHP-and-the-CoC/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/PHP-and-the-CoC/</guid>
-        
-        <category>PHP,</category>
-        
-        <category>CoC,</category>
-        
-        <category>community</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Why I helped out with Hour of Code</title>
-        <description>&lt;h2&gt;Give an hour of your time.&lt;/h2&gt;
-
-&lt;p&gt;I gave two hours, plus the time to drive to and back. What I got in return was well worth it. Its shiny, it tells the time, this watch is rad. Kidding of course. Although I did arrange to pick up an Apple Watch in that area. But what I am really talking about is Hour of Code! Its an initiative by &lt;a href=&quot;https://code.org&quot;&gt;code.org&lt;/a&gt; to introduce coding to students at an early age and hopefully inspire them to learn some.&lt;/p&gt;
-
-&lt;p&gt;I had seen links for Hour of Code floating around on twitter, and decided this year I would take action and participate. I love mentoring, I love helping out, so why not? Well, its definitely an interesting experience!&lt;/p&gt;
-
-&lt;h2&gt;How much money do you make?&lt;/h2&gt;
-
-&lt;p&gt;Within a few days of signing up, a teacher emailed me, and asked if I could come to her classroom and help out. After running it by the boss people at the office, it was a go. A few weeks go by and then as the week arrives, I learn that the main teacher of the class is going to be out. While I wasn;t too nervous, it wasn&amp;#39;t exactly inducing calmness in me. Besides being a bearded dude at a middle school, what was I actually doing? Was I supposed to show the students some code, was I supposed to live code, or was it more of a talk?&lt;/p&gt;
-
-&lt;p&gt;I invited my friend, Krista, to join me. As a substitute teacher, she was invaluable in keeping the kids on point. So when we got there and checked in, the substitute teacher came out and talked to us quickly. She asked what I wanted to do. Well, at this point, I wanted a beer, but I said we could answer some questions. Sure enough, the kids had a ton of questions, a lot of which they weren&amp;#39;t shy about.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;How much money do I make?&lt;/li&gt;
-&lt;li&gt;Do I like my job?&lt;/li&gt;
-&lt;li&gt;Am I a hacker?&lt;/li&gt;
-&lt;li&gt;Is it live TV?&lt;/li&gt;
-&lt;li&gt;What is the coolest thing you&amp;#39;ve done with code?&lt;/li&gt;
-&lt;li&gt;Can I do it?&lt;/li&gt;
-&lt;li&gt;Is it free?&lt;/li&gt;
-&lt;li&gt;Will I make a lot of money?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;As you can see, those kids have their priorities straight. I think, looking back, what really helped was making a fast connection to Minecraft. Now, Ive never really played Minecraft, but I know its the cool thing to do as a kid these days. All I hear about is Minecraft this and that. Of course, its a computer program, so to make a connection to the kids, I immediately talked about how Minecraft came to be, and how Microsoft bought it for something like $1 Billion. This set off lights. The students were instantly perked up. &amp;quot;You mean I can make money, and play Minecraft?&amp;quot;, yes you can.&lt;/p&gt;
-
-&lt;h2&gt;Lets live edit a page.&lt;/h2&gt;
-
-&lt;p&gt;When the older students came in, I decided to give them something cool to enjoy. Aside from the questions, mostly repeats of the younger kids, they asked me if I could hack. Well, in the most non-political ways possible, I gave them an idea of what a hacker is. Obviously the evil hacker who takes digital information, but there is also good hacking like when a government censors information. That aside, they had great questions, and I was happy to answer them. The fun came when I ssh&amp;#39;d into a Digital Ocean server I had running and essentially added a heading tag and some text on the fly. I have never seen faces brighten up so fast like theirs did. Of course, seeing the terminal, they legitimately thought I was a hacker.&lt;/p&gt;
-
-&lt;h2&gt;Code.org&lt;/h2&gt;
-
-&lt;p&gt;After &amp;quot;hacking&amp;quot; my own website for a few minutes, the students then hoped on to their own computers and did some code.org exercises. They could pick the theme such as Minecraft, Star Wars or some other ones and using Scratch, write very basic code. One thing I kept trying to point out is looking at the code, so they could recognize what code looked like. Some where able to clearly walk me through the code and show me what they did.&lt;/p&gt;
-
-&lt;h2&gt;Thoughts&lt;/h2&gt;
-
-&lt;p&gt;All in all, this was an amazing and powerful experience. I would highly recommend this to any developer I know. Even if you arent a teacher or mentor, give it a try. It will really give you a new perspective on coding and who some of the bright thinkers of tomorrow will be!&lt;/p&gt;
-</description>
-        
-          <description>&lt;h2&gt;Give an hour of your time.&lt;/h2&gt;
-</description>
-        
-        <pubDate>Wed, 06 Jan 2016 00:00:00 -0500</pubDate>
-        <link>http://matthewtrask.net/blog/Hour-Of-Code/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/Hour-Of-Code/</guid>
-        
-        <category>Volunteering,</category>
-        
-        <category>mentoring,</category>
-        
-        <category>students</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>MVC, What The ...?</title>
-        <description>&lt;h1&gt;Lets talk MVC.&lt;/h1&gt;
-
-&lt;p&gt;So one of my resolutions is to blog more. Why not right? Its a great way to grasp concepts. I dont want to write something and seem like a complete fool, so I do my research, which in turn lets me learn more.&lt;/p&gt;
-
-&lt;p&gt;As some of y&amp;#39;all know, I help run a local chapter of Free Code Camp. If you havent heard of Free Code Camp, or FCC; its a way to get people to code for free. It covers the MEAN Stack, ya know Mongo DB, Node Js, Angular JS and Express JS. Thats a lot of Javascript. Even the database is Javascript/JSON based. Opinions aside, its a cool initiative to get people coding. They aim to get you real world experience through helping non-profits with some coding issues. Rad right? Pretty much yes. Well, as I&amp;#39;m one of the moderators and more senior programmers in the group, I help answer questions. One I recently was asked was what is the MVC pattern, when to use it, why is it use, etc.&lt;/p&gt;
-
-&lt;p&gt;Its funny though, because while I field these questions; certain angry yet brilliant German developers are teaching me how to let go of the MVC. However, its not something that is easily let go. I understand the flaws of it, and I understand the uses. So lets talk about that.&lt;/p&gt;
-
-&lt;h2&gt;Some Examples of MVC in the Wild.&lt;/h2&gt;
-
-&lt;p&gt;The first thing we should look at is some examples. Everyone loves a good example, and there are a lot to look at.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://laravel.com&quot;&gt;Laravel&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://symfony.com&quot;&gt;Symfony&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://framework.zend.com&quot;&gt;Zend Framework 2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://cakephp.org&quot;&gt;CakePHP&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Outside of the PHP community we have&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://rubyonrails.org&quot;&gt;Ruby on Rails&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.djangoproject.com&quot;&gt;Django&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The list goes on. There are hybrids even. EmberJs, AngularJs, BackboneJs, and others are MV* types of frameworks. Mainly they are built on the Model-View layer, using both as a hybrid controller situation. Not a bad idea to use them, and combined with a more powerful back end framework, you can build some really powerful web apps with them.&lt;/p&gt;
-
-&lt;h2&gt;What is it exactly?&lt;/h2&gt;
-
-&lt;p&gt;The MVC pattern creates a separation of concern. It allows you to create reusable code, yet separate the logic from the views from the data modeling. Lets look deeper. First, what does MVC stand for? M is for Model, which is where we model the data for our database. Should names be split to firstName and lastName, or fullName? Well, thats the models job, to take the data passed to it, and pass it to a database the way the tables are expecting it. Next, we have V for View. Views only have the purpose of displaying data for the user. Admin sections, blogs, user pages, etc are all views you could have in an application. And that&amp;#39;s it! The view should be, and is, inherently stupid. The view should have absolutely no responsibility, no logic. It should display or take in data via a form. If you have anything else in the view, you have completely broken the MVC paradigm. Last but not lease, the most powerful component of the MVC is the C, which is for Controller. Before we go further, Controllers should have specific rules. Those rules being the SOLID concept:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Single Responsibility Principle&lt;/li&gt;
-&lt;li&gt;Open/Close Principle&lt;/li&gt;
-&lt;li&gt;Liskov Substitution Principle&lt;/li&gt;
-&lt;li&gt;Interface segregation principle&lt;/li&gt;
-&lt;li&gt;Dependency Inversion Principle&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The first four are fairly simple and straight forward. The fifth is always one developers have a tough time with. Its a complete shift in thinking. But Im not going deep into those concepts right now. Thats for a later post. Back to the controller, the logic of your application lives here. Users assigned to a sales rep, sales people assigned to an office, users shopping carts and check out are all handled in the controller. Its the glue, or, its the traffic cop. It directs the traffic of your application as it enters the app from the view.&lt;/p&gt;
-
-&lt;h2&gt;A basic MVC application&lt;/h2&gt;
-
-&lt;p&gt;So lets walk through a simple idea. A blog for instance. We have a model. Our models are responsible for three actions. Remember two things, one we are working towards the SOLID idea I just mentioned, and we are going simple. There is a lot of functionality Im skipping right now for the sake of reading. Anyways, our model with pass data to the SQL tables, another model method will fetch all posts, and one more model will handle any updates we want to do. So three models? Yes. A little granular, but I figure why not? Lets follow the Single Responsibility Principle(SRP) as closely as we can. So each model has one method. Does this satisfy the SRP? Yes! Score!&lt;/p&gt;
-
-&lt;p&gt;For our controllers, we will have one that takes in the post from the user, and another controller that passes the data to the views. With a router, we can dictate how the blog responds to requests. We would set /blog/ as the last 5 blog posts we make. Anything after that is a specific post, like /blog/april/my-birthday which is a specific post. That is all controlled by the controller, and dispatched in a request to a router. Most MVC based frameworks will have a router in place for you. Now, based on the request the router gets will determine which view we get. Do we get the past posts, or a specific or the view to edit our post, thats the job of the controller and router. And then the view is hanging out, just waiting to be used in some way. It has the data and form, it just needs a friend.&lt;/p&gt;
-
-&lt;h2&gt;Is this perfect?&lt;/h2&gt;
-
-&lt;p&gt;Is the MVC pattern perfect? No. There was only room for one awesome thing in this blog, and its me. Kidding of course, but the MVC has its share of problems. One of them is it doesnt handle HTTP requests as well as other patterns can do. While that may be true, Ive personally never had an issue. That doesnt mean it doesnt exist. Another issue is a lot of developers take the MVC as OOP and forget to actually code with OOP in mind. It doesnt help to use a pattern that is aimed at abstracting logic and then hard coding values into the controller. So remember, like many things with programming, this isnt perfect for everything, but its a tool to have and to use when the time is right.&lt;/p&gt;
-
-&lt;h2&gt;Wrap Up&lt;/h2&gt;
-
-&lt;p&gt;Obviously the example wasnt a full blown example of a blog, or big MVC application, but its the most granular level of an application. While we mentioned SOLID, I didnt do it justice. That is coming up shortly in another post. What I hope you take away from this is an understanding of the MVC framework style. While it may not always be the best answer, it can work well for a lot of simple situations. Now go out and code something awesome!&lt;/p&gt;
-</description>
-        
-          <description>&lt;h1&gt;Lets talk MVC.&lt;/h1&gt;
-</description>
-        
-        <pubDate>Sat, 02 Jan 2016 00:00:00 -0500</pubDate>
-        <link>http://matthewtrask.net/blog/MVC-What-The/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/MVC-What-The/</guid>
-        
-        <category>MVC,</category>
-        
-        <category>OOP,</category>
-        
-        <category>Concepts</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>So this is the new year</title>
-        <description>&lt;p&gt;## It&amp;#39;s the New Year. &lt;/p&gt;
-
-&lt;p&gt;Hello 2016. Goodbye 2015. &lt;/p&gt;
-
-&lt;p&gt;Its been quite a fun time. Quite an interesting year to say the least. It was filled with ups and downs, but by far the best year on record I would like to think.&lt;/p&gt;
-
-&lt;p&gt;Some of the pluses of 2015:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Really dived deep into PHP&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Became a community member of PHP&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Gave 2 mini talks at &lt;a href=&quot;https://atlantaphp.org&quot;&gt;AtlantaPHP&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Became a co-organizer of AtlantaPHP&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Got to go to Hawaii for a week&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Got an awesome job with great potential&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Contributed to open source projects&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Joined an open source team to help maintain &lt;a href=&quot;http://phergie.org&quot;&gt;Phergie&lt;/a&gt; -- I am going to be a lot better about this in 2016&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Grew a pretty awesome beard. &lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Hung out with awesome people.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Became friends with even more awesome people. &lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Attempted to ride all 46 rides at Walt Disney World in one day. &lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This year was tough. It was a struggle at times. But it is over and all I can do is look forward to the future, which is now. &lt;/p&gt;
-
-&lt;p&gt;## 2016 Goals&lt;/p&gt;
-
-&lt;p&gt;Ive laid out some awesome goals for this year. They revolve around both coding and non-coding. &lt;/p&gt;
-
-&lt;p&gt;They include:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Reading a book every week. &lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Running 6 5k&amp;#39;s this year.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Code more. &lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;More meaningful commits.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Contribute to more open source.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Blog more.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Speak at a conference.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Outside of that list, its mostly going to be more thoughful, more logical. Push myself to new limits, and make sure I leave an impression on at least one person!&lt;/p&gt;
-
-&lt;p&gt;Here is to an awesome 2016!&lt;/p&gt;
-</description>
-        
-          <description>&lt;p&gt;## It&amp;#39;s the New Year. &lt;/p&gt;
-
-&lt;p&gt;Hello 2016. Goodbye 2015. &lt;/p&gt;
-
-&lt;p&gt;Its been quite a fun time. Quite an interesting year to say the least. It was filled with ups and downs, but by far the best year on record I would like to think.&lt;/p&gt;
-
-&lt;p&gt;Some of the pluses of 2015:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Really dived deep into PHP&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Became a community member of PHP&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Gave 2 mini talks at &lt;a href=&quot;https://atlantaphp.org&quot;&gt;AtlantaPHP&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Became a co-organizer of AtlantaPHP&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Got to go to Hawaii for a week&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Got an awesome job with great potential&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Contributed to open source projects&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Joined an open source team to help maintain &lt;a href=&quot;http://phergie.org&quot;&gt;Phergie&lt;/a&gt; -- I am going to be a lot better about this in 2016&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Grew a pretty awesome beard. &lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Hung out with awesome people.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Became friends with even more awesome people. &lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Attempted to ride all 46 rides at Walt Disney World in one day. &lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This year was tough. It was a struggle at times. But it is over and all I can do is look forward to the future, which is now. &lt;/p&gt;
-
-&lt;p&gt;## 2016 Goals&lt;/p&gt;
-
-&lt;p&gt;Ive laid out some awesome goals for this year. They revolve around both coding and non-coding. &lt;/p&gt;
-
-&lt;p&gt;They include:&lt;/p&gt;
-</description>
-        
-        <pubDate>Fri, 01 Jan 2016 00:00:00 -0500</pubDate>
-        <link>http://matthewtrask.net/blog/A-New-Year/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/A-New-Year/</guid>
-        
-        <category>Goals,</category>
-        
-        <category>coding,</category>
-        
-        <category>life</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Technology, inclusion and how to do better</title>
-        <description>&lt;h2&gt;Tear down these walls.&lt;/h2&gt;
-
-&lt;p&gt;Over the weekend, I took apart in something special, something unique. And I have a unique perspective for a number of reasons. And to really give you the idea, I have to take you back to last year. &lt;/p&gt;
-
-&lt;p&gt;In America exists a program called &lt;a href=&quot;http://www.codeforamerica.org&quot;&gt;Code for America&lt;/a&gt;. Their mission is to open up the government with technology. Its simple, everyone has a smartphone, tablet, and/or computer. Hell, some of us now have fancy watches that let us know we got a text message before everyone else. The government, however, has decided that Internet Explore 8 and Windows XP (now well past security updates, and was E.O.L&amp;#39;d about a year ago) are the way to go. But thats neither here or there. Instead, Code For America, and the local groups, have taken it upon themselves to open up the government with current technology. Through this group, Code For Atlanta, a friend in the non profit world reached out and sent me an invite for the first ever &lt;a href=&quot;http://goodiehack.com&quot;&gt;Goodie Hack&lt;/a&gt;. &lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Goodie Hack is an intense and high energy event where techies and non-techies form teams to brainstorm and develop technical solutions to problems in under-served communities relative to economic development, education, heath, and safety.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;That sounds awesome right? I though so too! Well, long story short, I was the only white guy there. Only white person really. But you know what? Even though the hack was for the underserved and minority communities, there was never a sense of not belonging. So I got my laptop out, and started helping in anyway I could. Back then I barely knew what I was doing, so I didnt help much, but I created a name for myself with the group, and got invited to more hacks. My team managed to win a hack &lt;a href=&quot;http://amplify4good.org&quot;&gt;Amplify 4 Good&lt;/a&gt;, the parent company of Goodie Hack, hosted at General Assembly in Ponce City Market. &lt;/p&gt;
-
-&lt;h2&gt;Personalized Emails and being asked to help&lt;/h2&gt;
-
-&lt;p&gt;Generally when a hack is coming up, I get an email from &lt;a href=&quot;https://twitter.com/joeydigital&quot;&gt;Joey Womack&lt;/a&gt;, who leads the Amplify 4 Good group, mentioning the need for volunteers and mentors for the students at the various hacks they host. This time, I got a personalized call, which could have been the same for everyone, but I felt special and took to the calling. Sending an email back saying Im in, I get signed up and attend the tutoring class. &lt;/p&gt;
-
-&lt;p&gt;The tutoring class had some amazing thinkers, all aimed at empowering youth to go to college and look at Computer Science and Coding as available options. One thing stood out the most, &lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We should aim to teach the students that not every programmer and coder out there is a nerdy white guy sitting in the corner not talking to everyone.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Wow. &lt;/p&gt;
-
-&lt;p&gt;Those are powerful words. Are they right? Well maybe. Im not disagreeing with the fact that &lt;em&gt;a lot&lt;/em&gt; of programmers and devs I know are white. Im not disagreeing that diversity lacks. Im not the only one who thinks that either. Look on twitter, there are tons of developers who think the same way. Call for papers for conferences routinely ask for women to submit. Groups like PHP Women, Girl Develop It, Black Girls Code and Women Who Code help forward the cause. But yet, there are still people in the industry who have to be told to not be a dick to someone with different colored skin or something else. Its wrong. &lt;/p&gt;
-
-&lt;h2&gt;The hackathon itself&lt;/h2&gt;
-
-&lt;p&gt;If you know me, you know I value my down time. I gave up a huge chunk this weekend to help out. It was worth it. Being the only white person there is a huge push out of the comfort zone, but it didnt take long for it to just be another day of helping out. The students themselves came armed with questions and ideas. Personally I was shocked with how open they were to ideas, and how they didnt feel any reason was a reason to stop their efforts. This sentiment was echoed from many mentors who I talked with. It was an amazing experience to be apart of. &lt;/p&gt;
-
-&lt;p&gt;What I thought the students enjoyed most was gathering their data. It took some pushing on our part, but they took a liking to going out and talking to their peers and elders. So much that my mentoring partner, Monet, and I had to walk fast to keep up to their curiousity. They came back energized. It was awesome. &lt;/p&gt;
-
-&lt;h2&gt;Day 2&lt;/h2&gt;
-
-&lt;p&gt;Day 2 was the hardest bit. Kids came in tired, we came in tired. Starbucks couldnt get my drink size right. Venti means as much as possible, not 20 ounces of coffee. Seriously. But it was crunch time, and we pushed our kids to get the most out of them. One thing a student mentioned was their interest in coding. &lt;/p&gt;
-
-&lt;p&gt;I had him sit next to me, and with some simple Javascript commands in the console, completely blew his mind. Who know &lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;alert(&amp;#39;hello, world!&amp;#39;);&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;would take a kid down the road of learning to code? So what is the next logical step? Have them help us build a webpage. &lt;/p&gt;
-
-&lt;p&gt;For some reason, the same kid had a mild obsession with the Hawaii stickers on my laptop. So we built a simple page around the island of Kauai. Then Monet suggested we build a site for our group. Simple! &lt;/p&gt;
-
-&lt;p&gt;With the students in tow, I set out with a simple idea, utilizing &lt;a href=&quot;https://html5boilerplate.com&quot;&gt;HTML 5 Boilerplate&lt;/a&gt; to skeleton the project, &lt;a href=&quot;materializecss.com&quot;&gt;MaterializeCSS&lt;/a&gt; for that lovely Android design feel, and set to work, with three students helping me out at every step. They got to write some basic HTML and CSS, and then I set to hosting the site.&lt;/p&gt;
-
-&lt;h2&gt;Ill pay you to propagate the DNS now&lt;/h2&gt;
-
-&lt;p&gt;No one ever told me it usually takes 48 hours to propagate DNS. Maybe cause I use Digital Ocean, and they are awesome and I dont deal with that shit. Namecheap, who I think is the best registrar out there, let me buy a domain for 8 bucks. Rad! But then there was a glitch and the whole payment process seemed messed up. Which is explains why the DNS didnt fold over to Digital Ocean like I wanted. Frustrated, and not wanting to let the kids down, I set out to set up hosting via Namecheap. Shouldnt hard right, &lt;em&gt;right&lt;/em&gt;? Well, cause of the glitch, Namecheap was having a hard time placing the domain in a DNS zone, which is why Digital Ocean wasnt accepting it either. I was on chat support for an hour, literally up until 5 minutes before we presented. I was hoping, praying, wishing and everything in between to get this to work. The last thing I wanted to do was let down the students. &lt;/p&gt;
-
-&lt;p&gt;Finally, as we were walking over, I got confirmation that the DNS propagated, and I was good. Unfortunately, the FTP service I had wasnt working, so I had to manually upload the files via the cPanel as we walked to the presentation. Luckily it worked just the way we wanted. &lt;/p&gt;
-
-&lt;h2&gt;On to the Finals&lt;/h2&gt;
-
-&lt;p&gt;The finals judges were some big names in the start up community. The biggest was &lt;a href=&quot;https://twitter.com/MrDavidJohns&quot;&gt;David Johns&lt;/a&gt;. if you dont know, he is an advisor to President Obama about education initiatives. Having him there was a huge thing for the students. When we found out our team made it to the finals, Monet and I were nervous and excited. However the group did amazing. Mr. Johns summed up our group perfectly with this&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;quot;We went beyond the basics and created a website&amp;quot; #MicDrop #TeachTheBabies #LevelTheCodingField #LPFIHactivist #Ed &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Our group did everything we could have hoped for. They came up with an awesome idea, pushed through the tough times, and came out the other side stronger and empowered to learn more. Although they didnt win the money, they definitely were winners in my book for coming together, working hard and putting on a great presentation in under 48 hours. &lt;/p&gt;
-
-&lt;h2&gt;Takeaways&lt;/h2&gt;
-
-&lt;p&gt;Sitting at home now, I cant help but think about everything that happened. Its funny that as the sole white mentor, no one was outwardly stand offish to me. We were there working on the same goal, and everyone was working great together. Mentors joked, the students had fun, and hopefully some of them are looking up how to code now. Im sure their parents are already googling ways to be more involved with them.&lt;/p&gt;
-
-&lt;p&gt;You should never judge someone for anything. A book cover can only tell you so much. People wear ther hearts on their sleeves, but hide the scars deep underneath. Everyone: white, black, Asian, short, tall, male and female; has faced some sort of tough time. But to discount someone based on their skin color is the easiest way to be labelled an absolute tool bag. &lt;/p&gt;
-
-&lt;p&gt;I learned a lot this weekend, came out with some awesome stories, and I look forward to continuing to help empower youth of all ages and walks of life to challenge the system and do something more. &lt;/p&gt;
-
-&lt;p&gt;Special thanks to &lt;a href=&quot;twitter.com/morehouse&quot;&gt;Morehouse&lt;/a&gt; for hosting the event, &lt;a href=&quot;https://twitter.com/engijen&quot;&gt;Jennifer Arguello&lt;/a&gt; for being the driving force to excellence, and everyone else who joined in to help make the weekend a huge success!&lt;/p&gt;
-</description>
-        
-          <description>&lt;h2&gt;Tear down these walls.&lt;/h2&gt;
-</description>
-        
-        <pubDate>Sun, 27 Sep 2015 00:00:00 -0400</pubDate>
-        <link>http://matthewtrask.net/blog/preconceived-notions-are-bad/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/preconceived-notions-are-bad/</guid>
-        
-        <category>Coding,</category>
-        
-        <category>Technology,</category>
-        
-        <category>Inclusion</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>On Community</title>
-        <description>&lt;h1&gt;The PHP Community&lt;/h1&gt;
-
-&lt;p&gt;A few weeks ago, members of the PHP community were up in arms over a divisive issue. The issue? It was the always popular, debated framework Laravel. Of course the tweet, which is an awful mode of communication of ideas, sparked the debate which got personal fast. It spread to Reddit, which is the bastion of cool headedness and reasonable thought. Do I need the sarcasm tag there? &lt;/p&gt;
-
-&lt;p&gt;Luckily it ended a day later with Taylor Otwell and Anthony Ferrera agreeing to discuss the tweet sent by Anthony in a podcast. So thats a huge win for everyone. But while the community has these dark days, where can you find some awesomeness in the community? Better yet, how can you be involved?&lt;/p&gt;
-
-&lt;h2&gt;The User Group&lt;/h2&gt;
-
-&lt;p&gt;The user group is &lt;em&gt;the&lt;/em&gt; place to be in terms of interacting with the community. Most major cities have a user group, and they all run in a simple fashion. There is a period of conversation amongst users, generally friends, about work or projects. Food can be provided, sometimes beer, and then the group gets going. At &lt;a href=&quot;http://atlantaphp.org&quot;&gt;AtlantaPHP&lt;/a&gt; we have a mini talk. Can be about anything, but usually its someone testing a talk or idea, or showing off a project they think others will use. Then the big talk, which is more about concepts of programming and PHP. I&amp;#39;ve been fortunate enough to see a few good talks, with plenty to come.&lt;/p&gt;
-
-&lt;p&gt;One thing I notice with newer developers is a sense of fear. Part of our mission at &lt;a href=&quot;http://lampcamp.guru&quot;&gt;LAMP Camp&lt;/a&gt; is getting these developers out in front of people to meet others. But you need to make the effort. Developers are people too, same as CTO&amp;#39;s, CEO&amp;#39;s and others. Introduce yourself, let them ask questions. Especially if you are apart of a program, or just learning. I know for me, my first time was a little nervewracking, but being with my boss and fellow coworkers allowed me to break out of my shell and get involved. In fact, I&amp;#39;ll be giving a talk next week at AtlantaPHP. Unfortunately, or fortunately, some people arent close to a user group, so what can you do about it? Well there is a few things. &lt;/p&gt;
-
-&lt;h2&gt;The Virtual Hallway&lt;/h2&gt;
-
-&lt;p&gt;The hallway track, and now the viritual hallway, is a concept from the conferences that happen all year. While you are going from one talk to another, you stumble into vendors and other developers in the hallway talking and showing off a project or some knowledge. Enter &lt;a href=&quot;https://twitter.com/coderabbi&quot;&gt;@coderabbi&lt;/a&gt; and the rest of IRC. I mentioned @coderabbi cause his room on IRC is #coderabbi - &amp;quot;The Virtual Hallway&amp;quot;. But his is not the only one. A few active ones are #phpc, #phpmentoring and #slimphp. These are rooms I get into first thing in the morning, and just linger. I can contribute when I want, start conversations, offer input or ask for advice. Its great. Just this morning I was getting advice about &lt;a href=&quot;https://slimframework.com&quot;&gt;SlimPHP&lt;/a&gt; and how to use the Twig templates. All because I asked, and made myself involved. Its easy to register a nickname, and all you need to do is say &amp;quot;good morning&amp;quot;. &lt;/p&gt;
-
-&lt;h2&gt;NomadPHP&lt;/h2&gt;
-
-&lt;p&gt;Another great outlet, started by PHP&amp;#39;s cheerleader himself, &lt;a href=&quot;https://twitter.com/calevans&quot;&gt;Cal Evans&lt;/a&gt;, is NomadPHP.It&amp;#39;s slated to be for the developer without a user group, its more of an event for anyone who wants to be. Featuring two videos a month and an IRC room(#nomadPHP), its an easy way to learn from the comfort of home or at the office. We watched one video last week and put it on the projector so everyone could learn a little. For $20 a month, its one of the best ways to be involved. So why arent you doing it yet?&lt;/p&gt;
-
-&lt;h2&gt;Twitter&lt;/h2&gt;
-
-&lt;p&gt;The last way, and a way a lot of people are already involved with, is Twitter. Following other developers allows me access to their blogs, and comments on different concepts of programming. &lt;a href=&quot;https://twitter.com/philsturgeon&quot;&gt;Phil Sturgeon&lt;/a&gt; routinely sends tweet that gave valuable insight to the PHP community. Same with &lt;a href=&quot;https://twitter.com/ramsey&quot;&gt;Ben Ramsey&lt;/a&gt;. Its a constant information stream that is worth the effort to hop on Twitter and check it out everyday. I use Twitter so much its essentially replaced Facebook for me.  &lt;/p&gt;
-
-&lt;p&gt;Some others to follow include &lt;a href=&quot;https://twitter.com/joepferguson&quot;&gt;Joe Ferguson&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/elazar&quot;&gt;Matthew Turland&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/ambassadorawsum&quot;&gt;Amanda Folson&lt;/a&gt;, &lt;a href=&quot;@ircmaxell&quot;&gt;Anthony Ferrera&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/grumpyprogrammer&quot;&gt;Chris Hartjes&lt;/a&gt; and so many more. Cal Evans keeps a running &lt;a href=&quot;https://twitter.com/CalEvans/lists/phpeople&quot;&gt;list&lt;/a&gt; on his twitter, its worth running through it and just following everyone. &lt;/p&gt;
-
-&lt;h2&gt;Now what?&lt;/h2&gt;
-
-&lt;p&gt;Go out! Be involved! Meetup.com and search for whatever language you want to be involved with. Look for what groups are desiring comments on things, look at github.com for open source projects. Comment on those threads, read them and go out and be ready to be apart of the community. I made the choice to be apart of the PHP community and because of it, I have made some awesome new friends, drinking buddies, and a list of peers I know I can ask for honest advice from. Thats something I wouldn&amp;#39;t change for the world.&lt;/p&gt;
-</description>
-        
-          <description>&lt;h1&gt;The PHP Community&lt;/h1&gt;
-
-&lt;p&gt;A few weeks ago, members of the PHP community were up in arms over a divisive issue. The issue? It was the always popular, debated framework Laravel. Of course the tweet, which is an awful mode of communication of ideas, sparked the debate which got personal fast. It spread to Reddit, which is the bastion of cool headedness and reasonable thought. Do I need the sarcasm tag there? &lt;/p&gt;
-</description>
-        
-        <pubDate>Tue, 25 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://matthewtrask.net/blog/community/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/community/</guid>
-        
-        <category>Community,</category>
-        
-        <category>PHP,</category>
-        
-        <category>Lets</category>
-        
-        <category>Be</category>
-        
-        <category>Friends</category>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Tech Stack</title>
-        <description>&lt;h1&gt;How I build apps and sites&lt;/h1&gt;
-
-&lt;p&gt;I work at LAMP Camp, and since most of the people there are learning, one question I get alot
-is what tools do I use? And its an interesting question, because as of late, Ive been changing
-my mind and wondering what could be the best way to use the tools I use. Anyways, here is a run
-down. Keep an eye on this, cause I will be changing the post as I mess around with new tools. Lets
-treat this as if I just bought a new machine, and I want to set it up for development.&lt;/p&gt;
-
-&lt;h2&gt;Machine&lt;/h2&gt;
-
-&lt;p&gt;First and foremost, I am a Mac guy. I dont live and die with every decision they make, but
-they make good computers. Its a 2011 Macbook Pro, with 16 gigs or ram and 120 gig SSD. The SSD was
-the best decision I have made. Super fast, it sped my computer up and helped my workflow. Lately, however,
-Im not overly thrilled that Apple is soldering the ram and hard drives into the machine. Purely a business
-move to get more revenue, but still sucks. One trick I do like to do is remove the programs from the dock.
-It helps me keep track of what is open, and keeps the dock small and less distracting.&lt;/p&gt;
-
-&lt;p&gt;Now, I do have a Linux machine too, running a distro called ElementaryOS. They got some flack for
-trying to charge for their distro, and while I cant blame them for trying to make a living, it was
-kind of a dick move.&lt;/p&gt;
-
-&lt;h2&gt;Computer Programs&lt;/h2&gt;
-
-&lt;p&gt;Theres a few Mac specific programs I use to really optimize how I work. First thing I get is
-&lt;a href=&quot;http://brew.sh/&quot;&gt;Homebrew&lt;/a&gt;. It&amp;#39;s &lt;em&gt;the&lt;/em&gt; package manager for a Mac. To browse packages, check out this &lt;a href=&quot;http://braumeister.org/&quot;&gt;page&lt;/a&gt;. As you can see, theres Apache, Python, PHP, and others that you may want or need.&lt;/p&gt;
-
-&lt;p&gt;After I set up Homebrew, I get a version of &lt;a href=&quot;iterm2.com&quot;&gt;iTerm&lt;/a&gt;. It has a ton of awesome features that help speed
-things up for me. As a PHP developer, I spend a lot of time in the command line, and iTerm has some features I can&amp;#39;t live
-without anymore. Split screen is fantastic, and I hot key it on the &amp;#39;~&amp;#39; key. To aid in the terminal, and to make it a little
-less bland, I grab a copy of &lt;a href=&quot;http://ohmyz.sh/&quot;&gt;Oh My Zsh&lt;/a&gt;. It has a ton of plugins you can call upon, and it the color scheme
-helps keep it from getting dull after hours of looking at the terminal. Truly a godsend in my opinion.&lt;/p&gt;
-
-&lt;p&gt;Anpther app that is awesome is &lt;a href=&quot;https://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;. Dash allows me to download any language&amp;#39;s api documents and read them offline. When I took a trip to Maui a few months ago, I used it to code some PHP while in the air without Wifi. Sidenote, its an 8 hour flight, thats a cash cow in terms of internet usage fees. Why cant American Airlines offer wifi on the flights to Maui?!&lt;/p&gt;
-
-&lt;p&gt;The last thing I get specific to the Mac, is &lt;a href=&quot;http://www.sequelpro.com/&quot;&gt;Sequel Pro&lt;/a&gt;. Have you ever worked with command line MySQL or even worse, PHPMyAdmin. Yea, this solves the headaches. Its clean, fast, easy to use, allows for SSH tunnels for connections and an easy way to export tables to keep work up to date.&lt;/p&gt;
-
-&lt;p&gt;Outside of these, I get Pomodoro Time from the app store, Evernote for note taking, Spotify for music.&lt;/p&gt;
-
-&lt;h2&gt;Development Specific Tools&lt;/h2&gt;
-
-&lt;p&gt;As a PHP Developer, there are a few awesome things that I need in order to maximize my workflow.&lt;/p&gt;
-
-&lt;p&gt;First, is a text editor. And for that, its hard to beat &lt;a href=&quot;atom.io&quot;&gt;Atom&lt;/a&gt;. Its my favorite word, free, and very customizable. I&amp;#39;ll download it, and then get plugin support for Twig and LinterPHP for all of the linting tools out there. PHP Codesniffer is awesome to use, I highly recommend it. Clean code is good code. You can also get a plugin that will let you see PHPUnit test results in the text editor.&lt;/p&gt;
-
-&lt;p&gt;If you are looking for something more powerful, its hard not to recomment &lt;a href=&quot;jetbrains.com&quot;&gt;PHPStorm&lt;/a&gt;. The license may seem steep, but honestly, everything that it offers is unrivaled. PHPUnit support, Vagrant support, Git support, code completion and error checking just to name a few. I absolutely love it. But I only try to use it when Im plugged into power cause it can cause your battery to die off quickly.&lt;/p&gt;
-
-&lt;h2&gt;Local Development&lt;/h2&gt;
-
-&lt;p&gt;For local development, it is hard to beat &lt;a href=&quot;http://vagrantup.com&quot;&gt;vagrant&lt;/a&gt;. Vagrant, along with &lt;a href=&quot;virtualbox.org&quot;&gt;VirtualBox&lt;/a&gt; make for a great team. Vagrant allows quick access to virtual machines. Super helpful if you are working on a distributed team and need to have everyone on the same server enviornment, or want to have some fun learning Linux without blowing up a computer. Vagrant allows you to configure the VM as you want. If you want CentOS, MySQL, Ruby, PHP, and Node then you just add it to a bootstrap.sh file and once you build your vagrantfile, you run the shell file and it will install everything. There are already a lot of pre-made boxes out there, but making it yourself wouldn&amp;#39;t hurt at all. We use Vagrant at work and I use it at home. I cant tell you how awesome it is. Doesnt require the internet either. I put EVERYTHING on my vagrant instance. Git, Composer, Node and all my files. No more cluttering up my computer with tons of unneeded files. Instead, this keeps it nice and neat. I pass the vagrantfile to Github as well, so if someone wants to do a pull request, they have the enviornment I am using as well. Makes checking pull requests so much easier. &lt;/p&gt;
-
-&lt;h2&gt;Front End&lt;/h2&gt;
-
-&lt;p&gt;If Composer makes back end package management easy, NPM and Bower make Front End that much easier too. If I want Bootstrap, Bower install bootstrap, if I want Gulp (hell yea I do!), then npm install gulp and everything else I need related to Gulp. It makes life so much easier. I can spin up a project in an instant with Bower and Composer, rather then hunting around for 8 different website repos to get the code I want to make my projects. &lt;/p&gt;
-
-&lt;p&gt;Comments or questions?&lt;/p&gt;
-</description>
-        
-          <description>&lt;h1&gt;How I build apps and sites&lt;/h1&gt;
-</description>
-        
-        <pubDate>Sat, 25 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://matthewtrask.net/blog/Tech-Stack/</link>
-        <guid isPermaLink="true">http://matthewtrask.net/blog/Tech-Stack/</guid>
-        
-        <category>PHP,</category>
-        
-        <category>Tools,</category>
-        
-        <category>Beginnings,</category>
-        
-        <category>APIs,</category>
-        
-        <category>frameworks</category>
         
         
       </item>
