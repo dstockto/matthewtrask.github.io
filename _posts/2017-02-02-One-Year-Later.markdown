@@ -22,3 +22,5 @@ Besides the fact I had to be up at an ungodly hour, I arrived at Sunshine on Thu
 The conference could not have started on a better page. Cal had a great talk, something that I felt was a real inspiration for everyone. I got a chance to see a sneak peak of it, and was happy to see it presented. He had 10 principles as badges which he treats like the badges we see for code coverage/version/maintainers. Even though there were some great talks lined up, I spent most of the day in the uncon and hallway track. Its such a struggle when there are great talks taking place, and yet everyone says find time to get into the hallway track. The first uncon talk was a loosely structured conversation about the internals from Internals developers Elizabeth Smith, Davey Shafik, and Anthony Ferrera. It was awesome to have some of the PHP source code demysitifed a bit by the people who have had a hand in shaping it.
 
 The continued on with a great talk from David Stanley about how they migrated a production database and wrote a migration tool with the Symfony Console Component. After that it was mostly hanging out.
+
+(to be continued...)
