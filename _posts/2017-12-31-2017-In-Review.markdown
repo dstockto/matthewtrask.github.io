@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "2017 In Review"
+date:   2017-12-31
+comments: yes
+description: A look back at things I did, and didnt do.
+tags: Year in Review
+---
+
+## Goodbye 2017
+
+I've seen some other people do this, and figured this would be fun to do. I wanted to put down both my successes and failures on to ... well 
+paper. This isn't something to shame anyone, if you choose to do this as well, but a chance to reflect and set new goals based on the previous year.
+Without any further ado, I'm going to dive in. 
+
+### 2017 Goals
+
+I set out a few goals at the start of 2017, which were:
+
+* Lose weight
+* Contribute more to Open Source
+* Level up with my career
+* Get more involved with the community
+* Learn a new language (programming)
+* Cycle 2000 miles
+* Reduce my debt
+
+### 2017 Wins
+
+My first win, that stands out to me, is that I leveled up my career. I took a job back in October of 2016 that moved me to Nashville and 
+had me work as a developer at Bernard Health under Joe Wallace. My big project, which was blown way past the self imposed deadlines, was building an 
+Applicant Tracking System or ATS. Since we already have an HR platform in place, this was an obvious next step. As of right now according to Github, I have added
+46,592 lines of code, and removed 26,134 lines of code for a net of 20,458 lines of code to make ATS a living piece of software. We used Laravel, Vue.js and a few amazing
+packages like the [League's Fractal](https://fractal.thephpleague.com/) and many others to accomplish this goal. This was a huge thing for me, it is currently the hardest thing
+I have ever worked on, and mostly by myself. So I'm a little bit proud of if. 
+
+Another win is community involvement. When I left Atlanta to come to Nashville, I had to leave behind AtlantaPHP and the organizing I did there. I owe a lot of my career
+to AtlantaPHP so it was very sad to see it go, but knowing what I did, I jumped into NashvillePHP as soon as I got up here. Months later, I volunteered to help organize the user group and so far I think
+its been a success. We have seen steady growth in our user group base, more community involvement and was able to draw two pretty big members of the PHP community out to our group.
+I spoke at NashvillePHP and AtlantaPHP as well as NomadPHP this year, which all are considered successes. Which brings me to what I am currently working on: [Southeast PHP](https://southeastphp.com).
+We are bringing a community conference back to Nashville. This has been something that has been insanely challenging but so much fun and I have people working with me that are amazing.
+
+Considering how much I use Javascript now, compared to last year, I will consider that a win for learning a new language. I started to dive into Python as well. I don't know everything about 
+Javascript but I feel more confident then I did a year ago when using it. It's amazing what can happen when you are just pushed into the deep end and gotta figure out how to sink or swim.
+
+The last win I will consider is my debt. Its something I am not terribly open about, but since there has become a movement around personal finance, I feel its ok to talk about it more now. 
+I have some credit card debt, north of $10,000 mainly from being a moron and not understanding and having a healthy relationship with debt. The last weeks of 2017 saw me take out a personal loan
+at a considerably low interest rate to help me fix this problem. Lately I've become obsessed with fixing this problem and making it easier to enjoy life. I've thought about a side project to help new developers
+understand how to manage their finances as well, because it seems like developers love to take our huge salaries and blow it quickly. If you are interested in taking my route to get a loan, I used [Sofi](www.sofi.com/refer/620657) to get
+my loan, and its been such as easy process. 
+
+Other wins not listed on there, I was able to ride on GA 400 this summer in a huge bike ride through north Atlanta. I drove down that highway for years, so to do it on a bike was surreal. I started getting rid of a lot 
+of things in my apartment that were just cluttering up the place. I rode around 800 plus miles as well, far from my goal of 2000, but still not a bad amount of miles.
+
+### 2017 Loses
+
+First and foremost, I didn't lose weight. A few reasons I think, one stress from work was big at times. Another is that Nashville sits on the very eastern edge of the CST, so we have 
+weird timing for our days. The winter turns our days very short, and thus I get lethargic fast. I tried to bike as much as I could, but there is always a small amount of guilt when I come home and go out and my dog just 
+looks at me. Also, I spent way too much time and money eating out. I love food, and my current obsession is Hot Chicken. But there is literally nothing healthy about it. 
+I got into meal prep Sundays at the end of the year and hope to continue with that process. As I try to minimize my debt, I plan on making the most out of grocery trips. Id love to shoot for eating 18 of 21 meals at home.
+That is a lofty goal, but I think it can be done. 
+
+I will consider reducing my debt as a lose too, because I couldn't get it under control and lost discipline. But I have taken steps this year already to make it a thing of the past. 
+One thing I stumbled on was [Debitize](https://debitize.com), which treats a credit card like a debit card in that if you use your credit card, Debitize will immediately get the money out of your checking to pay off that credit card usage. You 
+still get the point or whatever, but you pay it off immediately. I think this is fantastic. I am also hoping to minimize what I buy this year. I have enough shirts and jeans and shoes to not worry about that, books can be rented from a library (Im getting myself a library
+card too), and I can get out and hike/run and see some of the beauty that is Nashville.
+
+There are some other things I would consider loses. I launched, but not officially, a side project for developers to trade elephpants around. There is one bug in there, maybe I can tackle that today, that is a show stopper. I want to get people using it, so I need to figure it out quick.
+
+
+### 2018 and Beyond. 
+
+What is next for me? Well I think 2018 is gonna be a change year for me. In what way I can not say. I have good goals set up, all of which are attainable, I just need the discipline to get them done. As I dive deeper into mentoring, I look forward to the relationships I will form
+for that, same as I dive deeper into the next year. Overall, I think I can make great things happen. I will make them happen.
+
+Some things I would like to do:
+
+* Bike 1500 miles
+* Run 250 miles
+* Have a sizeable emergency/do whatever fund
+* Run a successful conference
+* Attend more conferences in 2018 outside of PHP
+* Lose weight
+
+Here is to the new year! 
+
