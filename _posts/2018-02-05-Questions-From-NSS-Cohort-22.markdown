@@ -52,4 +52,8 @@ legacy code or anything about the job that sucks. Another reason is that those o
 where my skill level is. I spend time trolling through the "Ask HN: Who is hiring (month, year)" threads to find where trends are going and things like that. I tend to stay away 
 from job posting sites, because the chances are small that they will work out for you.
 
+### Why does community matter
+
+Steve, the "coach" as they call him, posed this to me: why is community important and why should everyone get involved. It was a simple one to answer: I owe my career to the community. I'll write a subsequant post about who deserves my thanks (so many) but suffice to say, I wouldn't be where I am without the communities I am in. From the PHP community to the OpenAPI community to the Nashville community, it has made my life better. Because of these communities I have couches to sleep on in other cities, I have friends who I can call on in times of need and get their advice and council, I have peers who want to see me succeed, and I have people who will vouch for me when it is time for recommendations as well as people who want to bring me on their team because they see my community involvement turned into passion for programming and writing good clean code. 
+
 I think that cover the majority of the topics we covered today, cheers!
