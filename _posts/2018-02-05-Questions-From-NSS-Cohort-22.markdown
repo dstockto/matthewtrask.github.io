@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Questions from NSS Cohort 23"
+title:  "Questions from NSS Cohort 22"
 date:   2018-02-05
 comments: yes
-description: Took some time from my funemployment to spend time with junior developers at NSS in Cohort 23.
+description: Took some time from my funemployment to spend time with junior developers at NSS in Cohort 22.
 tags: NSS, Side Projects, Junior Developers   
 ---
 
