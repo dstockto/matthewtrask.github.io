@@ -30,7 +30,7 @@ some help. Eventually we plan to expand to a few ideas on the back burner but ri
  
  Judging by the twitter stats, there is considerable interest so I am hoping this takes off!
  
- If you are interested in helping out, the project is open sourced on [github](https://github.com/matthewtrask).
+ If you are interested in helping out, the project is open sourced on [github](https://github.com/matthewtrask/developerresumes).
  
  Cheers!
 
