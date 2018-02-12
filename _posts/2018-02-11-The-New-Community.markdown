@@ -34,4 +34,25 @@ Organizers should be willing to trade a few minutes before the meeting starts to
 
 ## Get better at being inclusive
 
+I don't mean accessability or anything. Those are hugely important and deserve their own blog posts. I mean inlcuding all of your members in the group, and making sure everyone feels invited every single time. Not everyone is an extrovert and so coming to a user group is a big deal. Don't make a big deal out of it, but invite them out with the group after to beers and make it know that you truly appreciate their attendence. Remember, this could be the next person to step up and organize the group, find you money or more. Appreciate them. 
+
+> At conferences, it is so easy to fall into the trap of hanging out with friends of old and not working on including more new friends. 
+
+I am bad at this. I tend to be awkward and shy, but I do like meeting new people. At Sunshine this last weekend I went to talks friends did over people I didn't know, and spent most of the time hanging out with the same group of developers. These are friends, these are people who let me sleep on their couch when I'm in town, and more. So it's hard not to be with them. But that is less than 1% of the conference. There are so many people who don't have time to be on twitter, have time to make it to more then one conference and so this is all of the community they see. How can we make sure they are welcome at our tables? Well Twitter for one. Invite people. If you see an open seat, let people know and open it to them. If you are in a conversation and you see someone standing by themselves, offer to include them. We need to grow the community, and we need to make sure everyone knows they have a voice and they can contribute. 
+
+When you see these people, ask them about their user group. Encourage them to attend, but to also get involved. If they don't have a user group ask if they want to get it going. 
+
+> If so, give them the tools to succeed.
+
+The [php.ug](https://php.ug) site has tons of good resources for getting a user group going. Talk to other tech meet up organizers and share experience! Share what works and what doesn't work for you. You may not be alone in this regard. If you are at a conference as an user group organizer, take an uncon slot and do a roundtable on user group organizing. Share your knowledge around and let others learn and grow with you. 
+
+## The New Community
+
+I mention all of this, because as I looked around this last weekend I noticed the people I looked up to are moving up and now people look up to me and others who have come up at the same time I did. It's our job now, our duty, to make sure the next group that comes up when we move on are just as successful as we were when we started. Maybe it wasn't so easy for you, but that doesn't mean you can't help the ones coming behind you. 
+
+If you go to a conference, break out of your group and connect with new people. Do an uncon talk, and offer to help out when you can too. It will help the organizer focus on bigger things. 
+
+If you go to a user group, get your company involved at any level. If you organize, get on [joind.in](https://joind.in). Its language agnostic, but help your speakers out and get them more feedback so they can keep doing better.
+
+Til next time, cheers!
 
