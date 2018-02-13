@@ -7,7 +7,7 @@ description: As I leave SunshinePHP for the third year, I look around and realiz
 tags: Community 
 ---
 
-I just got back home from another fantastic [SunshinePHP](https://sunshinephp.com) and as I looked around and talked to others I had a mini-revelation: as the older leaders of our community, the PHP Community, step back and go up the career leader, we need to groom up and coming developers to step into those shoes in our community to keep it going. Lets share some thoughts and see what we can do to help others. 
+I just got back home from another fantastic [SunshinePHP](https://sunshinephp.com) and as I looked around and talked to others I had a mini-revelation: as the older leaders of our community, the PHP Community, step back and go up the career ladder, we need to groom up and coming developers to step into those shoes in our community to keep it going. Lets share some thoughts and see what we can do to help others. 
 
 
 ## Get better at thanking organizers 
