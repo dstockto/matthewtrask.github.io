@@ -13,9 +13,9 @@ I never dove into what the difference was, I just went with what was being used 
 
 ### A brief primer on ORM's
 
-From Wikipedia: 
+From Wikipedia[1]: 
 
-> Object-relational mapping (ORM, O/RM, and O/R mapping tool) in computer science is a programming technique for converting data between incompatible type systems using object-oriented programming languages. This creates, in effect, a "virtual object database" that can be used from within the programming language.[1] 
+> Object-relational mapping (ORM, O/RM, and O/R mapping tool) in computer science is a programming technique for converting data between incompatible type systems using object-oriented programming languages. This creates, in effect, a "virtual object database" that can be used from within the programming language.
 
 So from this, we can infer that an ORM is a layer in between our application and the database itself. Wikipedia uses an example of a Person class with properties like 
 
@@ -46,4 +46,62 @@ The task at hand was this: create an audit log for certain parts of our admin sy
 In Eloquent, which I used previously, it never exposed events to userland. Things like 
 ```php
 preFlush(), onFlush(), postFlush()
-``` were not things we had to deal with. It was all handled in the background through the Active Record pattern. 
+```
+were not things we had to deal with. It was all handled in the background through the Active Record pattern. So as I dove in, I noticed two things: there are events you can have on the model itself, or you can create whole class listeners that listen for what Doctrine calls ```php LifecycleEvents```. How does differ? Lets make an example of a class, a User model. It can look like this:
+
+```php
+<?php
+
+namespace Crm\Models;
+
+/**
+ * @Entity(repositoryClass="UserRepository") @Table(name="users")
+ * @HasLifecycleCallbacks
+ */
+ class User
+ {
+     /**
+     * @Id @Column(type="integer") @GeneratedValue
+     * @var int
+     */
+     private $id;
+     
+     /**
+      * @Column(type="string")
+      * @var string
+      */
+     private $name;
+     
+     /**
+      * @Column(type="string")
+      * @var string
+      */
+     private $address;
+     
+     /**
+      * @Column(type="int")
+      * @var int
+      */
+     private $phoneNumber;
+     
+     private $weeklyAccomplishment;
+
+     public function getId() { // }
+     
+     public function setId($id) { // }
+     
+     ...
+     
+     public function getWeeklyAccomplishment() : ? string
+     {
+         return $this->weeklyAccomplishment;
+     }
+     
+     public function setWeeklyAccomplishment(string $weeklyAccomplishment) 
+     {
+         $this->weeklyAccomplishment = $weeklyAccomplishment;
+     }
+ }
+```
+
+Alright! Our model is set. Now, lets look at what I did. The user model is pretty straightforward, and we use annotations cause that is how Doctrine works. If you want to read more about the annotations, you can go [here](https://www.doctrine-project.org/projects/doctrine-annotations/en/latest/index.html). The interesting thing here though is the first thing, I learned: Transient Properties. Notice when we set up our properties, I left off a docblock for the ```php $weeklyAccomplishment```. That is for two reasons: one: on our users table, there is no column for the value there, and we are going to use this value elsewhere, two: this prevents the value from being persisted, so Doctrine just holds this value in memory and we can access it later. Pretty neat! So how will we use this new value that we can't store on our users model? We can make a simple model that will store the userId, the accomplishment and a timestamp. I don't think I need to write that out right now, but I can. But lets say we want to store it when we update the user in the admin system we are creating. Where would we call this ```php $weeklyAccomplishment``` value? Well, it seems we can do it two places. Either on the model itself with a ```php onFlush``` method or an event listener. 
