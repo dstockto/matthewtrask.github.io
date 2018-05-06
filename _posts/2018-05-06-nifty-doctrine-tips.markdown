@@ -184,3 +184,7 @@ That was a lot! What did we cover?
 * Tapping into the Event Architecture of Doctrine
 
 Hopefully this will come in handy for you sometime soon!
+
+
+References: 
+1: https://en.wikipedia.org/wiki/Object-relational_mapping
