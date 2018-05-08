@@ -7,9 +7,9 @@ description: I had a fun thing to work on at work and it let me dive into some c
 tags: ORM, Doctrine, Work
 ---
 
-This is now the 4th different database tool I've worked with in PHP. It helps that the original author is just 25 feet or so awat from me
+This is now the 4th different database tool I've worked with in PHP. It helps that the original author is just 25 feet or so away from me
 at work, but as I grew as a PHP developer, the debate I always heard was: Eloquent vs Doctrine. Active Record ORM vs Data Mapper ORM. Personally
-I never dove into what the difference was, I just went with what was being used and learned it to make sure I could leverage whichever tool Im using.
+I never dove into what the difference was, I just went with what was being used and learned it to make sure I could leverage whichever tool I'm using.
 
 ### A brief primer on ORM's
 
