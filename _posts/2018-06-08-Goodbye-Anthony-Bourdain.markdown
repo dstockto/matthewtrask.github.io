@@ -26,7 +26,7 @@ lives. No one needs to suffer in silence. No one should come to the realization 
 guess about Spade's as well (I think I heard something about finacial troubles, which is a huge problem in our society). 
 
 If you have a close friend who you know has gone close to suicide, or you think just needs to have someone to talk to, reach out to them. Social Media lets you peer into others lives, and you can pick up tell tale signs
-like frustration, hopelessness, and more. Don't be the person to push boundaries, but let friends know that your phone is alwaus on, DMs always open and you will be there to be the best frined you can be. We spend the formulative eyars
+like frustration, hopelessness, and more. Don't be the person to push boundaries, but let friends know that your phone is always on, DMs always open and you will be there to be the best frined you can be. We spend the formulative eyars
 of our lives building up friendships to watch them disappear after college and into adult hood, so spend a few minutes rekindling friendships that had faded and 
 strengthening the ones you are. Friends are not (usually) trained mental health professionals, but they can be the gateway to you realizing you need something more. 
 
