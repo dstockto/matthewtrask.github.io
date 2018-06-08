@@ -9,7 +9,9 @@ tags: Mental Health, Suicide
 
 Im sitting at the airport ready to do something that now seems more timely: talking about mental health resources in tech. It is timely for two reasons:
 1. Kate Spade (famous fashion designer for those who don't know) took her own life, and 2. Anthony Bourdain (famous chef, tv personaility and story teller) took his own life
-just this morning. Kate Spade didn't really resonate with me as much because if you see how I dress every day (jeans, v-neck shirt and flip flops) fashion isn't high on the list of
+just this morning. 
+
+Kate Spade didn't really resonate with me as much because if you see how I dress every day (jeans, v-neck shirt and flip flops) fashion isn't high on the list of
 things I think I'm knownledgable about. However, ever since I worked in a restaurant and read Anthony's book "Kitchen Confidential" I have
 enjoyed his stories. His show "No Reservations" was one of my favorites to binge, and even though he went to the one hot chicken place in Nashville I couldn't stand, his Nashville show was still cool.
 
