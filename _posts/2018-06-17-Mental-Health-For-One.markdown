@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Goodbye Anthony Bourdain"
+title:  "Mental Health For One"
 date:   2018-06-08
 comments: yes
-description: Another awesome person is lost to suicide, so lets make sure others know whats out there for tech and more.
-tags: Mental Health, Suicide
+description: Tips and tricks to manage your mental health, whether you work in an office or remote.
+tags: Mental Health
 ---
 
 
