@@ -37,4 +37,4 @@ So much stuff. Every speaker brought their A-game and it showed. We had talks ra
 We had talks about working on making diversity a priority, overcoming your fear of failure, how to build world class software teams, to what it's like to have a 
 mental health issue while working as a developer. 
 
-The hashtag is still live and you can check it out here: https://twitter.com/search?f=tweets&vertical=default&q=sephp18&src=typd
+The hashtag is still live and you can check it out [here](https://twitter.com/search?f=tweets&vertical=default&q=sephp18&src=typd).
