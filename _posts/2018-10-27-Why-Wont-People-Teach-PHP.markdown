@@ -58,7 +58,7 @@ we can now use something cleaner:
 
 ```php
 
-private UserIdentity $userIdentity;
+public UserIdentity $userIdentity;
 
 public function __construct(UserIdentity $userIdentity)
 {
